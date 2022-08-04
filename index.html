@@ -266,7 +266,14 @@
                     <input type="email" name="email" placeholder="Email" required pattern="[a-z0-9]{5,30}(@gmail.com|@yahoo.com)">
                     <br>
                     <br>
-                    <input type="text" name="subject" placeholder="Subject" required pattern="[A-z ]{2,30}">
+                    <input type="text" name="subject" placeholder="Subject" required pattern="[A-z ]{2,30}" list="subject">
+                    <datalist id="subject">
+                        <option value="Java">
+                        <option value="MySQL">
+                        <option value="HTML">
+                        <option value="CSS">
+                        <option value="Java script">
+                    </datalist>
                     <br>
                     <br>
                     <textarea name="message" cols="20" rows="5"></textarea>
