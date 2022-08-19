@@ -11,39 +11,63 @@
             width: 100vw;
             position: relative;
         }
-
         body>main>section{
             height: 50vh;
             width: 50vw;
+            position: absolute;
         }
 
-        body>main>section:first-child{
-            background-color: red;
-            position: absolute;
+        body>main>section:nth-child(1){
+            background: red;
             left: 0;
             top: 0;
         }
 
         body>main>section:nth-child(2){
-            background-color: green;
-            position: absolute;
+            background: green;
             right: 0;
             top: 0;
         }
 
         body>main>section:nth-child(3){
-            background-color: orange;
-            position: absolute;
-            left: 0;
+            background: orange;
             bottom: 0;
+            left: 0;
         }
 
-        body>main>section:last-child{
-            background-color: deeppink;
-            position: absolute;
+        body>main>section:nth-child(4){
+            background: deeppink;
             right: 0;
             bottom: 0;
         }
+
+        body>main>div:first-of-type{
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            border: 1px solid white;
+            background: white;
+        }
+
+        body>main>div:first-of-type>div{
+            width: 50%;
+            height: 50%;
+            background-color: red;
+            border-radius: 100%;
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+
+        }
+
     </style>
 </head>
 <body>
@@ -59,6 +83,11 @@
 
     <section>
     </section>
+
+    <div>
+        <div>
+         </div>
+    </div>
 </main>
 </body>
 </html>
