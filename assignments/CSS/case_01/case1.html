@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Case 01</title>
+    <link rel="stylesheet" href="assests/normalize.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <style>
+        body>main{
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        body>main>section{
+            height: 50vh;
+            width: 50vw;
+        }
+
+        body>main>section:first-child{
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        body>main>section:nth-child(2){
+            background-color: green;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        body>main>section:nth-child(3){
+            background-color: orange;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        body>main>section:last-child{
+            background-color: deeppink;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section>
+    </section>
+
+    <section>
+    </section>
+
+    <section>
+    </section>
+
+    <section>
+    </section>
+</main>
+</body>
+</html>
