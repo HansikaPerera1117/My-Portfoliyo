@@ -4,15 +4,73 @@
     <meta charset="UTF-8">
     <title>CSS Case 02</title>
     <link rel="stylesheet" href="assests/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <style>
 
+        header{
+            background-color: white;
+            height: 73px;
+            position: relative;
+            box-shadow: 0px -1px 8px 2px #1c1717e8;
+        }
+
+        header>img{
+            width: 190px;
+            position: relative;
+            top: 20px;
+            left: 10px;
+        }
+
+        header>nav{
+            position: absolute;
+            right: 40px;
+            top: 0;
+        }
+
+        header>nav>ul>li{
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px;
+            font-family: 'Ubuntu';
+            color: rgba(46,41,41,0.96);
+
+        }
+
+        main{
+            background-color: rebeccapurple;
+        }
+        footer{
+            background-color: gray;
+            height: 50px;
+            position: relative;
+        }
+        footer>small{
+            position: absolute;
+            right: 50%;
+            bottom: 40%;
+            color: white;
+            font-family: 'Ubuntu';
+        }
     </style>
 </head>
 <body>
 <header>
-    <aside>
+    <img src="assests/ijse-logo.gif" alt="This is logo of IJSE">
         <nav>
+            <ul>
+                <li>Home</li>
+                <li>Services</li>
+                <li>Contact</li>
+                <li>About Us</li>
+            </ul>
+
+        </nav>
+</header>
+<main>
+    <nav>
             <ol>
                 <li>Home</li>
                 <li>Services</li>
@@ -20,9 +78,13 @@
                 <li>About Us</li>
             </ol>
         </nav>
-    </aside>
-</header>
-<main></main>
-<footer></footer>
+
+    <section>
+
+    </section>
+</main>
+<footer>
+    <small>Developed by IJSE</small>
+</footer>
 </body>
 </html>
