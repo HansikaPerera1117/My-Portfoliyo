@@ -18,7 +18,10 @@
         header{
             background-color: white;
             height: 73px;
-            position: relative;
+            position: fixed;
+            z-index: 2;
+            width: 100%;
+            top: 0;
             box-shadow: 0px -1px 8px 2px #1c1717e8;
         }
 
@@ -52,8 +55,17 @@
             text-decoration: none;
         }
 
+        header ul>li:hover a{
+            color: darkorange;
+        }
+
+        header ul>li:hover i{
+            color: green;
+        }
+
         main{
             position: relative;
+            margin-top: 73px;
         }
 
         main>nav{
@@ -83,6 +95,13 @@
             text-decoration: none;
         }
 
+       main ul>li:hover a{
+            color: red;
+       }
+
+        main ul>li:hover i{
+            color: orange;
+        }
 
         main>section{
             margin-left: 270px;
