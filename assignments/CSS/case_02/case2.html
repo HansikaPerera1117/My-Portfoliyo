@@ -103,6 +103,34 @@
             color: orange;
         }
 
+        main>section>section:first-child{
+            height: 300px;
+            position: relative;
+        }
+
+        main>section>section:first-child>div{
+            border: 1px solid rgba(0, 0, 0, 0.33);
+            height: 100%;
+            width: calc(100%/3);
+            position: absolute;
+
+        }
+
+        main>section>section:first-child>div:nth-child(1){
+            background: url("assests/gif.gif");
+            left: 0;
+        }
+
+        main>section>section:first-child>div:nth-child(2){
+            background: url("assests/gif.gif");
+            left: calc(100%/3);
+        }
+
+        main>section>section:first-child>div:nth-child(3){
+            background: url("assests/gif.gif");/* image tag ekak wageth puluwan */
+            right: 0;
+        }
+
         main>section{
             margin-left: 270px;
             padding: 10px;
@@ -129,7 +157,7 @@
                 <li><i class="fa-solid fa-house"></i><a href="https://www.ijse.lk/">Home</a></li>
                 <li><i class="fa-solid fa-earth-americas"></i><a href="#">Services</a></li>
                 <li><i class="fa-solid fa-phone"></i><a href="#">Contact</a> </li>
-                <li><i class="fa-solid fa-user"></i><a href="#"> About Us</a></li>
+                <li><i class="fa-solid fa-address-card"></i><a href="#"> About Us</a></li>
             </ul>
 
         </nav>
@@ -140,7 +168,7 @@
             <li><i class="fa-solid fa-house"></i><a href="https://www.ijse.lk/">Home</a></li>
             <li><i class="fa-solid fa-earth-americas"></i><a href="#">Services</a></li>
             <li><i class="fa-solid fa-phone"></i><a href="#">Contact</a></li>
-            <li><i class="fa-solid fa-user"></i><a href="#"> About Us</a></li>
+            <li><i class="fa-solid fa-address-card"></i><a href="#"> About Us</a></li>
         </ul>
     </nav>
 
