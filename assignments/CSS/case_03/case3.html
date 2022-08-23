@@ -10,35 +10,58 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <style>
 
-        main{
+        body>main{
             height: 100vh;
             width: 100vw;
+            position: relative;
         }
-
-        main>section:nth-child(1){
+        body>main>section{
             height: 30%;
             width: 15%;
             border-radius: 100%;
+            position: absolute;
+
+        }
+
+        body>main>section:nth-child(1){
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+        }
+
+        body>main:nth-child(1)>section{
             background-color: purple;
 
         }
-        main>section:nth-child(2){
-            height: 30%;
-            width: 15%;
-            border-radius: 100%;
+
+        body>main:nth-child(2)>section{
             background-color: dodgerblue;
 
         }
-        main>section:nth-child(3){
-            height: 30%;
-            width: 15%;
-            border-radius: 100%;
+        body>main:nth-child(3)>section{
             background-color: coral;
+
         }
 
-        main>section>h1{
+        main>section:nth-child(1)>h1{
+            display: inline-block;
             color: white;
             font-family: Ubuntu;
+            position: absolute;
+            top: 30%;
+            right: 35%;
+        }
+
+        main>section:nth-child(1)>h1{
+            display: inline-block;
+            color: white;
+            font-family: Ubuntu;
+            position: relative;
+            top: 30%;
+            right: 0;
         }
 
 
@@ -50,9 +73,16 @@
     <section>
         <h1>Hello</h1>
     </section>
+
+
+</main>
+<main>
     <section>
         <h1>Welcome To</h1>
     </section>
+
+</main>
+<main>
     <section>
         <h1>Institute of Software Engineering</h1>
     </section>
