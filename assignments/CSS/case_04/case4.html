@@ -11,50 +11,95 @@
     <style>
         body{
             height: 100vh;
-            width: 99vw;
+            width: 99.5vw;
             position: relative;
         }
+
+        ::-webkit-scrollbar{
+            width: 8px;
+            background: rgba(63, 56, 56, 0.56);
+        }
+
+        ::-webkit-scrollbar-thumb{
+            background: white;
+        }
+
         *{
             font-family: 'Open Sans';
         }
 
-        body>header{
+        body>section{
+            height: 100%;
+            width: 100%;
+        }
+
+        body>section>header{
+            height: 14%;
+            font-size: 25px;
+            position: sticky;
+        }
+        body>section:nth-child(1)>header{
             background-color: red;
-            height: 10%;
-            font-size: 20px;
+        }
+
+        body>section:nth-child(2)>header{
+            background-color: darkblue;
+        }
+
+        body>section>header>h3{
+            display: inline-block;
+            margin-top: 0;
+            position: relative;
+            top: 30px;
+            left: 20px;
             color: white;
         }
 
-        body>header>h3{
-            margin-top: 0;
-            position: relative;
-            top: 20px;
-            left: 15px;
-        }
-        body>main{
+        body>section>main{
+            height: 100%;
             font-size: 60px;
             font-weight: bold;
         }
 
-        body>main>h1{
-            position: absolute;
+        body>section>main>h1{
+            position: relative;
             display: inline-block;
             top: 35%;
             left: 40%;
-
-
         }
+
+        body>section:nth-child(1)>main{
+            background-color: white;
+        }
+
+        body>section:nth-child(2)>main{
+            background-color: dodgerblue;
+        }
+
+
     </style>
 </head>
 
 <body>
 
-<header>
+<section>
+    <header>
     <h3>Card 1</h3>
 </header>
-<main>
-    <h1>Hello</h1>
-</main>
+    <main>
+        <h1>Hello</h1>
+    </main>
+</section>
+
+<section>
+    <header>
+        <h3>Card 2</h3>
+    </header>
+    <main>
+        <h1>How</h1>
+    </main>
+</section>
+
 
 </body>
 </html>
