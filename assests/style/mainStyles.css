@@ -1,0 +1,100 @@
+main{
+    position: relative;
+    margin-top: 100px;
+}
+
+main>section:first-child{
+    height: 750px;
+    background-color: black;
+    color: white;
+}
+
+main>section:first-child>aside>nav>ol>li{
+    list-style: none;
+}
+
+main>section:first-child>aside>nav>ol>li>img{
+    height: 40px;
+    width: 40px;
+    position: relative;
+    top: 240px;
+    left: 20px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+
+main>section:first-child>article>p:nth-child(1){
+    font-family: 'Jaldi', sans-serif;
+    font-size: 30px;
+    position: absolute;
+    top: 110px;
+    left: 200px;
+}
+
+main>section:first-child>article>p:nth-child(2){
+    font-family: 'Glory', sans-serif;
+    font-size: 60px;
+    position: absolute;
+    top: 125px;
+    left: 201px;
+}
+
+main>section:first-child>article>p:nth-child(3){
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    position: absolute;
+    top: 265px;
+    left: 200px;
+}
+
+main>section:first-child>article>p:nth-child(4){
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    position: absolute;
+    top: 310px;
+    left: 200px;
+}
+
+main>section:first-child>article>button:nth-child(5){
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    border: 3px solid rgba(192, 64, 0, 1);
+    border-radius: 10px;
+    height: 36px;
+    width: 130px;
+    position: absolute;
+    top: 390px;
+    left: 230px;
+}
+
+main>section:first-child>article>button:nth-child(5)>a{
+    color: white;
+    text-decoration:none;
+}
+
+main>section:first-child>article>button:nth-child(6){
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    border: 3px solid rgba(192, 64, 0, 1);
+    border-radius: 10px;
+    height: 36px;
+    width: 165px;
+    position: absolute;
+    top: 390px;
+    left: 390px;
+}
+
+main>section:first-child>article>button:nth-child(6)>a{
+    color: white;
+    text-decoration:none;
+}
+
+main>section:first-child>article>img:nth-child(7){
+    height: 690px;
+    width: 550px;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+}

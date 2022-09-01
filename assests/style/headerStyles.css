@@ -5,6 +5,7 @@ header{
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 2;
     box-shadow: 0px -1px 8px 2px #1c1717e8;
 }
 header>h1{
@@ -13,8 +14,8 @@ header>h1{
     font-size: 47px;
     position: relative;
     margin: 0;
-    top: 20px;
-    left: 100px;
+    top: 25px;
+    left: 120px;
 }
 
 header>nav{
@@ -47,6 +48,4 @@ header>nav>ol>li:hover a{
     font-size:17px ;
     font-weight: bold;
 }*/
-
-
 
