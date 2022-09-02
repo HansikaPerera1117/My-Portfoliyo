@@ -3,8 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <title>CSS Transitions Case 06</title>
+    <link rel="stylesheet" href="assests/normalize.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="assests/fonts/css/all.min.css">
+    <style>
+        section{
+            width: 230px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+        }
+
+        section>div{
+            height: 60px;
+            width: 200px;
+            position: relative;
+            right: 150px;
+            background-color: rebeccapurple;
+            border: 2px solid white;
+            margin-top: 20px;
+            box-shadow: 0px -1px 8px 2px #1c1717e8;
+            cursor: pointer;
+            transition-property: all;
+            transition-duration: 2s;
+            color: white;
+        }
+
+        section>div:hover{
+            right:1px;
+            background-color: black;
+            transition-property: all;
+            transition-duration: 2s;
+        }
+
+        section>div>h3{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            height: max-content;
+            padding-left: 10px;
+           
+        }
+
+        section > div > i {
+            position: absolute;
+            right: 15px;
+            top: 0;
+            bottom: 0;
+            height: max-content;
+            margin: auto;
+            font-size: 25px;
+        }
+
+
+    </style>
 </head>
 <body>
+<section>
+    <div>
+        <h3>Menu One</h3>
+        <i class="fa-solid fa-address-book"></i>
+    </div>
+    <div>
+        <h3>Menu Two</h3>
+        <i class="fa-solid fa-truck-fast"></i>
+    </div>
+    <div>
+        <h3>Menu Two</h3>
+        <i class="fa-sharp fa-solid fa-earth-americas"></i>
+    </div>
+    <div>
+        <h3>Menu Four</h3>
+        <i class="fa-solid fa-layer-group"></i>
+    </div>
+    <div>
+        <h3>Menu Five</h3>
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+</section>
 
 </body>
 </html>
