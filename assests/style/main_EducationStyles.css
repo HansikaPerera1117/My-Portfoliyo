@@ -43,7 +43,7 @@ main>section:nth-child(3)>section:nth-child(3)>div{
     height: max-content;
     width: max-content;
     position: relative;
-    top: 20px
+    top: 15px;
 }
 
 main>section:nth-child(3)>section:nth-child(3)>div:nth-child(1){
@@ -67,8 +67,8 @@ main>section:nth-child(3)>section:nth-child(3)>div:nth-child(5){
 }
 
 main>section:nth-child(3)>section:nth-child(3)>div:nth-child(5)>img{
-    height: 80px;
-    width: 160px;
+    height: 110px;
+    width: 150px;
     background-position: center;
     background-size: cover;
     position: relative;
