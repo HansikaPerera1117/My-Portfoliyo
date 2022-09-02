@@ -5,8 +5,70 @@
     <title>CSS Transitions Case 02</title>
   <link rel="stylesheet" href="assests/normalize.css">
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <style>
+
+    section{
+      height: 100vh;
+      width: 100vw;
+      background-color: hotpink;
+    }
+
+    section>div{
+      height: 250px;
+      width: 250px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      cursor: pointer;
+    }
+
+    section>div>h1{
+      color: white;
+      font-size: 35px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: max-content;
+      height: max-content;
+      font-family:Calibri;
+    }
+
+    section>div::before{
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: gray;
+        border-radius: 100%;
+        border: 15px solid white;
+        border-top: 15px solid crimson ;
+    }
+
+    div:hover::before{
+        transform: rotate(360deg);
+        transition: all 2s;
+    }
+
+
+  </style>
 </head>
 <body>
+
+<section>
+  <div>
+      <!--pseudo element/cosmetic element-->
+    <h1>RWAD</h1>
+  </div>
+</section>
 
 
 </body>
