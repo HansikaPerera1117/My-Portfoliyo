@@ -3,29 +3,37 @@ main>section:nth-child(2)>h3:nth-child(1){
     font-family: 'Amarante', cursive;
     font-size: 45px;
     color: rgba(192, 64, 0, 1);
-    position: relative;
+    position: absolute;
     left: 0px;
     right: 0px;
+    top: 25px;
     margin: auto;
+    height: max-content;
+    width: max-content;
 }
 
 main>section:nth-child(2)>h5:nth-child(2){
     font-family: 'Arsenal', sans-serif;
+    font-weight: lighter;
     font-size: 20px;
     color: #636363;
     position: absolute;
     left: 0;
     right: 0;
+    top: 80px;
     margin: auto;
+    height: max-content;
+    width: max-content;
 }
+
 
 main>section:nth-child(2)>article>img:nth-child(1){
     height:495px;
     width: 360px;
     border: 1px solid white;
     position: relative;
-    top: 100px;
-    left: 150px;
+    top: 145px;
+    left: 160px;
     display: inline-block;
 }
 
@@ -35,7 +43,7 @@ main>section:nth-child(2)>article>aside>p:nth-child(1){
     font-weight: bolder;
     position: absolute;
     top: 130px;
-    left: 574px;
+    left: 584px;
 }
 
 main>section:nth-child(2)>article>aside>p:nth-child(2){
@@ -43,7 +51,7 @@ main>section:nth-child(2)>article>aside>p:nth-child(2){
     font-size: 21px;
     position: absolute;
     top: 215px;
-    left: 574px;
+    left: 584px;
 }
 
 main>section:nth-child(2)>article>aside>p:nth-child(3){
@@ -51,7 +59,7 @@ main>section:nth-child(2)>article>aside>p:nth-child(3){
     font-size: 21px;
     position: absolute;
     top: 290px;
-    left: 574px;
+    left: 584px;
 }
 
 main>section:nth-child(2)>article>aside>p:nth-child(3)>a{
@@ -67,7 +75,7 @@ main>section:nth-child(2)>article>aside>p:nth-child(4){
     font-size: 21px;
     position: absolute;
     top: 370px;
-    left: 574px;
+    left: 584px;
 }
 
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li{
@@ -87,26 +95,26 @@ main>section:nth-child(2)>article>aside>ol:nth-child(5)>li>img{
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(1){
     position: absolute;
     top: 475px;
-    left: 573px;
+    left: 583px;
 }
 
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(2){
     position: absolute;
     top: 535px;
-    left: 573px;
+    left: 583px;
 }
 
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(3){
     position: absolute;
     top: 595px;
-    left: 573px;
+    left: 583px;
 }
 
 
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(4){
     position: absolute;
     top: 475px;
-    left: 1025px;
+    left: 1035px;
 }
 
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(4)>a{
@@ -120,7 +128,7 @@ main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(4)>a:hover{
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(5){
     position: absolute;
     top: 535px;
-    left: 1025px;
+    left: 1035px;
 }
 
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(5)>a{
@@ -134,7 +142,7 @@ main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(5)>a:hover{
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(6){
     position: absolute;
     top: 595px;
-    left: 1025px;
+    left: 1035px;
 }
 
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(6)>a{
@@ -155,7 +163,7 @@ main>section:nth-child(2)>article>aside>button:nth-child(6){
     width: 130px;
     position: absolute;
     top: 670px;
-    right: 60px;
+    right: 70px;
     color: white;
 }
 

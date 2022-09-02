@@ -1,0 +1,116 @@
+main>section:nth-child(3)>h3:nth-child(1){
+    font-family: 'Amarante', cursive;
+    font-size: 45px;
+    color: rgba(192, 64, 0, 1);
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 240px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+main>section:nth-child(3)>h5:nth-child(2){
+    font-family: 'Arsenal', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    color: #636363;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 298px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+main>section:nth-child(3)>section:nth-child(3){
+    height: 850px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+    position: relative;
+    top: 330px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+main>section:nth-child(3)>section:nth-child(3)>div{
+    height: max-content;
+    width: max-content;
+    position: relative;
+    top: 20px
+}
+
+main>section:nth-child(3)>section:nth-child(3)>div:nth-child(1){
+    align-self: self-start;
+}
+
+main>section:nth-child(3)>section:nth-child(3)>div:nth-child(2){
+    align-self: self-end;
+}
+
+main>section:nth-child(3)>section:nth-child(3)>div:nth-child(3){
+     align-self: self-start;
+}
+
+main>section:nth-child(3)>section:nth-child(3)>div:nth-child(4){
+      align-self: self-end;
+}
+
+main>section:nth-child(3)>section:nth-child(3)>div:nth-child(5){
+       align-self: self-start;
+}
+
+main>section:nth-child(3)>section:nth-child(3)>div:nth-child(5)>img{
+    height: 80px;
+    width: 160px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+main>section:nth-child(3)>section:nth-child(3)>div>img{
+    height: 80px;
+    width: 90px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    left: 30%;
+
+}
+
+main>section:nth-child(3)>section:nth-child(3)>div:nth-child(3)>img{
+    height: 100px;
+    width: 106px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+main>section:nth-child(3)>section:nth-child(3)>div>p{
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: max-content;
+    height: max-content;
+}
+
+main>section:nth-child(3)>section:nth-child(3)>div>p:nth-child(2){
+    font-size: 17px;
+    font-weight: bold;
+}
