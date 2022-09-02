@@ -1,0 +1,49 @@
+main>section:nth-child(6)>h3:nth-child(1){
+    font-family: 'Amarante', cursive;
+    font-size: 45px;
+    color: rgba(192, 64, 0, 1);
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 1550px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+main>section:nth-child(6)>h5:nth-child(2){
+    font-family: 'Arsenal', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    color: #636363;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1610px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+main>section:nth-child(6)>figure:nth-child(3)>img{
+    height: 470px;
+    width: 385px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 1710px;
+    margin: auto;
+}
+
+main>section:nth-child(6)>figure:nth-child(3)>figcaption{
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 2200px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
