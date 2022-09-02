@@ -28,7 +28,7 @@ main>section:nth-child(3)>h5:nth-child(2){
 main>section:nth-child(3)>section:nth-child(3){
     height: 850px;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     width: 60%;
@@ -66,7 +66,7 @@ main>section:nth-child(3)>section:nth-child(3)>div:nth-child(5){
        align-self: self-start;
 }
 
-main>section:nth-child(3)>section:nth-child(3)>div:nth-child(5)>img{
+main>section:nth-child(3)>section:nth-child(3)>div:nth-child(1)>img{
     height: 110px;
     width: 150px;
     background-position: center;

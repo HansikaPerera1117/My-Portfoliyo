@@ -1,7 +1,6 @@
 main{
     background-color: rgba(30, 30, 30, 1);
     color: white;
-    position: relative;
     margin-top: 100px;
 }
 main>section{

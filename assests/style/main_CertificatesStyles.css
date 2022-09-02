@@ -33,7 +33,6 @@ main>section:nth-child(4)>figure:nth-child(3)>img{
     left: 0;
     top: 630px;
     margin: auto;
-    cursor: zoom-in;
 }
 
 main>section:nth-child(4)>figure:nth-child(3)>figcaption{
