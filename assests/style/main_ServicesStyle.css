@@ -1,0 +1,94 @@
+main>section:nth-child(7)>h3:nth-child(1){
+    font-family: 'Amarante', cursive;
+    font-size: 45px;
+    color: rgba(192, 64, 0, 1);
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 2360px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+main>section:nth-child(7)>h5:nth-child(2){
+    font-family: 'Arsenal', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    color: #636363;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 2415px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+main>section:nth-child(7)>section:nth-child(3){
+    position: absolute;
+    height: 350px;
+    width: 70%;
+    top: 2515px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main>section:nth-child(7)>section:nth-child(3)>section{
+    background-color: white;
+    height: 335px;
+    width: 275px;
+    border-radius: 36px;
+    position: relative;
+}
+
+main>section:nth-child(7)>section:nth-child(3)>section>img{
+    height:80px;
+    width:80px;
+    position: absolute;
+    top: 16px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+main>section:nth-child(7)>section:nth-child(3)>section>p{
+    font-family: 'Arsenal', sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    color: black;
+    position: absolute;
+    top: 107px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+main>section:nth-child(7)>section:nth-child(3)>section>p:nth-child(3){
+    top: 150px;
+}
+
+main>section:nth-child(7)>section:nth-child(3)>section>article:last-child{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    top: 213px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: max-content;
+    width: 230px;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+
+
+
