@@ -112,6 +112,15 @@ main>section:nth-child(9)>button:nth-child(8){
     left: 755px;
     top: 890px;
 }
+main>section:nth-child(9)>button:nth-child(8):hover{
+    height: 40px;
+    width: 169px;
+    font-weight: bold;
+    font-size: 110%;
+    background-color: white;
+    color:  rgba(192, 64, 0, 1);
+    transition: all 0.5s;
+}
 
 main>section:nth-child(9)>button:nth-child(9){
     height: 38px;
@@ -125,6 +134,17 @@ main>section:nth-child(9)>button:nth-child(9){
     position: absolute;
     left: 755px;
     top: 940px;
+    transition: all 0.5s;
+}
+
+main>section:nth-child(9)>button:nth-child(9):hover{
+    height: 40px;
+    width: 169px;
+    font-weight: bold;
+    font-size: 110%;
+    background-color: white;
+    color:  rgba(192, 64, 0, 1);
+    transition: all 0.5s;
 }
 
 main>section:nth-child(9)>ol:nth-child(10)>li{
@@ -156,14 +176,14 @@ main>section:nth-child(9)>ol:nth-child(10)>li>p:hover{
 main>section:nth-child(9)>ol:nth-child(10)>li>p>a{
     color: white;
     text-decoration: none;
-    transition: all 1s;
+    transition: all 0.5s;
 
 }
 
 main>section:nth-child(9)>ol:nth-child(10)>li>p>a:hover{
     color: rgba(192, 64, 0, 1);
     font-size: 23px;
-    transition: all 1s;
+    transition: all 0.5s;
 }
 
 main>section:nth-child(9)>ol:nth-child(10)>li:nth-child(1){

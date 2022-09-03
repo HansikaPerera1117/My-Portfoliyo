@@ -156,6 +156,14 @@ footer>section:nth-child(1)>nav:nth-child(7)>section>img{
     height: 40px;
     width: 40px;
     border-radius: 10px;
+    transition: all 0.5s;
+
+}
+
+footer>section:nth-child(1)>nav:nth-child(7)>section>img:hover{
+    height: 50px;
+    width: 50px;
+    transition: all 0.5s;
 }
 
 footer>section:nth-child(2){

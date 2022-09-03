@@ -159,5 +159,17 @@ main>section:nth-child(2)>article>aside>button:nth-child(6){
     top: 670px;
     right: 70px;
     color: white;
+    transition: all 0.5s;
 }
+main>section:nth-child(2)>article>aside>button:nth-child(6):hover{
+    height: 40px;
+    width: 134px;
+    font-weight: bold;
+    font-size: 110%;
+    background-color: white;
+    color:  rgba(192, 64, 0, 1);
+    transition: all 0.5s;
+}
+
+
 

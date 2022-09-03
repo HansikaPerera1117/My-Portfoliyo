@@ -1,3 +1,17 @@
+body{
+    height: 100vh;
+    width: 99.5vw;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    background: rgba(63, 56, 56, 0.56);
+}
+
+::-webkit-scrollbar-thumb{
+    background: red;
+}
+
 header{
     background-color: black;
     height: 100px;
@@ -35,12 +49,15 @@ header>nav>ol>li{
 header>nav>ol>li>a{
     color: white;
     text-decoration:none;
+    transition: all 0.5s;
+
 }
 
 header>nav>ol>li:hover a{
     color: chocolate;
     font-size:17px ;
     font-weight: bold;
+    transition: all 0.5s;
 }
 
 /*header>nav>ol>li>a:visited{
