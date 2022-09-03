@@ -1,0 +1,189 @@
+footer>section:nth-child(1){
+    position: relative;
+    background-color: black;
+    height: 320px;
+    color: white;
+}
+
+footer>section:nth-child(1)>aside:nth-child(1)>nav>ol{
+    height: max-content;
+    width: max-content;
+    list-style: none;
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+}
+
+footer>section:nth-child(1)>aside:nth-child(1)>nav>ol>li{
+    margin-top: 10px;
+}
+
+footer>section:nth-child(1)>aside:nth-child(1)>nav>ol>li>a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+
+}
+
+footer>section:nth-child(1)>aside:nth-child(1)>nav>ol>li>a:hover{
+    color: rgba(192, 64, 0, 1);
+    font-size: 20px;
+    transition: all 0.5s;
+}
+
+footer>section:nth-child(1)>aside:nth-child(2){
+    height: max-content;
+    width: max-content;
+    position: absolute;
+    top: 0px;
+    right: 25px;
+}
+
+footer>section:nth-child(1)>aside:nth-child(2)>h1:nth-child(1){
+    color: white;
+    font-family: 'Oleo Script', cursive;
+    font-size: 45px;
+}
+
+footer>section:nth-child(1)>aside:nth-child(2)>ol:nth-child(2){
+    list-style: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+}
+
+footer>section:nth-child(1)>aside:nth-child(2)>ol:nth-child(2)>li{
+    margin-top: 12px;
+    position: absolute;
+    right: 0;
+    transition: all 0.5s;
+
+}
+
+footer>section:nth-child(1)>aside:nth-child(2)>ol:nth-child(2)>li:hover{
+    color: rgba(192, 64, 0, 1);
+    font-size: 20px;
+    transition: all 0.5s;
+}
+
+footer>section:nth-child(1)>aside:nth-child(2)>ol:nth-child(2)>li:nth-child(1){
+    top: 90px;
+}
+footer>section:nth-child(1)>aside:nth-child(2)>ol:nth-child(2)>li:nth-child(2){
+    top:130px;
+}
+footer>section:nth-child(1)>aside:nth-child(2)>ol:nth-child(2)>li:nth-child(3){
+    top:170px;
+}
+footer>section:nth-child(1)>aside:nth-child(2)>ol:nth-child(2)>li:nth-child(4){
+    top:210px;
+    width: 160px;
+    text-align: right;
+}
+
+footer>section:nth-child(1)>aside:nth-child(2)>ol:nth-child(2)>li>a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+
+}
+
+footer>section:nth-child(1)>aside:nth-child(2)>ol:nth-child(2)>li>a:hover{
+    color: rgba(192, 64, 0, 1);
+    font-size: 20px;
+    transition: all 0.5s;
+}
+
+footer>section:nth-child(1)>img{
+    height: 69px;
+    width: 74px;
+    position: absolute;
+    top: 55px;
+}
+
+footer>section:nth-child(1)>img:nth-child(3){
+    left:295px ;
+}
+
+footer>section:nth-child(1)>img:nth-child(4){
+    left:422px ;
+}
+
+footer>section:nth-child(1)>img:nth-child(5){
+    left:550px ;
+}
+
+footer>section:nth-child(1)>img:nth-child(6){
+    left:662px ;
+}
+
+footer>section:nth-child(1)>nav:nth-child(7){
+    height: 120px;
+    width: 500px;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+footer>section:nth-child(1)>nav:nth-child(7)>p:nth-child(1){
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+footer>section:nth-child(1)>nav:nth-child(7)>section{
+    height: 60px;
+    width: 500px;
+    position: absolute;
+    bottom:12px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer>section:nth-child(1)>nav:nth-child(7)>section>img{
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+}
+
+footer>section:nth-child(2){
+    height: 50px;
+    background-color: black;
+    border-top: 5px solid rgba(192, 64, 0, 1);
+    color: white;
+}
+
+footer>section:nth-child(2)>h4{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+    margin-top: 20px;
+
+
+}
+
+
+
+
+
+
+
+
