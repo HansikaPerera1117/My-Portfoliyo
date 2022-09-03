@@ -1,0 +1,57 @@
+main>section:nth-child(8){
+    position: relative;
+    background-color: rgba(30, 30, 30, 1);
+    height: 1560px;
+}
+
+main>section:nth-child(8)>h3:nth-child(1){
+    font-family: 'Amarante', cursive;
+    font-size: 45px;
+    color: rgba(192, 64, 0, 1);
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 30px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+main>section:nth-child(8)>h5:nth-child(2){
+    font-family: 'Arsenal', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    color: #636363;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 85px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+main>section:nth-child(8)>section:nth-child(3){
+    background-color: rgba(99, 99, 99, 1);
+    height: 1300px;
+    width: 90%;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 185px;
+    margin: auto;
+    display: grid;
+    grid-template-rows: repeat(10,1fr);
+    grid-template-columns: repeat(9,1fr);
+    gap: 15px;
+}
+
+main>section:nth-child(8)>section:nth-child(3)>div{
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.68);
+    border: 2px solid black;
+}
+
+/*styles to images ara wrote as meta style */
+
+
+
