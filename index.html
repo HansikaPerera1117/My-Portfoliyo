@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assests/style/main_ProjectsStyles.css">
     <link rel="stylesheet" href="assests/style/main_ServicesStyle.css">
     <link rel="stylesheet" href="assests/style/main_GalleryStyles.css">
-
+    <link rel="stylesheet" href="assests/style/main_ContactMeStyles.css">
 
 
 
@@ -44,7 +44,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arsenal:wght@700&display=swap" rel="stylesheet">
-
 
 
     <meta name="keywords" content="Hansika,Perera,Software Engineer,FullStack Developer">
@@ -473,13 +472,13 @@
         <h3><dfn id="contactMe">Contact Me</dfn></h3>
         <h5>You Can Contact Me Here</h5>
 
-        <p><span>Thank You</span> for view my portfolio. I really hope you've enjoyed looking at my works.</p>
+        <p><span style="font-size: 28px"><span style="font-weight: bold"><span style="font-family: 'Arsenal', sans-serif;"><span style="color: rgba(192, 64, 0, 1);">Thank You</span></span></span></span> for view my portfolio. I really hope you've enjoyed looking at my works.</p>
         <p>If you want to give feedback, you want to comment me or just want to say hi, feel free to contact me from below.</p>
         <p>Get In Touch With Me</p>
         <p>Follow me or connect with me via the social links</p>
 
         <aside>
-            <form action="gedara" method="post">
+            <form action="gedara" id="msgForm" method="post">
                 <fieldset>
                     <input type="text" name="name" placeholder="Your Name" required pattern="[A-z ]{3,25}">
                     <br>
@@ -497,22 +496,37 @@
                     </datalist>
                     <br>
                     <br>
-                    <textarea name="message" cols="20" rows="5"></textarea>
+                    <textarea name="message" placeholder="Message" cols="20" rows="5"></textarea>
                     <br>
                     <br>
-                    <button type="button">Send Message</button>
-                    <button type="reset">Reset</button>
 
                 </fieldset>
             </form>
         </aside>
+        <button form="msgForm" formaction="gedara" formmethod="post" type="button" formtarget="_blank">Send Message</button>
+        <button form="msgForm" formaction="gedara" formmethod="post" type="reset">Reset</button>
 
         <ol>
-            <li><img src="assests/images/icons/person.png" alt="This is icon of person">H.D Hansik M Perera</li>
-            <li><img src="assests/images/icons/location..png" alt="This is icon of location">Address : No.230/2,Gonahena, Kadawatha.</li>
-            <li><img src="assests/images/icons/gmail-logo.png" alt="This is icon of gmail"><a href="mailto:hansikaperera59@gmail.com">hansikaperera59@gmail.com</a></li>
-            <li><img src="assests/images/icons/telephone.png" alt="This is icon of telephone"><a href="tel:0755646280">0755646280</a></li>
-            <li><img src="assests/images/icons/whatsapp.png" alt="This is icon of whatsapp"><a href="tel:0713609461">0713609461</a></li>
+            <li>
+                <p>H.D Hansik M Perera</p>
+                <img src="assests/images/icons/person.png" alt="This is icon of person">
+            </li>
+            <li>
+                <p>Address : No.230/2,Gonahena, Kadawatha.</p>
+                <img src="assests/images/icons/location..png" alt="This is icon of location">
+            </li>
+            <li>
+                <p><a href="mailto:hansikaperera59@gmail.com">hansikaperera59@gmail.com</a></p>
+                <img src="assests/images/icons/gmail-logo.png" alt="This is icon of gmail">
+            </li>
+            <li>
+                <p><a href="tel:0755646280">0755646280</a></p>
+                <img src="assests/images/icons/telephone.png" alt="This is icon of telephone">
+            </li>
+            <li>
+                <p><a href="tel:0713609461">0713609461</a></p>
+                <img src="assests/images/icons/whatsapp.png" alt="This is icon of whatsapp">
+            </li>
         </ol>
     </section>
 

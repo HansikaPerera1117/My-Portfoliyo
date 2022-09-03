@@ -122,12 +122,17 @@ main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(4){
     left: 1035px;
 }
 
-main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(4)>a{
+main>section:nth-child(2)>article>aside>ol:nth-child(5)>li>a{
     color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+
 }
 
-main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(4)>a:hover{
+main>section:nth-child(2)>article>aside>ol:nth-child(5)>li>a:hover{
     color: rgba(192, 64, 0, 1);
+    font-size: 22px;
+    transition: all 0.5s;
 }
 
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(5){
@@ -136,26 +141,10 @@ main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(5){
     left: 1035px;
 }
 
-main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(5)>a{
-    color: white;
-}
-
-main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(5)>a:hover{
-    color: rgba(192, 64, 0, 1);
-}
-
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(6){
     position: absolute;
     top: 595px;
     left: 1035px;
-}
-
-main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(6)>a{
-    color: white;
-}
-
-main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(6)>a:hover{
-    color: rgba(192, 64, 0, 1);
 }
 
 main>section:nth-child(2)>article>aside>button:nth-child(6){

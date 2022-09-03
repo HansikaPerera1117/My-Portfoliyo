@@ -80,6 +80,10 @@ main>section:nth-child(7)>section:nth-child(3)>section>p:nth-child(3){
     top: 150px;
 }
 
+main>section:nth-child(7)>section:nth-child(3)>section:nth-child(3)>p{
+    top: 150px;
+}
+
 main>section:nth-child(7)>section:nth-child(3)>section>article:last-child{
     font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
