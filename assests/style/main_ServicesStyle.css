@@ -1,3 +1,9 @@
+main>section:nth-child(7){
+    position: relative;
+    background-color: rgba(30, 30, 30, 1);
+    height: 650px;
+}
+
 main>section:nth-child(7)>h3:nth-child(1){
     font-family: 'Amarante', cursive;
     font-size: 45px;
@@ -5,7 +11,7 @@ main>section:nth-child(7)>h3:nth-child(1){
     position: absolute;
     left: 0px;
     right: 0px;
-    top: 2360px;
+    top: 30px;
     margin: auto;
     height: max-content;
     width: max-content;
@@ -19,7 +25,7 @@ main>section:nth-child(7)>h5:nth-child(2){
     position: absolute;
     left: 0;
     right: 0;
-    top: 2415px;
+    top: 85px;
     margin: auto;
     height: max-content;
     width: max-content;
@@ -29,7 +35,7 @@ main>section:nth-child(7)>section:nth-child(3){
     position: absolute;
     height: 350px;
     width: 70%;
-    top: 2515px;
+    top: 185px;
     right: 0;
     left: 0;
     margin: auto;

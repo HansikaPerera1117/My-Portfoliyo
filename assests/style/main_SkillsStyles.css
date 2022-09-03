@@ -1,3 +1,9 @@
+main>section:nth-child(5){
+    position: relative;
+    background-color:rgba(30, 30, 30, 1);
+    height: 1150px;
+}
+
 main>section:nth-child(5)>h3:nth-child(1){
     font-family: 'Amarante', cursive;
     font-size: 45px;
@@ -5,7 +11,7 @@ main>section:nth-child(5)>h3:nth-child(1){
     position: absolute;
     left: 0px;
     right: 0px;
-    top: 1210px;
+    top: 30px;
     margin: auto;
     height: max-content;
     width: max-content;
@@ -19,64 +25,74 @@ main>section:nth-child(5)>h5:nth-child(2){
     position: absolute;
     left: 0;
     right: 0;
-    top: 1268px;
+    top: 85px;
     margin: auto;
     height: max-content;
     width: max-content;
 }
 
+/*-------------languages--------------------------------*/
 main>section:nth-child(5)>section:nth-child(3)>p:nth-child(1){
     font-family: 'Arsenal', sans-serif;
     font-weight: bold;
     font-size: 23px;
     position: relative;
     left: 9%;
-    top: 1350px;
+    top: 167px;
     margin: 0;
 }
-
 
 main>section:nth-child(5)>section:nth-child(3)>section:nth-child(2){
     height: 250px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     width: 80%;
     position: relative;
-    top: 1330px;
+    top: 137px;
     right: 0;
     left: 0;
     margin: auto;
 }
 
-main>section:nth-child(5)>section:nth-child(3)>section:nth-child(2)>img{
+main>section:nth-child(5)>section:nth-child(3)>section:nth-child(2)>div{
+    height: 200px;
+    width: 200px;
+    position: relative;
+}
+
+main>section:nth-child(5)>section:nth-child(3)>section:nth-child(2)>div>img{
     height: 100px;
     width: 110px;
-    position: relative;
+    position: absolute;
     right: 0;
     left: 0;
+    top: 0;
+    bottom: 0;
     margin: auto;
-    margin-left: 20px;
-    margin-right: 20px;
+
 }
 
-main>section:nth-child(5)>section:nth-child(3)>section:nth-child(2)>p{
+main>section:nth-child(5)>section:nth-child(3)>section:nth-child(2)>div>p{
     font-family: 'Arsenal', sans-serif;
     font-size: 20px;
-    position: relative;
-    top: 90px;
-    right: 125px;
-    margin: 20px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: max-content;
+    width: max-content;
 }
 
+/*-------------tools----------------------------*/
 main>section:nth-child(5)>section:nth-child(4)>p:nth-child(1){
     font-family: 'Arsenal', sans-serif;
     font-weight: bold;
     font-size: 23px;
     position: relative;
     left: 9%;
-    top: 1400px;
+    top: 217px;
     margin: 0;
 }
 
@@ -88,45 +104,55 @@ main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2){
     align-items: center;
     width: 80%;
     position: relative;
-    top: 1380px;
+    top: 187px;
     right: 0;
     left: 0;
     margin: auto;
 }
 
-main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>img{
+main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>div{
+    height: 200px;
+    width: 200px;
+    position: relative;
+}
+
+main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>div>img{
     height: 100px;
     width: 110px;
-    position: relative;
+    position: absolute;
     right: 0;
     left: 0;
+    top: 0;
+    bottom: 0;
     margin: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>img:nth-child(14){
-    height: 50px;
-    width: 110px;
 
 }
 
-main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>p{
+main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>div:nth-child(5)>img{
+    height: 60px;
+    width: 120px;
+}
+
+main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>div>p{
     font-family: 'Arsenal', sans-serif;
     font-size: 20px;
-    position: relative;
-    top: 90px;
-    right: 100px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: max-content;
+    width: max-content;
 }
 
-
+/*-------------FrameWorks----------------------------*/
 main>section:nth-child(5)>section:nth-child(5)>p:nth-child(1){
     font-family: 'Arsenal', sans-serif;
     font-weight: bold;
     font-size: 23px;
     position: relative;
     left: 9%;
-    top: 1450px;
+    top: 267px;
     margin: 0;
 }
 
@@ -135,31 +161,42 @@ main>section:nth-child(5)>section:nth-child(5)>section:nth-child(2){
     height: 250px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 80%;
     position: relative;
-    top: 1430px;
+    top: 237px;
     right: 0;
     left: 0;
     margin: auto;
 }
 
-main>section:nth-child(5)>section:nth-child(5)>section:nth-child(2)>img{
+main>section:nth-child(5)>section:nth-child(5)>section:nth-child(2)>div{
+    height: 200px;
+    width: 200px;
+    position: relative;
+}
+
+main>section:nth-child(5)>section:nth-child(5)>section:nth-child(2)>div>img{
     height: 100px;
     width: 110px;
-    position: relative;
+    position: absolute;
     right: 0;
     left: 0;
+    top: 0;
+    bottom: 0;
     margin: auto;
-    margin-left: 20px;
-    margin-right: 20px;
+
 }
 
-main>section:nth-child(5)>section:nth-child(5)>section:nth-child(2)>p{
+main>section:nth-child(5)>section:nth-child(5)>section:nth-child(2)>div>p{
     font-family: 'Arsenal', sans-serif;
     font-size: 20px;
-    position: relative;
-    top: 90px;
-    right: 165px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: max-content;
+    width: max-content;
 }

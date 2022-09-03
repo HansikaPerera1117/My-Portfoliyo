@@ -1,16 +1,12 @@
 main{
-    background-color: rgba(30, 30, 30, 1);
     color: white;
     margin-top: 100px;
-}
-main>section{
-    position: relative;
 }
 
 main>section:first-child{
     height: 750px;
+    position: relative;
     background-color: black;
-    color: white;
 }
 
 main>section:first-child>aside>nav>ol>li{
