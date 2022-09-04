@@ -37,7 +37,7 @@ main>section:nth-child(5)>section:nth-child(3)>p:nth-child(1){
     font-weight: bold;
     font-size: 23px;
     position: relative;
-    left: 9%;
+    margin-left:9%!important;
     top: 167px;
     margin: 0;
 }
@@ -91,7 +91,7 @@ main>section:nth-child(5)>section:nth-child(4)>p:nth-child(1){
     font-weight: bold;
     font-size: 23px;
     position: relative;
-    left: 9%;
+    margin-left:9%!important;
     top: 217px;
     margin: 0;
 }
@@ -151,7 +151,7 @@ main>section:nth-child(5)>section:nth-child(5)>p:nth-child(1){
     font-weight: bold;
     font-size: 23px;
     position: relative;
-    left: 9%;
+    margin-left:9%!important;
     top: 267px;
     margin: 0;
 }
