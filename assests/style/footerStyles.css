@@ -1,6 +1,9 @@
+footer{
+    width: 100%;
+    background-color: black;
+}
 footer>section:nth-child(1){
     position: relative;
-    background-color: black;
     height: 320px;
     color: white;
 }
@@ -168,7 +171,6 @@ footer>section:nth-child(1)>nav:nth-child(7)>section>img:hover{
 
 footer>section:nth-child(2){
     height: 50px;
-    background-color: black;
     border-top: 5px solid rgba(192, 64, 0, 1);
     color: white;
 }

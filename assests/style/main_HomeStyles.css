@@ -1,8 +1,8 @@
-main{
+body>main{
     color: white;
     margin-top: 100px;
-    background-color: red;
-
+    background-color: rgba(30, 30, 30, 1);
+    width: 100%;
 }
 
 main>section:first-child{
