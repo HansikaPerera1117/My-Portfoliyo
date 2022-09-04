@@ -14,34 +14,40 @@
           border-radius: 20px;
 
           animation-name: my-animation;
-          animation-duration: 8s;
+          animation-duration: 6s;
           animation-iteration-count: infinite;
           animation-direction: alternate;
+
       }
 
       @keyframes my-animation {
         0%{
           background-color: yellow;
             margin: 0px 0px 0px 0px;
+            transform: rotate(360deg);
         }
 
         25%{
             background-color: red;
-            margin: 0px 0px 0px 1315px;
+            margin: 0px 0px 0px 1300px;
+
         }
 
         50%{
             background-color: deeppink;
-            margin: 630px 0px 0px 1315px;
+            margin: 580px 0px 0px 1300px;
+
         }
 
         75%{
             background-color: orange;
-            margin: 630px 0px 0px 0px;
+            margin: 580px 0px 0px 0px;
+
         }
 
         100%{
             background-color: rebeccapurple;
+
         }
       }
 
