@@ -5,9 +5,101 @@
     <title>CSS Animations Case 03</title>
     <link rel="stylesheet" href="assests/normalize.css">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <style></style>
+    <style>
+
+        main{
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+          main>section{
+              position: relative;
+              right: 0;
+              width: 500%;
+              height: 100%;
+              display: flex;
+
+              animation-name: slide-show;
+              animation-duration: 15s;
+              animation-iteration-count: 1;
+              animation-fill-mode: both;
+              animation-timing-function: linear;
+          }
+
+        @keyframes slide-show {
+            0%,15%{
+                /*transform: translateX(0);*/ /*sir karapu vidiha*/
+                right: 0%;   /*mama karapu vidiha*/
+            }
+            20%,35%{
+                /*transform: translateX(0%);*/
+                right: 100%;
+            }
+            40%,55%{
+                /*transform: translateX(-25%);*/
+                right: 200%;
+            }
+            60%,75%{
+                /*transform: translateX(-50%);*/
+                right: 300%;
+            }
+            80%,100%{
+                /*transform: translateX(-100%);*/
+                right: 400%;
+            }
+        }
+
+          main>section>div{
+              height: 100%;
+              width: 100%;
+          }
+
+        main>section>div:nth-child(1){
+            background: url("assests/images/img1.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        main>section>div:nth-child(2){
+            background: url("assests/images/img2.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        main>section>div:nth-child(3){
+            background: url("assests/images/img3.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        main>section>div:nth-child(4){
+            background: url("assests/images/img4.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        main>section>div:nth-child(5){
+            background: url("assests/images/img5.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+
+    </style>
 </head>
 <body>
-<div></div>
+
+<main>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </section>
+</main>
+
 </body>
 </html>
