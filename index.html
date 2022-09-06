@@ -59,7 +59,7 @@
         main>section:nth-child(8)>section:nth-child(3)>div:nth-child(1){
             grid-row: 1/4;
             grid-column: 1/4;
-            background:url("assests/images/photoes/1.jpg");
+            background:url("assests/images/photoes/16.jpg");
             background-size: cover;
             background-position: center;
         }
@@ -75,7 +75,52 @@
         main>section:nth-child(8)>section:nth-child(3)>div:nth-child(3){
             grid-row: 1/4;
             grid-column: 6/10;
+            overflow-x: hidden;
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(3)>section{
+            height: 100%;
+            width: 300%;
+            display: flex;
+
+            animation-name: slide-show-2;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+        }
+
+        @keyframes slide-show-2 {
+            0%,20%{
+                transform: translateX(0%);
+            }
+            40%,60%{
+                transform: translateX(-33.5%);
+            }
+            80%,100%{
+                transform: translateX(-67%);
+            }
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(3)>section>div{
+            height: 100%;
+            width: 100%;
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(3)>section>div:nth-child(1){
             background:url("assests/images/photoes/8.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(3)>section>div:nth-child(2){
+            background:url("assests/images/photoes/11.JPG");
+            background-size: cover;
+            background-position: center;
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(3)>section>div:nth-child(3){
+            background:url("assests/images/photoes/17.jpg");
             background-size: cover;
             background-position: center;
         }
@@ -83,7 +128,52 @@
         main>section:nth-child(8)>section:nth-child(3)>div:nth-child(4){
             grid-row: 4/7;
             grid-column: 1/4;
+            overflow-x: hidden;
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(4)>section{
+            height: 100%;
+            width: 300%;
+            display: flex;
+
+            animation-name: slide-show-1;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            animation-timing-function: linear;
+        }
+
+        @keyframes slide-show-1 {
+            0%,20%{
+                transform: translateX(0%);
+            }
+            40%,60%{
+                transform: translateX(-33.5%);
+            }
+            80%,100%{
+                transform: translateX(-67%);
+            }
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(4)>section>div{
+            height: 100%;
+            width: 100%;
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(4)>section>div:nth-child(1){
+            background:url("assests/images/photoes/13.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(4)>section>div:nth-child(2){
             background:url("assests/images/photoes/7.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(4)>section>div:nth-child(3){
+            background:url("assests/images/photoes/1.jpg");
             background-size: cover;
             background-position: center;
         }
@@ -107,7 +197,44 @@
         main>section:nth-child(8)>section:nth-child(3)>div:nth-child(7){
             grid-row: 4/8;
             grid-column: 8/10;
+            overflow-y: hidden;
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(7)>section{
+            height: 200%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            animation-name: slide-show-3;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+        }
+
+        @keyframes slide-show-3 {
+            0%,30%{
+                transform: translateY(0%);
+            }
+            70%,100%{
+                transform: translateY(-50%);
+            }
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(7)>section>div{
+            height: 100%;
+            width: 100%;
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(7)>section>div:nth-child(1){
             background:url("assests/images/photoes/4.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        main>section:nth-child(8)>section:nth-child(3)>div:nth-child(7)>section>div:nth-child(2){
+            background:url("assests/images/photoes/12.jpg");
             background-size: cover;
             background-position: center;
         }
@@ -451,11 +578,28 @@
         <section>
             <div></div>
             <div></div>
+            <div>
+               <section>
+                   <div></div>
+                   <div></div>
+                   <div></div>
+               </section>
+            </div>
+            <div>
+                <section>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </section>
+            </div>
             <div></div>
             <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div>
+                <section>
+                    <div></div>
+                    <div></div>
+                </section>
+            </div>
             <div></div>
             <div></div>
             <div></div>
