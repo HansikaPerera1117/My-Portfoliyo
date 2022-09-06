@@ -35,6 +35,20 @@
             background-size: cover;
             background-position: center;
             position: absolute;
+
+            animation-name: car-wheels;
+            animation-duration: 8s;
+            animation-iteration-count: 2;
+            animation-timing-function: cubic-bezier(0, 0.22, 0.39, 1.02);
+        }
+
+        @keyframes car-wheels {
+            0%{
+                transform: rotate(0deg);
+            }
+            80%,100%{
+                transform: rotate(-360deg);
+            }
         }
 
         main>div:nth-child(1)>div:nth-child(1){
@@ -57,7 +71,6 @@
             animation-duration: 8s;
             animation-iteration-count: 2;
             animation-timing-function: cubic-bezier(0, 0.22, 0.39, 1.02);
-            animation-fill-mode: both;
         }
 
         @keyframes slide-show {
@@ -73,6 +86,7 @@
             height: 50%;
             width: 100%;
         }
+
         main>section>div:nth-child(1){
             background: url("assests/Car_Animation_Img/city.png");
             background-position: center;
