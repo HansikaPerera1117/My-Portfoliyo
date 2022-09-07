@@ -1,5 +1,4 @@
 body{
-
     width: 99.5vw;
 }
 ::-webkit-scrollbar{
@@ -64,4 +63,16 @@ header>nav>ol>li:hover a{
     font-size:17px ;
     font-weight: bold;
 }*/
+
+/*===========transition=======================*/
+
+@media all and (max-width: 1024px){
+    body{
+        width: 125vw;
+    }
+    header>nav>ol>li{
+        padding: 10px;
+
+    }
+}
 

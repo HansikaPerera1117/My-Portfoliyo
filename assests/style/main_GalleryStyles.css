@@ -51,6 +51,18 @@ main>section:nth-child(8)>section:nth-child(3)>div{
     border: 2px solid black;
 }
 
+
+/*===========transition=======================*/
+
+@media all and (max-width: 1024px){
+    main>section:nth-child(8)>section:nth-child(3){
+        height: 1000px;
+    }
+    main>section:nth-child(8){
+        height: 1250px;
+    }
+}
+
 /*styles to images ara wrote as meta style */
 
 

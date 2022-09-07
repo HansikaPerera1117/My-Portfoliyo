@@ -167,3 +167,15 @@ main>div:nth-child(10)>a>i{
     width: max-content;
 }
 
+
+/*===========transition=======================*/
+
+@media all and (max-width: 1024px){
+    main>section:first-child>article>img:nth-child(7){
+        height: 670px;
+        width: 530px;
+        right: 20px;
+    }
+}
+
+
