@@ -1,0 +1,114 @@
+main>section:nth-child(2){
+    height: 1200px;
+    position: relative;
+}
+
+main>section:nth-child(2)>p:nth-child(1){
+    font-family: 'Arsenal', sans-serif;
+    font-weight: bolder;
+    font-size: 23px;
+    position: relative;
+    margin-left:9%!important;
+    top: 60px;
+    margin: 0;
+}
+
+main>section:nth-child(2)>section{
+    width: 80%;
+    position: relative;
+    right: 0;
+    left: 0;
+    top: 120px;
+    margin: auto;
+}
+
+main>section:nth-child(2)>section>p{
+    font-family: 'Arsenal', sans-serif;
+    font-size: 23px;
+    position: relative;
+    top: 0px;
+    margin: 0;
+}
+
+main>section:nth-child(2)>section:nth-child(2){
+    height: 500px;
+    top: 120px;
+}
+
+main>section:nth-child(2)>section:nth-child(2)>div{
+    height: 200px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+main>section:nth-child(2)>section:nth-child(2)>div:nth-child(2){
+    top: 30px;
+    justify-content: space-between;
+}
+
+main>section:nth-child(2)>section:nth-child(2)>div:nth-child(3){
+    top: 80px;
+    justify-content: left;
+}
+
+main>section:nth-child(2)>section>div>div{
+    height: 182px;
+    width: 230px;
+    border-radius: 20px;
+}
+
+main>section:nth-child(2)>section:nth-child(2)>div:nth-child(3)>div{
+    margin-right: 100px;
+}
+
+main>section:nth-child(2)>section>div>div>a{
+    font-family: 'Arsenal', sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+    height: max-content;
+    width: 190px;
+    position: relative;
+    top: 55px;
+    left: 10px;
+}
+
+main>section:nth-child(2)>section:nth-child(3){
+    height: 210px;
+    top: 200px;
+}
+
+main>section:nth-child(2)>section:nth-child(3)>div{
+    height: 200px;
+    width: 100%;
+    position: relative;
+    top: 30px;
+    display: flex;
+    align-items: center;
+
+}
+
+main>section:nth-child(2)>section:nth-child(3)>div>div:nth-child(1){
+    margin-right: 100px;
+}
+
+main>section:nth-child(2)>section:nth-child(4){
+    height: 210px;
+    top: 320px;
+}
+
+main>section:nth-child(2)>section:nth-child(4)>div{
+    height: 200px;
+    width: 100%;
+    position: relative;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
