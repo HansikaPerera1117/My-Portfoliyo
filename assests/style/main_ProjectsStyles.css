@@ -1,7 +1,7 @@
 main>section:nth-child(6){
     position: relative;
     background-color: rgba(30, 30, 30, 1);
-    height: 790px;
+    height: 1440px;
 }
 
 main>section:nth-child(6)>h3:nth-child(1){
@@ -31,7 +31,17 @@ main>section:nth-child(6)>h5:nth-child(2){
     width: max-content;
 }
 
-main>section:nth-child(6)>figure:nth-child(3)>img{
+main>section:nth-child(6)>p:nth-child(3){
+    font-family: 'Arsenal', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    position: relative;
+    margin-left:9%!important;
+    top: 180px;
+    margin: 0;
+}
+
+main>section:nth-child(6)>figure:nth-child(4)>img{
     height: 470px;
     width: 385px;
     position: absolute;
@@ -41,7 +51,7 @@ main>section:nth-child(6)>figure:nth-child(3)>img{
     margin: auto;
 }
 
-main>section:nth-child(6)>figure:nth-child(3)>figcaption{
+main>section:nth-child(6)>figure:nth-child(4)>figcaption{
     color: white;
     font-family: 'Ubuntu', sans-serif;
     font-size: 15px;
@@ -52,4 +62,120 @@ main>section:nth-child(6)>figure:nth-child(3)>figcaption{
     margin: auto;
     height: max-content;
     width: max-content;
+}
+
+main>section:nth-child(6)>button:nth-child(5){
+    height: 36px;
+    width: 140px;
+    background-color: black;
+    border-radius: 5px;
+    border: 2px solid rgba(192, 64, 0, 1);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    position: absolute;
+    right: 155px;
+    top: 690px;
+    transition: all 0.5s;
+}
+
+main>section:nth-child(6)>button:nth-child(5)>a{
+    color: white;
+    text-decoration: none;
+}
+
+main>section:nth-child(6)>button:nth-child(5):hover{
+    height: 40px;
+    width: 145px;
+    font-weight: bold;
+    font-size: 110%;
+    background-color: white;
+    color:  rgba(192, 64, 0, 1);
+    transition: all 0.5s;
+}
+
+main>section:nth-child(6)>button:nth-child(5):hover>a{
+    color: rgba(192, 64, 0, 1);
+}
+
+main>section:nth-child(6)>p:nth-child(6){
+    font-family: 'Arsenal', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    position: relative;
+    margin-left:9%!important;
+    top: 720px;
+    margin: 0;
+}
+
+main>section:nth-child(6)>section:nth-child(7){
+    height: 500px;
+    width: 80%;
+    position: absolute;
+    top: 830px;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+}
+
+main>section:nth-child(6)>section:nth-child(7)>div{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main>section:nth-child(6)>section:nth-child(7)>div>div{
+    height: 182px;
+    width: 230px;
+    border-radius: 20px;
+}
+
+/*styles to background images in div ara wrote as meta style */
+
+main>section:nth-child(6)>section:nth-child(7)>div>div>a{
+    font-family: 'Arsenal', sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+    height: max-content;
+    width: 190px;
+    position: relative;
+    top: 55px;
+    left: 10px;
+}
+
+main>section:nth-child(6)>button:nth-child(8){
+    height: 36px;
+    width: 140px;
+    background-color: black;
+    border-radius: 5px;
+    border: 2px solid rgba(192, 64, 0, 1);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    position: absolute;
+    right: 155px;
+    top: 1350px;
+    transition: all 0.5s;
+}
+
+main>section:nth-child(6)>button:nth-child(8)>a{
+    color: white;
+    text-decoration: none;
+}
+
+main>section:nth-child(6)>button:nth-child(8):hover{
+    height: 40px;
+    width: 145px;
+    font-weight: bold;
+    font-size: 110%;
+    background-color: white;
+    color:  rgba(192, 64, 0, 1);
+    transition: all 0.5s;
+}
+
+main>section:nth-child(6)>button:nth-child(8):hover>a{
+    color: rgba(192, 64, 0, 1);
 }

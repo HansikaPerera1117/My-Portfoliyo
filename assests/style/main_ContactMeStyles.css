@@ -113,8 +113,8 @@ main>section:nth-child(9)>button:nth-child(8){
     top: 890px;
 }
 main>section:nth-child(9)>button:nth-child(8):hover{
-    height: 40px;
-    width: 169px;
+    height: 42px;
+    width: 162px;
     font-weight: bold;
     font-size: 110%;
     background-color: white;
@@ -138,8 +138,8 @@ main>section:nth-child(9)>button:nth-child(9){
 }
 
 main>section:nth-child(9)>button:nth-child(9):hover{
-    height: 40px;
-    width: 169px;
+    height: 42px;
+    width: 162px;
     font-weight: bold;
     font-size: 110%;
     background-color: white;
