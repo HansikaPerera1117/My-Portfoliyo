@@ -142,3 +142,28 @@ main>section:first-child>article>img:nth-child(7){
     top: 0px;
     right: 30px;
 }
+
+main>div:nth-child(10){
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-color: rgba(192, 64, 0, 1);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+main>div:nth-child(10)>a>i{
+    font-size: 50px;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
