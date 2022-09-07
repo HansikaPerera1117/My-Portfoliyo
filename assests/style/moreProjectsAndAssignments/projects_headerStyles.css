@@ -1,0 +1,62 @@
+body{
+    width: 99.5vw;
+}
+::-webkit-scrollbar{
+    width: 8px;
+    background: rgba(63, 56, 56, 0.56);
+}
+
+::-webkit-scrollbar-thumb{
+    background: black;
+}
+
+
+header{
+    background-color: black;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    box-shadow: 0px -1px 8px 2px #1c1717e8;
+}
+header>h1{
+    color: white;
+    font-family: 'Oleo Script', cursive;
+    font-size: 47px;
+    position: relative;
+    margin: 0;
+    top: 25px;
+    left: 120px;
+}
+
+header>nav{
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+
+
+header>nav>ol>li{
+    display: inline-block;
+    cursor: pointer;
+    padding: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    color: white;
+}
+header>nav>ol>li>a{
+    color: white;
+    text-decoration:none;
+    transition: all 0.5s;
+
+}
+
+header>nav>ol>li:hover a{
+    color: chocolate;
+    font-size:17px ;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
