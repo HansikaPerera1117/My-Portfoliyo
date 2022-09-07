@@ -1,0 +1,129 @@
+main>section:nth-child(3){
+    position: relative;
+    height: 550px;
+}
+
+main>section:nth-child(3)>h3:nth-child(1){
+    font-family: 'Amarante', cursive;
+    font-size: 45px;
+    color: rgba(192, 64, 0, 1);
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 30px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+main>section:nth-child(3)>h5:nth-child(2){
+    font-family: 'Arsenal', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    color: #636363;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 85px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+main>section:nth-child(3)>ol:nth-child(3)>li{
+    list-style: none;
+    position: absolute;
+    left: 270px;
+    font-family: 'Arsenal', sans-serif;
+    font-size: 22px;
+}
+
+
+main>section:nth-child(3)>ol:nth-child(3)>li>p{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 60px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+    transition: all 0.5s;
+}
+
+main>section:nth-child(3)>ol:nth-child(3)>li>p:hover{
+    color: rgba(192, 64, 0, 1);
+    font-size: 23px;
+    transition: all 1s;
+}
+
+main>section:nth-child(3)>ol:nth-child(3)>li>p>a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+
+}
+
+main>section:nth-child(3)>ol:nth-child(3)>li>p>a:hover{
+    color: rgba(192, 64, 0, 1);
+    font-size: 23px;
+    transition: all 0.5s;
+}
+
+main>section:nth-child(3)>ol:nth-child(3)>li:nth-child(1){
+    top: 150px;
+}
+
+main>section:nth-child(3)>ol:nth-child(3)>li:nth-child(2){
+    top: 210px;
+}
+
+main>section:nth-child(3)>ol:nth-child(3)>li:nth-child(3){
+    top: 270px;
+}
+
+main>section:nth-child(3)>ol:nth-child(3)>li:nth-child(4){
+    top: 330px;
+}
+
+main>section:nth-child(3)>ol:nth-child(3)>li:nth-child(5){
+    top: 390px;
+}
+main>section:nth-child(3)>ol:nth-child(3)>li>img{
+    height: 50px;
+    width: 50px;
+}
+
+
+main>section:nth-child(3)>button:nth-child(4){
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    background-color: black;
+    border: 3px solid rgba(192, 64, 0, 1);
+    border-radius: 10px;
+    height: 45px;
+    width: 185px;
+    position: absolute;
+    top: 400px;
+    right: 400px;
+    transition: all 0.5s;
+
+}
+
+main>section:nth-child(3)>button:nth-child(4):hover{
+    height: 49px;
+    width: 189px;
+    font-weight: bold;
+    font-size: 22px;
+    background-color: white;
+    transition: all 0.5s;
+}
+
+main>section:nth-child(3)>button:nth-child(4):hover>a{
+    color:  rgba(192, 64, 0, 1);
+}
+
+
+main>section:nth-child(3)>button:nth-child(4)>a{
+    color: white;
+    text-decoration:none;
+}
