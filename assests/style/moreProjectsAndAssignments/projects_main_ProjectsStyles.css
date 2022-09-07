@@ -26,36 +26,29 @@ main>section:first-child>section{
     display: flex;
     justify-content: space-between;
     align-items: self-start;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin:auto;
 }
 
 main>section:first-child>section:nth-child(2){
     height: 340px;
-    position: absolute;
     top: 120px;
-    right: 0;
-    left: 0;
-    margin:auto;
 }
 
 main>section:first-child>section:nth-child(3){
     height: 260px;
-    position: absolute;
     top: 500px;
-    right: 0;
-    left: 0;
-    margin:auto;
+
 }
 
 main>section:first-child>section:nth-child(4){
     height: 260px;
-    position: absolute;
     top: 850px;
-    right: 0;
-    left: 0;
-    margin:auto;
 }
 
-main>section:first-child>section:nth-child(2)>div>figure>figcaption{
+main>section:first-child>section>div>figure>figcaption{
     font-family: 'Ubuntu', sans-serif;
     font-size: 12px;
     position: relative;
@@ -64,107 +57,59 @@ main>section:first-child>section:nth-child(2)>div>figure>figcaption{
     margin: auto;
     height: max-content;
     width: max-content;
+    transition: all 1s;
 }
 
-main>section:first-child>section:nth-child(2)>div:nth-child(1)>figure>img{
-    height: 292px;
-    width: 227px;
+main>section:first-child>section>div>figure>img:hover+figcaption{
+    font-size: 15px;
+    transition: all 1s;
+}
+
+
+main>section:first-child>section>div>figure>img{
     background-size: cover;
     background-position: center;
     position: relative;
     right: 0;
     left: 0;
     margin: auto;
+}
+
+
+main>section:first-child>section:nth-child(2)>div:nth-child(1)>figure>img{
+    height: 292px;
+    width: 227px;
 }
 
 main>section:first-child>section:nth-child(2)>div:nth-child(2)>figure>img{
     height: 234px;
     width: 416px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    right: 0;
-    left: 0;
-    margin: auto;
 }
 
 main>section:first-child>section:nth-child(2)>div:nth-child(3)>figure>img{
     height: 234px;
     width: 416px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    right: 0;
-    left: 0;
-    margin: auto;
 }
 
-
-
-main>section:first-child>section:nth-child(3)>div>figure>figcaption{
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 12px;
-    position: relative;
-    right: 0;
-    left: 0;
-    margin: auto;
-    height: max-content;
-    width: max-content;
-}
 
 main>section:first-child>section:nth-child(3)>div:nth-child(1)>figure>img{
     height: 221px;
     width: 242px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    right: 0;
-    left: 0;
-    margin: auto;
 }
 
 main>section:first-child>section:nth-child(3)>div:nth-child(2)>figure>img{
     height: 223px;
     width: 523px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    right: 0;
-    left: 0;
-    margin: auto;
 }
 
 main>section:first-child>section:nth-child(3)>div:nth-child(3)>figure>img{
     height: 216px;
     width: 259px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    right: 0;
-    left: 0;
-    margin: auto;
-}
-
-main>section:first-child>section:nth-child(4)>div>figure>figcaption{
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 12px;
-    position: relative;
-    right: 0;
-    left: 0;
-    margin: auto;
-    height: max-content;
-    width: max-content;
 }
 
 main>section:first-child>section:nth-child(4)>div:nth-child(1)>figure>img{
     height: 235px;
     width: 458px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    right: 0;
-    left: 0;
-    margin: auto;
 }
 
 

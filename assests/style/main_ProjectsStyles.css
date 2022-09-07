@@ -145,6 +145,13 @@ main>section:nth-child(6)>section:nth-child(7)>div>div>a{
     position: relative;
     top: 55px;
     left: 10px;
+    transition: all 1s;
+
+}
+
+main>section:nth-child(6)>section:nth-child(7)>div>div:hover>a{
+    font-size: 35px;
+    transition: all 1s;
 }
 
 main>section:nth-child(6)>button:nth-child(8){

@@ -75,7 +75,14 @@ main>section:nth-child(2)>section>div>div>a{
     position: relative;
     top: 55px;
     left: 10px;
+    transition: all 1s;
 }
+
+main>section:nth-child(2)>section>div>div:hover>a{
+    font-size: 35px;
+    transition: all 1s;
+}
+
 
 main>section:nth-child(2)>section:nth-child(3){
     height: 210px;
