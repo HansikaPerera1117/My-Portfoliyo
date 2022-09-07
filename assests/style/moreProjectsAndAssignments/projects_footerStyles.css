@@ -38,6 +38,7 @@ footer>section:nth-child(1)>aside:nth-child(1)>nav>ol>li>a:hover{
     transition: all 0.5s;
 }
 
+
 footer>section:nth-child(1)>aside:nth-child(2){
     height: max-content;
     width: max-content;
@@ -99,6 +100,7 @@ footer>section:nth-child(1)>aside:nth-child(2)>ol:nth-child(2)>li>a:hover{
     font-size: 20px;
     transition: all 0.5s;
 }
+
 
 footer>section:nth-child(1)>img{
     height: 69px;
@@ -187,12 +189,5 @@ footer>section:nth-child(2)>h4{
     width: max-content;
     margin-top: 13px;
 
+
 }
-
-
-
-
-
-
-
-

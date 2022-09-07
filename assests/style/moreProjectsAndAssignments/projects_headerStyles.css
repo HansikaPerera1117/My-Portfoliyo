@@ -10,7 +10,6 @@ body{
     background: black;
 }
 
-
 header{
     background-color: black;
     height: 100px;
@@ -36,7 +35,6 @@ header>nav{
     right: 25px;
     top: 10px;
 }
-
 
 header>nav>ol>li{
     display: inline-block;
