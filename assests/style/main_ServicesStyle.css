@@ -99,6 +99,12 @@ main>section:nth-child(7)>section:nth-child(3)>section>article:last-child{
     margin-left: 25px;
 }
 
+@media all and (max-width: 768px){
+    main>section:nth-child(7)>section:nth-child(3){
+        width: 80%;
+    }
+}
+
 
 
 

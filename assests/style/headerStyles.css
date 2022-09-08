@@ -76,3 +76,21 @@ header>nav>ol>li:hover a{
     }
 }
 
+
+@media all and (max-width: 768px){
+    body{
+        width: 158vw;
+    }
+
+    header>nav{
+        right: 40px;
+        top: 20px;
+    }
+
+    header>h1{
+        left: 90px;
+    }
+
+}
+
+

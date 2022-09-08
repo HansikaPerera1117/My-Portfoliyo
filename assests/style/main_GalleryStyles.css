@@ -51,19 +51,28 @@ main>section:nth-child(8)>section:nth-child(3)>div{
     border: 2px solid black;
 }
 
+/*styles to images ara wrote as meta style */
+
 
 /*===========transition=======================*/
 
 @media all and (max-width: 1024px){
     main>section:nth-child(8)>section:nth-child(3){
-        height: 1000px;
+        height: 1130px;
     }
     main>section:nth-child(8){
-        height: 1250px;
+        height: 1360px;
     }
 }
 
-/*styles to images ara wrote as meta style */
+@media all and (max-width: 768px){
+    main>section:nth-child(8)>section:nth-child(3){
+        height: 1050px;
+    }
+    main>section:nth-child(8){
+        height: 1320px;
+    }
+}
 
 
 

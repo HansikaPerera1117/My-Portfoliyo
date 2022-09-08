@@ -15,12 +15,18 @@ main>section:first-child>aside>nav>ol>li{
     list-style: none;
 }
 
+main>section:first-child>aside{
+    position: absolute;
+    top: 240px;
+}
+
+
 main>section:first-child>aside>nav>ol>li>img{
     height: 40px;
     width: 40px;
     border-radius: 10px;
     position: relative;
-    top: 240px;
+    top: 0px;
     left: 20px;
     margin-top: 9px;
     margin-bottom: 9px;
@@ -176,6 +182,40 @@ main>div:nth-child(10)>a>i{
         width: 530px;
         right: 20px;
     }
+}
+
+@media all and (max-width: 768px){
+
+    main>section:first-child>article>p:nth-child(1){
+        left: 160px;
+    }
+
+    main>section:first-child>article>p:nth-child(2){
+        left: 161px;
+    }
+
+    main>section:first-child>article>p:nth-child(3){
+        left: 160px;
+    }
+
+    main>section:first-child>article>p:nth-child(4){
+        left: 160px;
+    }
+
+    main>section:first-child>article>img:nth-child(7){
+        height: 650px;
+        width: 510px;
+        right: 10px;
+    }
+
+    main>section:first-child>article>button:nth-child(5){
+        left: 190px;
+    }
+
+    main>section:first-child>article>button:nth-child(6) {
+        left: 350px;
+    }
+
 }
 
 

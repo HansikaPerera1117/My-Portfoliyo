@@ -224,6 +224,48 @@ main>section:nth-child(9)>ol:nth-child(10)>li>img{
         left: 140px;
     }
 
+    main>section:nth-child(9)>button:nth-child(8) {
+        left: 690px;
+    }
+
+    main>section:nth-child(9)>button:nth-child(9){
+        left: 690px;
+    }
+
+}
+
+@media all and (max-width: 768px){
+    main>section:nth-child(9)>p{
+        left: 100px;
+    }
+    main>section:nth-child(9)>aside:nth-child(7)>form>fieldset>input{
+        width: 425px;
+        height: 65px;
+    }
+
+    main>section:nth-child(9)>aside:nth-child(7)>form>fieldset>textarea{
+        width: 410px;
+        height: 155px;
+    }
+
+    main>section:nth-child(9)>button:nth-child(8) {
+        left: 650px;
+        top: 860px;
+    }
+
+    main>section:nth-child(9)>button:nth-child(9){
+        left: 650px;
+        top: 912px;
+    }
+
+    main>section:nth-child(9)>ol:nth-child(10)>li{
+        right: 80px;
+    }
+
+    main>section:nth-child(9){
+        height: 1025px;
+    }
+
 }
 
 

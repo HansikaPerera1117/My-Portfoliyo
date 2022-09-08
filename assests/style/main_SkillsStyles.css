@@ -1,7 +1,7 @@
 main>section:nth-child(5){
     position: relative;
     background-color:rgba(30, 30, 30, 1);
-    height: 1150px;
+    height: 1210px;
 }
 
 main>section:nth-child(5)>h3:nth-child(1){
@@ -31,72 +31,22 @@ main>section:nth-child(5)>h5:nth-child(2){
     width: max-content;
 }
 
-/*-------------languages--------------------------------*/
-main>section:nth-child(5)>section:nth-child(3)>p:nth-child(1){
+main>section:nth-child(5)>section{
+    height: 275px;
+    width: 100%;
+    position: absolute;
+}
+
+main>section:nth-child(5)>section>p{
     font-family: 'Arsenal', sans-serif;
     font-weight: bold;
     font-size: 23px;
     position: relative;
     margin-left:9%!important;
-    top: 167px;
     margin: 0;
 }
 
-main>section:nth-child(5)>section:nth-child(3)>section:nth-child(2){
-    height: 250px;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    width: 80%;
-    position: relative;
-    top: 137px;
-    right: 0;
-    left: 0;
-    margin: auto;
-}
-
-main>section:nth-child(5)>section:nth-child(3)>section:nth-child(2)>div{
-    height: 200px;
-    width: 200px;
-    position: relative;
-}
-
-main>section:nth-child(5)>section:nth-child(3)>section:nth-child(2)>div>img{
-    height: 100px;
-    width: 110px;
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-
-}
-
-main>section:nth-child(5)>section:nth-child(3)>section:nth-child(2)>div>p{
-    font-family: 'Arsenal', sans-serif;
-    font-size: 20px;
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    height: max-content;
-    width: max-content;
-}
-
-/*-------------tools----------------------------*/
-main>section:nth-child(5)>section:nth-child(4)>p:nth-child(1){
-    font-family: 'Arsenal', sans-serif;
-    font-weight: bold;
-    font-size: 23px;
-    position: relative;
-    margin-left:9%!important;
-    top: 217px;
-    margin: 0;
-}
-
-main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2){
+main>section:nth-child(5)>section>section{
     height: 250px;
     display: flex;
     flex-direction: row;
@@ -104,19 +54,18 @@ main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2){
     align-items: center;
     width: 80%;
     position: relative;
-    top: 187px;
     right: 0;
     left: 0;
     margin: auto;
 }
 
-main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>div{
+main>section:nth-child(5)>section>section>div{
     height: 200px;
     width: 200px;
     position: relative;
 }
 
-main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>div>img{
+main>section:nth-child(5)>section>section>div>img{
     height: 100px;
     width: 110px;
     position: absolute;
@@ -125,7 +74,30 @@ main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>div>img{
     top: 0;
     bottom: 0;
     margin: auto;
+}
 
+main>section:nth-child(5)>section>section>div>p{
+    font-family: 'Arsenal', sans-serif;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+
+
+/*-------------languages--------------------------------*/
+main>section:nth-child(5)>section:nth-child(3){
+    top: 170px;
+}
+
+/*-------------tools----------------------------*/
+main>section:nth-child(5)>section:nth-child(4){
+    top: 502px;
 }
 
 main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>div:nth-child(5)>img{
@@ -133,70 +105,17 @@ main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>div:nth-chil
     width: 120px;
 }
 
-main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>div>p{
-    font-family: 'Arsenal', sans-serif;
-    font-size: 20px;
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    height: max-content;
-    width: max-content;
-}
-
 /*-------------FrameWorks----------------------------*/
-main>section:nth-child(5)>section:nth-child(5)>p:nth-child(1){
-    font-family: 'Arsenal', sans-serif;
-    font-weight: bold;
-    font-size: 23px;
-    position: relative;
-    margin-left:9%!important;
-    top: 267px;
-    margin: 0;
+main>section:nth-child(5)>section:nth-child(5){
+    top: 826px;
 }
-
 
 main>section:nth-child(5)>section:nth-child(5)>section:nth-child(2){
-    height: 250px;
-    display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
-    width: 80%;
-    position: relative;
-    top: 237px;
-    right: 0;
-    left: 0;
-    margin: auto;
 }
 
-main>section:nth-child(5)>section:nth-child(5)>section:nth-child(2)>div{
-    height: 200px;
-    width: 200px;
-    position: relative;
-}
-
-main>section:nth-child(5)>section:nth-child(5)>section:nth-child(2)>div>img{
-    height: 100px;
-    width: 110px;
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-
-}
-
-main>section:nth-child(5)>section:nth-child(5)>section:nth-child(2)>div>p{
-    font-family: 'Arsenal', sans-serif;
-    font-size: 20px;
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    height: max-content;
-    width: max-content;
+@media all and (max-width: 768px){
+    main>section:nth-child(5)>section>section{
+        width: 90%;
+    }
 }

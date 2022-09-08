@@ -129,3 +129,9 @@ main>section:nth-child(3)>section:nth-child(3)>div>p:nth-child(2){
         width: 70%;
     }
 }
+
+@media all and (max-width: 768px){
+    main>section:nth-child(3)>section:nth-child(3){
+        width: 80%;
+    }
+}

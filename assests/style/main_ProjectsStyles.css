@@ -186,3 +186,11 @@ main>section:nth-child(6)>button:nth-child(8):hover{
 main>section:nth-child(6)>button:nth-child(8):hover>a{
     color: rgba(192, 64, 0, 1);
 }
+
+@media all and (max-width: 768px){
+    main>section:nth-child(6)>section:nth-child(7)>div>div{
+        height: 162px;
+        width: 210px;
+    }
+}
+
