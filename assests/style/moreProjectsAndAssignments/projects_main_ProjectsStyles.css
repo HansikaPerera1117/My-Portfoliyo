@@ -112,4 +112,46 @@ main>section:first-child>section:nth-child(4)>div:nth-child(1)>figure>img{
     width: 458px;
 }
 
+/*===========transition=======================*/
+
+@media all and (max-width: 1024px){
+
+    main>section:first-child>section:nth-child(2)>div:nth-child(1)>figure>img{
+        height: 244px;
+        width: 179px;
+    }
+
+    main>section:first-child>section:nth-child(2)>div:nth-child(2)>figure>img{
+        height: 186px;
+        width: 368px;
+    }
+
+    main>section:first-child>section:nth-child(2)>div:nth-child(3)>figure>img{
+        height: 186px;
+        width: 368px;
+    }
+
+
+    main>section:first-child>section:nth-child(3)>div:nth-child(1)>figure>img{
+        height: 173px;
+        width: 194px;
+    }
+
+    main>section:first-child>section:nth-child(3)>div:nth-child(2)>figure>img{
+        height: 175px;
+        width: 475px;
+    }
+
+    main>section:first-child>section:nth-child(3)>div:nth-child(3)>figure>img{
+        height: 168px;
+        width: 211px;
+    }
+
+    main>section:first-child>section:nth-child(4)>div:nth-child(1)>figure>img{
+        height: 187px;
+        width: 410px;
+    }
+
+}
+
 

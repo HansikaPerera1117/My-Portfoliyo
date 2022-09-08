@@ -58,3 +58,11 @@ header>nav>ol>li:hover a{
     transition: all 0.5s;
 }
 
+/*===========transition=======================*/
+
+@media all and (max-width: 1024px){
+    body{
+        width: 125vw;
+    }
+}
+

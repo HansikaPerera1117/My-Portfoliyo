@@ -120,3 +120,12 @@ main>section:nth-child(3)>section:nth-child(3)>div>p:nth-child(2){
     font-size: 17px;
     font-weight: bold;
 }
+
+
+/*===========transition=======================*/
+
+@media all and (max-width: 1024px){
+    main>section:nth-child(3)>section:nth-child(3){
+        width: 70%;
+    }
+}
