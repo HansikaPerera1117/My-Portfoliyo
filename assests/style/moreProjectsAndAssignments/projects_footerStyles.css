@@ -198,3 +198,11 @@ footer>section:nth-child(2)>h4{
         left: 290px;
     }
 }
+
+@media all and (max-width: 768px) {
+    footer>section:nth-child(2)>h4{
+        position: absolute;
+        left: 395px;
+    }
+}
+

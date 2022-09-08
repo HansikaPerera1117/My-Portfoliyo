@@ -88,7 +88,11 @@ header>nav>ol>li:hover a{
     }
 
     header>h1{
-        left: 90px;
+        left: 85px;
+    }
+
+    header>nav>ol>li{
+        font-size: 16px;
     }
 
 }

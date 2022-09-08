@@ -135,3 +135,13 @@ main>section:nth-child(3)>button:nth-child(4)>a{
         right: 300px;
     }
 }
+
+@media all and (max-width: 768px) {
+    main > section:nth-child(3) > ol:nth-child(3) > li {
+        left: 210px;
+    }
+
+    main>section:nth-child(3)>button:nth-child(4){
+        right: 230px;
+    }
+}

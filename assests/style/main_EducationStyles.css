@@ -134,4 +134,8 @@ main>section:nth-child(3)>section:nth-child(3)>div>p:nth-child(2){
     main>section:nth-child(3)>section:nth-child(3){
         width: 80%;
     }
+
+    main>section:nth-child(3)>section:nth-child(3)>div>p{
+        font-size: 16px;
+    }
 }

@@ -66,3 +66,18 @@ header>nav>ol>li:hover a{
     }
 }
 
+@media all and (max-width: 768px) {
+    body {
+        width: 158vw;
+    }
+
+    header>nav>ol>li{
+        font-size: 16px;
+    }
+
+    header>nav>ol>li:hover a {
+        font-size: 18px
+    }
+
+}
+

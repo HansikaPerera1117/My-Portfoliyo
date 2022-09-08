@@ -192,5 +192,9 @@ main>section:nth-child(6)>button:nth-child(8):hover>a{
         height: 162px;
         width: 210px;
     }
+
+    main>section:nth-child(6)>figure:nth-child(4)>figcaption{
+        font-size: 16px;
+    }
 }
 
