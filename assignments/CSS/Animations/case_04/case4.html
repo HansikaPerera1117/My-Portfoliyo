@@ -8,8 +8,7 @@
     <style>
         main{
             width: 100vw;
-            height: 97vh;
-            overflow-x: hidden;
+            height: 100vh;
             background: url("assests/Car_Animation_Img/sky.jpg");
             background-position: center;
             background-size: cover;
@@ -63,17 +62,23 @@
 
         main>section{
             height: 70%;
-            width: 400%;
+            width: 100%;
             position: absolute;
             bottom: 0;
             overflow-x: hidden;
+        }
+
+        main>section>div{
+            height: 50%;
+            width: 400%;
+            border: none;
+
 
             animation-name: slide-show;
             animation-duration: 10s;
             animation-iteration-count: infinite;
             animation-timing-function: cubic-bezier(0, 0.22, 0.39, 1.02);
         }
-
         @keyframes slide-show {
             0%{
                 transform: translateX(0%);
@@ -83,16 +88,13 @@
             }
         }
 
-        main>section>div{
-            height: 50%;
-            width: 100%;
-        }
-
         main>section>div:nth-child(1){
+            height: 250px;
             background: url("assests/Car_Animation_Img/city.png");
-            background-position: center;
+            background-position: bottom;
         }
         main>section>div:nth-child(2){
+            height: 260px;
             background: url("assests/Car_Animation_Img/road.jpg");
             background-position: center;
             background-size: contain;
