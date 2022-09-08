@@ -114,6 +114,8 @@ main>section:nth-child(5)>section:nth-child(5)>section:nth-child(2){
     justify-content: space-evenly;
 }
 
+/*===========responsive=======================*/
+
 @media all and (max-width: 768px){
     main>section:nth-child(5)>section>section{
         width: 90%;

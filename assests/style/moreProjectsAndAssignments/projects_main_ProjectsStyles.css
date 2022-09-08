@@ -152,7 +152,7 @@ main>section:first-child>section:nth-child(4)>div:nth-child(1)>figure>img{
     width: 458px;
 }
 
-/*===========transition=======================*/
+/*===========responsive=======================*/
 
 @media all and (max-width: 1024px){
     main>section:first-child>section:nth-child(2)>div:nth-child(1){

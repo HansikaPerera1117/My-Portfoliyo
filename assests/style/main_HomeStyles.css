@@ -174,7 +174,7 @@ main>div:nth-child(10)>a>i{
 }
 
 
-/*===========transition=======================*/
+/*===========responsive=======================*/
 
 @media all and (max-width: 1024px){
     main>section:first-child>article>img:nth-child(7){

@@ -54,7 +54,7 @@ main>section:nth-child(8)>section:nth-child(3)>div{
 /*styles to images ara wrote as meta style */
 
 
-/*===========transition=======================*/
+/*===========responsive=======================*/
 
 @media all and (max-width: 1024px){
     main>section:nth-child(8)>section:nth-child(3){

@@ -54,6 +54,8 @@ main>section:nth-child(4)>figure:nth-child(3)>figcaption{
     width: max-content;
 }
 
+/*===========responsive=======================*/
+
 @media all and (max-width: 768px){
     main>section:nth-child(4)>figure:nth-child(3)>figcaption{
         font-size: 16px;

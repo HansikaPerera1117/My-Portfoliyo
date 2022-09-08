@@ -209,7 +209,7 @@ main>section:nth-child(9)>ol:nth-child(10)>li>img{
     width: 50px;
 }
 
-/*===========transition=======================*/
+/*===========responsive=======================*/
 
 @media all and (max-width: 1024px){
     main>section:nth-child(9)>ol:nth-child(10)>li{

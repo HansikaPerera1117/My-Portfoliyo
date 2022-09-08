@@ -53,7 +53,7 @@ main>section:nth-child(2)>article>aside{
     position: absolute;
     height: 560px;
     width: 775px;
-    left: 540px;
+    left: 535px;
     top: 15px;
 }
 
@@ -127,7 +127,7 @@ main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(3){
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(4){
     position: absolute;
     top: 325px;
-    left: 452px;
+    left: 440px;
 }
 
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li>a{
@@ -146,14 +146,14 @@ main>section:nth-child(2)>article>aside>ol:nth-child(5)>li>a:hover{
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(5){
     position: absolute;
     top: 385px;
-    left: 452px;
-    width: 347px;
+    left: 440px;
+    width: 362px;
 }
 
 main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(6){
     position: absolute;
     top: 445px;
-    left: 452px;
+    left: 440px;
 }
 
 main>section:nth-child(2)>article>aside>button:nth-child(6){
@@ -216,9 +216,13 @@ main>section:nth-child(2)>article>aside>button:nth-child(6):hover{
         left: 330px;
     }
 
+    main>section:nth-child(2)>article>aside>ol:nth-child(5)>li>a:hover{
+        font-size: 21px;
+    }
+
     main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(5){
         left: 330px;
-        width: 333px;
+        width: 347px;
     }
 
     main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(6){
@@ -226,6 +230,8 @@ main>section:nth-child(2)>article>aside>button:nth-child(6):hover{
     }
 
 }
+
+/*===========responsive=======================*/
 
 @media all and (max-width: 768px){
     main>section:nth-child(2)>article>img:nth-child(1){

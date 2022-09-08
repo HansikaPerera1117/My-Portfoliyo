@@ -58,7 +58,7 @@ header>nav>ol>li:hover a{
     transition: all 0.5s;
 }
 
-/*===========transition=======================*/
+/*===========responsive=======================*/
 
 @media all and (max-width: 1024px){
     body{
