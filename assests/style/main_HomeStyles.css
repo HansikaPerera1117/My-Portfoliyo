@@ -251,8 +251,3 @@ main>div:nth-child(10)>a>i{
         left: 0px;
     }
 }
-@media all and (max-width: 320px) {
-    #a{
-        background-color: red;
-    }
-}

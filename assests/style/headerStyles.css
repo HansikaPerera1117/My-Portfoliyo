@@ -68,66 +68,106 @@ header>nav>ol>li:hover a{
 
 @media all and (max-width: 1024px){
     body{
-        width: 125vw;
+        width: 100vw;
     }
-    header>nav>ol>li{
-        padding: 10px;
 
+    header>nav {
+        top: 16px;
+    }
+
+    header>nav>ol>li {
+        padding: 9px;
+        font-size: 13px;
+    }
+
+    header>h1 {
+        left: 45px;
     }
 }
 
 @media all and (max-width: 768px){
     body{
-        width: 158vw;
-    }
-
-    header>nav{
-        right: 40px;
-        top: 20px;
-    }
-
-    header>h1{
-        left: 85px;
-    }
-
-    header>nav>ol>li{
-        font-size: 16px;
-    }
-
-    header>nav>ol>li:hover a{
-        font-size:18px ;
-    }
-}
-
-@media all and (max-width: 426px){
-    body{
-        width: 260vw;
+        width: 100vw;
     }
 
     header {
-        height: 139px;
+        height: 133px;
+    }
+
+    header>nav {
+        top: 65px;
+        right: 0;
+        left: 0;
+    }
+
+    header>nav>ol{
+        text-align: center;
     }
 
     header>h1 {
         left: 0px;
-        right: 0px;
+        right: 0;
         margin: auto;
         width: max-content;
-        top: 22px;
+    }
+
+    element.style {
+        text-align: center;
+    }
+
+}
+
+@media all and (max-width: 426px){
+    body{
+        width: 100vw;
+    }
+
+    header {
+        height: 148px;
     }
 
     header>nav {
-        right: 0;
-        top: 60px;
-        left: 0;
-        margin: auto;
-        width: max-content;
-        height: max-content;
+        top: 73px;
+        width: 95%;
     }
 
+    header>nav>ol {
+        text-align: center;
+        margin: auto;
+    }
+
+}
+
+@media all and (max-width: 375px) {
+    header > h1 {
+        font-size: 45px;
+    }
+    header>nav {
+        width: 100%;
+    }
     header>nav>ol>li {
-        font-size: 21px;
+        padding: 5px;
+    }
+
+   header{
+        height: 175px;
     }
 }
+
+@media all and (max-width: 320px) {
+    header>nav {
+       left: -15px;
+    }
+
+    header {
+        height: 157px;
+    }
+
+}
+/*@media all and (max-width: 375px){*/
+/*    header {*/
+/*        height: 177px;*/
+/*    }*/
+/*}*/
 
 
