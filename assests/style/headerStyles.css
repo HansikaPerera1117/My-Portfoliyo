@@ -138,19 +138,20 @@ header>nav>ol>li:hover a{
 
 }
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 377px) {
     header > h1 {
         font-size: 45px;
     }
     header>nav {
         width: 100%;
+        top: 77px;
     }
     header>nav>ol>li {
         padding: 5px;
     }
 
    header{
-        height: 175px;
+        height: 143px;
     }
 }
 
@@ -164,10 +165,5 @@ header>nav>ol>li:hover a{
     }
 
 }
-/*@media all and (max-width: 375px){*/
-/*    header {*/
-/*        height: 177px;*/
-/*    }*/
-/*}*/
 
 
