@@ -99,4 +99,35 @@ header>nav>ol>li:hover a{
     }
 }
 
+@media all and (max-width: 426px){
+    body{
+        width: 260vw;
+    }
+
+    header {
+        height: 139px;
+    }
+
+    header>h1 {
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        width: max-content;
+        top: 22px;
+    }
+
+    header>nav {
+        right: 0;
+        top: 60px;
+        left: 0;
+        margin: auto;
+        width: max-content;
+        height: max-content;
+    }
+
+    header>nav>ol>li {
+        font-size: 21px;
+    }
+}
+
 

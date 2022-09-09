@@ -60,6 +60,12 @@ main>section:nth-child(4)>figure:nth-child(3)>figcaption{
     main>section:nth-child(4)>figure:nth-child(3)>figcaption{
         font-size: 16px;
     }
-
 }
+
+@media all and (max-width: 426px) {
+    main>section:nth-child(4)>figure:nth-child(3)>figcaption{
+        font-size: 25px;
+    }
+}
+
 

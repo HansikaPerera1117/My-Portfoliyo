@@ -121,3 +121,18 @@ main>section:nth-child(5)>section:nth-child(5)>section:nth-child(2){
         width: 90%;
     }
 }
+
+@media all and (max-width: 426px){
+
+    main>section:nth-child(5)>section:nth-child(3)>section:nth-child(2)>div:nth-child(5){
+        display: none;
+    }
+
+    main>section:nth-child(5)>section:nth-child(4)>section:nth-child(2)>div:nth-child(5){
+        display: none;
+    }
+
+    main>section:nth-child(5)>section>section>div>p{
+        font-size: 25px;
+    }
+}

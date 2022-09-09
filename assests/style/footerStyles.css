@@ -205,6 +205,34 @@ footer>section:nth-child(2)>h4{
     }
 }
 
+@media all and (max-width: 426px) {
+
+    footer>section:nth-child(1)>aside:nth-child(1)>nav>ol {
+        font-size: 20px;
+    }
+
+    footer>section:nth-child(1)>aside:nth-child(2)>ol:nth-child(2) {
+        font-size: 20px;
+    }
+
+    footer>section:nth-child(1)>aside:nth-child(2)>ol:nth-child(2)>li:nth-child(4) {
+        width: 184px;
+        text-align: right;
+    }
+
+    footer>section:nth-child(1)>nav:nth-child(7)>section>img {
+        height: 60px;
+        width: 60px;
+    }
+
+    footer>section:nth-child(2)>h4 {
+        font-size: 20px;
+        left: 317px;
+    }
+}
+
+
+
 
 
 

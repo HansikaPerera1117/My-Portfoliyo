@@ -80,3 +80,13 @@ header>nav>ol>li:hover a{
     }
 }
 
+@media all and (max-width: 426px) {
+    body {
+        width: 260vw;
+    }
+
+    header>nav>ol>li {
+        font-size: 21px;
+    }
+}
+

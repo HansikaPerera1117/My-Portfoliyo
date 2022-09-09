@@ -108,6 +108,22 @@ main>section:nth-child(7)>section:nth-child(3)>section>article:last-child{
     }
 }
 
+@media all and (max-width: 426px) {
+
+    main>section:nth-child(7)>section:nth-child(3) {
+        width: 85%;
+    }
+
+    main>section:nth-child(7)>section:nth-child(3)>section {
+        height: 370px;
+    }
+
+    main>section:nth-child(7)>section:nth-child(3)>section>article:last-child{
+        font-size: 23px;
+    }
+}
+
+
 
 
 

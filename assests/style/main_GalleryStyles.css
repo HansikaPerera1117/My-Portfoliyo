@@ -74,5 +74,15 @@ main>section:nth-child(8)>section:nth-child(3)>div{
     }
 }
 
+@media all and (max-width: 426px) {
 
+    main>section:nth-child(8) {
+        height: 1260px;
+    }
+
+    main > section:nth-child(8) > section:nth-child(3) {
+        height: 980px;
+        width: 95%;
+    }
+}
 

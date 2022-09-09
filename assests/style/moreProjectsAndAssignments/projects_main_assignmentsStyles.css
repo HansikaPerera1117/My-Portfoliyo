@@ -136,5 +136,10 @@ main>section:nth-child(2)>section:nth-child(4)>div{
 }
 
 
+@media all and (max-width: 426px) {
 
+    main > section:nth-child(2) > section {
+        width: 90%;
+    }
+}
 

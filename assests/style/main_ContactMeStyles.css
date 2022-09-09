@@ -268,6 +268,34 @@ main>section:nth-child(9)>ol:nth-child(10)>li>img{
 
 }
 
+@media all and (max-width: 426px) {
+
+    main>section:nth-child(9)>p{
+        font-size: 22px;
+
+    }
+
+    main > section:nth-child(9) > p:nth-child(4) {
+        top: 220px;
+        width: 835px;
+    }
+
+    main>section:nth-child(9)>aside:nth-child(7) {
+        left: 85px;
+    }
+
+    main>section:nth-child(9)>button:nth-child(8) {
+        left: 590px;
+        font-size: 18px;
+    }
+
+    main>section:nth-child(9)>button:nth-child(9) {
+        left: 590px;
+        font-size: 18px;
+    }
+
+}
+
 
 
 

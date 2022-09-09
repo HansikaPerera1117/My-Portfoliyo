@@ -200,3 +200,30 @@ main>section:nth-child(6)>button:nth-child(8):hover>a{
     }
 }
 
+@media all and (max-width: 426px){
+    main>section:nth-child(6)>figure:nth-child(4)>figcaption{
+        font-size: 25px;
+    }
+
+    main>section:nth-child(6)>button:nth-child(5){
+        right: 100px;
+    }
+
+    main>section:nth-child(6)>section:nth-child(7) {
+        width: 85%;
+    }
+
+    main>section:nth-child(6)>button:nth-child(8){
+        right: 100px;
+    }
+
+    main>section:nth-child(6)>button:nth-child(5) {
+        font-size: 18px;
+    }
+
+    main>section:nth-child(6)>button:nth-child(8) {
+        font-size: 18px;
+    }
+
+}
+

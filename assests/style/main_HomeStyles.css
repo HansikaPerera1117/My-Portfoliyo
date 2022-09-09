@@ -73,18 +73,19 @@ main>section:first-child>article>p:nth-child(4){
     left: 200px;
 }
 
-main>section:first-child>article>button:nth-child(5){
+main>section:first-child>article>button{
     font-family: 'Roboto', sans-serif;
     background-color: black;
     border: 3px solid rgba(192, 64, 0, 1);
     border-radius: 10px;
     height: 36px;
-    width: 130px;
     position: absolute;
     top: 390px;
-    left: 230px;
     transition: all 0.5s;
-
+}
+main>section:first-child>article>button:nth-child(5){
+    width: 130px;
+    left: 230px;
 }
 
 main>section:first-child>article>button:nth-child(5):hover{
@@ -107,17 +108,8 @@ main>section:first-child>article>button:nth-child(5)>a{
 }
 
 main>section:first-child>article>button:nth-child(6){
-    font-family: 'Roboto', sans-serif;
-    background-color: black;
-    border: 3px solid rgba(192, 64, 0, 1);
-    border-radius: 10px;
-    height: 36px;
     width: 165px;
-    position: absolute;
-    top: 390px;
     left: 390px;
-    transition: all 0.5s;
-
 }
 
 main>section:first-child>article>button:nth-child(6):hover{
@@ -215,7 +207,52 @@ main>div:nth-child(10)>a>i{
     main>section:first-child>article>button:nth-child(6) {
         left: 350px;
     }
-
 }
 
+@media all and (max-width: 426px) {
+    main > section:first-child {
+        height: 689px;
+    }
 
+    main>section:first-child>article>p:nth-child(1){
+        left: 142px;
+    }
+
+    main>section:first-child>article>p:nth-child(2){
+        left: 143px;
+    }
+
+    main>section:first-child>article>p:nth-child(3){
+        left: 142px;
+    }
+
+    main>section:first-child>article>p:nth-child(4) {
+        left: 142px;
+        width: 480px;
+    }
+
+    main>section:first-child>article>img:nth-child(7) {
+        height: 620px;
+        width: 480px;
+        right: 0px;
+    }
+
+    main>section:first-child>article>button{
+        font-size: 19px;
+    }
+
+    main>section:first-child>aside {
+        top: 141px;
+    }
+
+    main>section:first-child>aside>nav>ol>li>img {
+        height: 60px;
+        width: 60px;
+        left: 0px;
+    }
+}
+@media all and (max-width: 320px) {
+    #a{
+        background-color: red;
+    }
+}
