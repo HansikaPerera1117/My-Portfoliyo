@@ -68,7 +68,7 @@ header>nav>ol>li:hover a{
 
 @media all and (max-width: 1024px){
     body{
-        width: 100vw;
+        width: 99.2vw;
     }
 
     header>nav {
@@ -139,6 +139,10 @@ header>nav>ol>li:hover a{
 }
 
 @media all and (max-width: 377px) {
+    body{
+        width: 100vw;
+    }
+
     header > h1 {
         font-size: 45px;
     }
@@ -156,6 +160,10 @@ header>nav>ol>li:hover a{
 }
 
 @media all and (max-width: 320px) {
+    body{
+        width: 100vw;
+    }
+
     header>nav {
        left: -15px;
     }
