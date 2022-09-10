@@ -189,41 +189,175 @@ main>section:nth-child(6)>button:nth-child(8):hover>a{
 
 /*===========responsive=======================*/
 
-@media all and (max-width: 768px){
-    main>section:nth-child(6)>section:nth-child(7)>div>div{
+
+@media all and (max-width: 1024px){
+    main>section:nth-child(6)>section:nth-child(7) {
+        width: 90%;
+    }
+
+    main>section:nth-child(6)>section:nth-child(7)>div>div {
         height: 162px;
         width: 210px;
     }
 
-    main>section:nth-child(6)>figure:nth-child(4)>figcaption{
-        font-size: 16px;
+    main>section:nth-child(6)>section:nth-child(7)>div>div>a {
+        top: 35px;
+    }
+}
+
+@media all and (max-width: 768px){
+
+    main>section:nth-child(6)>button:nth-child(5) {
+        right: 65px;
+    }
+
+    main>section:nth-child(6)>button:nth-child(8) {
+        right: 65px;
+    }
+
+    main>section:nth-child(6)>section:nth-child(7)>div:nth-child(1)>div:nth-child(4) {
+       display: none;
+    }
+
+    main>section:nth-child(6)>section:nth-child(7)>div:nth-child(2)>div:nth-child(1) {
+       display: none;
     }
 }
 
 @media all and (max-width: 426px){
-    main>section:nth-child(6)>figure:nth-child(4)>figcaption{
-        font-size: 25px;
-    }
-
-    main>section:nth-child(6)>button:nth-child(5){
-        right: 100px;
-    }
-
-    main>section:nth-child(6)>section:nth-child(7) {
-        width: 85%;
-    }
-
-    main>section:nth-child(6)>button:nth-child(8){
-        right: 100px;
+    main>section:nth-child(6)>figure:nth-child(4)>img {
+        height: 430px;
+        width: 345px;
+        top: 225px;
     }
 
     main>section:nth-child(6)>button:nth-child(5) {
-        font-size: 18px;
+        right: 32px;
+        top: 720px;
     }
 
     main>section:nth-child(6)>button:nth-child(8) {
-        font-size: 18px;
+        right: 32px;
+        top: 1327px;
     }
 
+    main>section:nth-child(6)>p:nth-child(6) {
+        top: 763px;
+    }
+
+    main>section:nth-child(6)>section:nth-child(7)>div:nth-child(1)>div:nth-child(2) {
+        display: none;
+    }
+
+    main>section:nth-child(6)>section:nth-child(7)>div:nth-child(1)>div:nth-child(1) {
+        display: none;
+    }
+
+    main>section:nth-child(6)>section:nth-child(7)>div:nth-child(2)>div:nth-child(3) {
+       display: none;
+    }
+
+    main>section:nth-child(6)>section:nth-child(7)>div:nth-child(2)>div:nth-child(4) {
+        display: none;
+    }
+
+    main>section:nth-child(6)>section:nth-child(7)>div {
+        justify-content: space-around;
+    }
 }
+
+@media all and (max-width: 377px) {
+    main>section:nth-child(6)>figure:nth-child(4)>img {
+        height: 390px;
+        width: 305px;
+    }
+
+    main>section:nth-child(6)>figure:nth-child(4)>figcaption {
+        top: 640px;
+    }
+
+    main>section:nth-child(6)>button:nth-child(5) {
+        top: 695px;
+    }
+
+    main>section:nth-child(6)>h5:nth-child(2) {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 320px) {
+
+    main>section:nth-child(6)>figure:nth-child(4)>img {
+        height: 350px;
+        width: 265px;
+    }
+
+    main>section:nth-child(6)>figure:nth-child(4)>figcaption {
+        top: 597px;
+        width: 90%;
+        text-align: center;
+    }
+
+    main>section:nth-child(6)>button:nth-child(5) {
+        top: 670px;
+    }
+
+    main>section:nth-child(6)>p:nth-child(6) {
+        top: 735px;
+    }
+
+    main>section:nth-child(6)>section:nth-child(7) {
+        top: 805px;
+    }
+
+    main>section:nth-child(6)>button:nth-child(8) {
+        top: 1310px;
+    }
+
+    main>section:nth-child(6) {
+        height: 1405px;
+    }
+}
+
+
+
+
+/*@media all and (max-width: 768px){*/
+/*    main>section:nth-child(6)>section:nth-child(7)>div>div{*/
+/*        height: 162px;*/
+/*        width: 210px;*/
+/*    }*/
+
+/*    main>section:nth-child(6)>figure:nth-child(4)>figcaption{*/
+/*        font-size: 16px;*/
+/*    }*/
+/*}*/
+
+/*@media all and (max-width: 426px){*/
+/*    main>section:nth-child(6)>figure:nth-child(4)>figcaption{*/
+/*        font-size: 25px;*/
+/*    }*/
+
+/*    main>section:nth-child(6)>button:nth-child(5){*/
+/*        right: 100px;*/
+/*    }*/
+
+/*    main>section:nth-child(6)>section:nth-child(7) {*/
+/*        width: 85%;*/
+/*    }*/
+
+/*    main>section:nth-child(6)>button:nth-child(8){*/
+/*        right: 100px;*/
+/*    }*/
+
+/*    main>section:nth-child(6)>button:nth-child(5) {*/
+/*        font-size: 18px;*/
+/*    }*/
+
+/*    main>section:nth-child(6)>button:nth-child(8) {*/
+/*        font-size: 18px;*/
+/*    }*/
+
+/*}*/
 
