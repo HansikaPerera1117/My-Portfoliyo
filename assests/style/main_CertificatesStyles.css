@@ -56,16 +56,52 @@ main>section:nth-child(4)>figure:nth-child(3)>figcaption{
 
 /*===========responsive=======================*/
 
-@media all and (max-width: 768px){
-    main>section:nth-child(4)>figure:nth-child(3)>figcaption{
-        font-size: 16px;
+@media all and (max-width: 426px){
+    main>section:nth-child(4)>figure:nth-child(3)>figcaption {
+        top: 450px;
+    }
+
+    main>section:nth-child(4)>figure:nth-child(3)>img {
+        height: 245px;
+        width: 365px;
+    }
+
+    main>section:nth-child(4) {
+        height: 540px;
     }
 }
 
-@media all and (max-width: 426px) {
-    main>section:nth-child(4)>figure:nth-child(3)>figcaption{
-        font-size: 25px;
+@media all and (max-width: 377px) {
+
+    main>section:nth-child(4)>figure:nth-child(3)>img {
+        height: 215px;
+        width: 335px;
+    }
+
+    main>section:nth-child(4)>figure:nth-child(3)>figcaption {
+        top: 420px;
+    }
+
+    main>section:nth-child(4) {
+        height: 505px;
     }
 }
+
+@media all and (max-width: 320px) {
+
+    main>section:nth-child(4)>figure:nth-child(3)>img {
+        height: 175px;
+        width: 295px;
+    }
+
+    main>section:nth-child(4)>figure:nth-child(3)>figcaption {
+        top: 380px;
+    }
+
+    main>section:nth-child(4) {
+        height: 465px;
+    }
+}
+
 
 
