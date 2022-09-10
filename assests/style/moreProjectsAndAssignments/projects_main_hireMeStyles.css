@@ -128,20 +128,80 @@ main>section:nth-child(3)>button:nth-child(4)>a{
     text-decoration:none;
 }
 
+
 /*===========responsive=======================*/
 
 @media all and (max-width: 1024px){
-    main>section:nth-child(3)>button:nth-child(4){
-        right: 300px;
+    main>section:nth-child(3)>ol:nth-child(3)>li {
+        left: 186px;
+    }
+    main>section:nth-child(3)>button:nth-child(4) {
+        right: 280px;
     }
 }
 
-@media all and (max-width: 768px) {
-    main > section:nth-child(3) > ol:nth-child(3) > li {
-        left: 210px;
+@media all and (max-width: 768px){
+    main>section:nth-child(3)>ol:nth-child(3)>li {
+        left: 125px;
     }
-
-    main>section:nth-child(3)>button:nth-child(4){
-        right: 230px;
+    main>section:nth-child(3)>button:nth-child(4) {
+        right: 100px;
     }
 }
+
+@media all and (max-width: 426px){
+    main>section:nth-child(3)>ol:nth-child(3)>li>p {
+        width: 285px;
+    }
+
+    main>section:nth-child(3)>ol:nth-child(3)>li {
+        left: 30px;
+    }
+
+    main>section:nth-child(3)>button:nth-child(4) {
+        right: 27px;
+        top: 465px;
+    }
+}
+
+@media all and (max-width: 377px) {
+
+    main>section:nth-child(3)>ol:nth-child(3)>li {
+        left: 20px;
+    }
+}
+
+@media all and (max-width: 320px) {
+    main>section:nth-child(3)>ol:nth-child(3)>li {
+        left: 10px;
+    }
+    main>section:nth-child(3)>ol:nth-child(3)>li>img {
+        height: 40px;
+        width: 40px;
+    }
+    main>section:nth-child(3)>ol:nth-child(3)>li>p {
+        left: 50px;
+    }
+    main>section:nth-child(3)>ol:nth-child(3)>li {
+        font-size: 20px;
+    }
+
+    main>section:nth-child(3)>ol:nth-child(3)>li>p {
+        width: 225px;
+    }
+    main>section:nth-child(3)>ol:nth-child(3)>li:nth-child(2) {
+        top: 218px;
+    }
+    main>section:nth-child(3)>ol:nth-child(3)>li:nth-child(3) {
+        top: 287px;
+    }
+    main>section:nth-child(3)>ol:nth-child(3)>li:nth-child(4) {
+        top: 342px;
+    }
+    main>section:nth-child(3)>ol:nth-child(3)>li:nth-child(5) {
+        top: 398px;
+    }
+
+}
+
+
