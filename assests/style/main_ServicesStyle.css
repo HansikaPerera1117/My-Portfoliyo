@@ -102,28 +102,43 @@ main>section:nth-child(7)>section:nth-child(3)>section>article:last-child{
 
 /*===========responsive=======================*/
 
-@media all and (max-width: 768px){
-    main>section:nth-child(7)>section:nth-child(3){
-        width: 80%;
+
+@media all and (max-width: 1024px){
+    main>section:nth-child(7)>section:nth-child(3) {
+        width: 90%;
     }
 }
 
-@media all and (max-width: 426px) {
+@media all and (max-width: 768px){
+    main>section:nth-child(7)>section:nth-child(3)>section {
+        margin-bottom: 40px;
+    }
 
     main>section:nth-child(7)>section:nth-child(3) {
-        width: 85%;
+        width: max-content;
+        display: block;
     }
 
-    main>section:nth-child(7)>section:nth-child(3)>section {
-        height: 370px;
+    main>section:nth-child(7) {
+        height: 1370px;
     }
 
-    main>section:nth-child(7)>section:nth-child(3)>section>article:last-child{
-        font-size: 23px;
-    }
 }
 
 
+@media all and (max-width: 377px) {
 
+    main>section:nth-child(7) {
+        height: 1350px;
+    }
 
+}
 
+@media all and (max-width: 320px) {
+
+    main>section:nth-child(7)>h5:nth-child(2) {
+        width: 90%;
+        text-align: center;
+    }
+
+}
