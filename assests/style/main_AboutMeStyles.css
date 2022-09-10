@@ -414,7 +414,9 @@ main>section:nth-child(2)>article>aside>button:nth-child(6):hover{
     main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(6) {
         top: 755px;
     }
-
+    main>section:nth-child(2)>article>aside>ol:nth-child(5)>li:nth-child(5) {
+        width: 356px;
+    }
 
 }
 

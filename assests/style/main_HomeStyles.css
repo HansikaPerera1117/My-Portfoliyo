@@ -284,6 +284,12 @@ main>div:nth-child(10)>a>i{
         width: 400px;
     }
 
+    main>section:first-child>article>p:nth-child(2) {
+        left: 31px;
+        width: 80%;
+        top: 80px;
+    }
+
     main>section:first-child>aside>nav>ol {
         display: flex;
     }
