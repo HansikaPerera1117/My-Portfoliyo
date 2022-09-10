@@ -431,7 +431,7 @@ main>section:nth-child(2)>article>aside>button:nth-child(6):hover{
     }
 
     main>section:nth-child(2)>article>img:nth-child(1) {
-        height: 270px;
+        height: 255px;
         width: 180px;
         top: 77px;
         left: 113px;
