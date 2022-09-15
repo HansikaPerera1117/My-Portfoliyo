@@ -1,0 +1,94 @@
+.myNav{
+    background-color: rgba(255, 204, 204, 1);
+}
+
+.navbar-brand{
+    padding-left: 20px;
+}
+.myf{
+    --bs-offcanvas-width: 160px;
+    background-color:  rgba(255, 204, 204, 1);
+}
+.menu {
+    top: 20px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    right: 0px;
+    left: 0;
+    margin: auto;
+}
+
+.navbar-toggler {
+    top: 20px;
+    position: relative;
+    left: 8px;
+}
+
+.logo{
+    margin-left: 25px;
+}
+
+.name {
+    font-family: 'Saira', sans-serif;
+    font-size: 35px;
+    position: absolute;
+    top: 15px;
+    left: 174px;
+}
+
+.menu1 {
+    height: max-content;
+    width: 100px;
+    position: relative;
+    right: 0px;
+    left: 0;
+    margin: auto;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.menu > a > img{
+    position: absolute;
+    right: 0px;
+    left: 0;
+    margin: auto;
+    cursor: pointer;
+}
+
+.menu > p{
+    position: absolute;
+    top: 54px;
+    left: 23px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+}
+.myf>div:nth-child(3)>p{
+    left: 10px;
+}
+
+.nav {
+    position: absolute;
+    top: 55px;
+    right: 24px;
+    width: 220px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.nav >img{
+    margin-left: 20px;
+}
+
+.dateTime {
+    position: absolute;
+    top: 2px;
+    right: 20px;
+    width: 164px;
+    height: 47px;
+    text-align: right;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+}

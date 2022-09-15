@@ -5,9 +5,75 @@
     <title>Framework POS System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+
+    <!------------------------stylesheets--------------------------------->
+    <link rel="stylesheet" href="assests/styles/navbar.css">
+
+    <!---------------------------font links------------------------------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+<!-----------------------nav bar start--------------------------------------------->
+<nav class="myNav">
+    <div class="container-fluid">
+
+        <!---------------------------menu button start---------------------------------->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <img src="assests/Images/menu.png" alt="menu icone" width="40" height="40" class="d-inline-block align-text-top">
+        </button>
+
+        <div  class=" myf offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" >
+            <div class="menu" >
+                <a href="Home.html"> <img src="assests/Images/home.png" alt="home icon" height="60" width="60"></a>
+                <p>Home</p>
+            </div>
+            <div class="menu">
+                <a href="Orders.html"><img src="assests/Images/order.png" alt="Order icon" height="60" width="60"></a>
+                <p>Orders</p>
+            </div>
+            <div class="menu">
+                <a href="Customers.html"><img src="assests/Images/customer.png" alt="Customer icon" height="60" width="60"></a>
+                <p>Customers</p>
+            </div>
+            <div class="menu">
+                <a href="Items.html"> <img src="assests/Images/items.png" alt="item icon" height="60" width="60"></a>
+                <p>Items</p>
+            </div>
+
+            <div class="menu1">
+                <img src="assests/Images/signin.png" alt="signup icon" height="25" width="25">
+                <a>Sign Up</a>
+                <img src="assests/Images/logout.png" alt="logout icon" height="25" width="25">
+                <a>LogOut</a>
+            </div>
+
+        </div>
+        <!---------------------------menu button end---------------------------------->
+
+        <img src="assests/Images/logo.png" alt="Logo" width="83" height="90" class="logo d-inline-block align-text-top">
+        <p class="name">Royal Grocery</p>
+
+
+        <div class="dateTime">
+            <p>Date : 0000-00-00 Time : 0000:00:00</p>
+            <!--            <p>Time : 0000:00:00</p>-->
+        </div>
+        <div class="nav">
+            <img src="assests/Images/signin.png" alt="signup icon" height="25" width="25">
+            <a>Sign Up</a>
+            <img src="assests/Images/logout.png" alt="logout icon" height="25" width="25">
+            <a>LogOut</a>
+        </div>
+    </div>
+</nav>
+<!-----------------------nav bar end--------------------------------------------->
 
 <script src="assests/js/bootstrap.min.js"></script>
 </body>
