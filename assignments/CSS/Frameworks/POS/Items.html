@@ -128,13 +128,101 @@
             <div class="row me-1 " style="height: 80px">
                 <div class="col"></div>
                 <div class="col align-self-end">
-                    <button type="button" class="btn btn-primary text-black" id="newCustomer" >New Item</button>
+                    <button type="button" class="btn btn-primary text-black" id="newCustomer" data-bs-target="#newItemModal" data-bs-toggle="modal" type="button">New Item</button>
+
+                    <!---------------------New Item Modal start----------------->
+                    <div aria-hidden="true" aria-labelledby="newItemModalLabel" class="modal fade" id="newItemModal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="newItemModalLabel">New Item</h5>
+                                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <section>
+                                        <div class="mb-3">
+                                            <span style="font-size: 20px"><strong>Item Code : P001</strong></span>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="inputItemName">Item Name</label>
+                                            <input class="form-control" id="inputItemName" type="text" placeholder="Keerisamba 5Kg">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="inputPackSize">Pack Size</label>
+                                            <input class="form-control" id="inputPackSize" multiple type="text" placeholder="Kg/g/l/ml...">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="inputPrice">Price</label>
+                                            <input class="form-control" id="inputPrice" type="number" placeholder="0000.00">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="inputQuantity">Quantity</label>
+                                            <input class="form-control " id="inputQuantity" type="number" placeholder="0000">
+                                        </div>
+                                        <div class="row justify-content-end">
+                                            <div class="col-7 me-0">
+                                                <button class="btn text-white ms-3 " style="background-color: rgb(227,133,133)" type="button">Save Item</button>
+                                                <button class="btn btn-primary" type="button">Renew</button>
+                                                <button class="btn btn-secondary " data-bs-dismiss="modal" type="button">Close</button>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---------------------New Item Modal end----------------->
+
                 </div>
             </div>
             <div class="row me-1" style="height: 80px">
                 <div class="col"></div>
                 <div class="col text-start align-self-end" >
-                    <button type="button" class="btn btn-warning" id="viewAll" >View All Items</button>
+                    <button type="button" class="btn btn-warning" id="viewAll" data-bs-target="#ViewAllItemsModal" data-bs-toggle="modal" type="button" >View All Items</button>
+
+                    <!---------------------View all Customer Modal start----------------->
+                    <div aria-hidden="true" aria-labelledby="ViewAllItemsModalLabel" class="modal fade" id="ViewAllItemsModal" tabindex="-1">
+                        <div class="modal-dialog" style="--bs-modal-width: 1250px">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ViewAllItemsModalLabel">List of All Items</h5>
+                                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <section>
+                                        <table class="table table-bordered table-hover mt-2">
+                                            <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
+                                            <tr>
+                                                <th>Item Code</th>
+                                                <th>Item Name</th>
+                                                <th>Pack Size</th>
+                                                <th>Price</th>
+                                                <th>Quantity</th>
+                                            </tr>
+                                            </thead>
+                                            <tbdoy>
+                                                <tr>
+                                                    <td>P001</td>
+                                                    <td>Keerisamba 5Kg</td>
+                                                    <td>5Kg</td>
+                                                    <td>255.00</td>
+                                                    <td>15</td>
+                                                </tr>
+                                            </tbdoy>
+                                        </table>
+                                        <div class="row justify-content-end">
+                                            <div class="col-1 me-0">
+                                                <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------------------View all Customer Modal end----------------->
+
+
                 </div>
             </div>
         </div>
@@ -142,7 +230,50 @@
         <div class="col-12" style="height: 80px">
             <div class="btn-group mt-2 ms-5" role="group" aria-label="Basic mixed styles example" style="height: 55px">
                 <button type="button" class="btn btn-danger" style="width: 90px">Delete</button>
-                <button type="button" class="btn btn-primary" style="width: 90px">Details</button>
+                <button type="button" class="btn btn-primary" style="width: 90px" data-bs-target="#ItemDetailsModal" data-bs-toggle="modal" type="button">Details</button>
+
+                <!--------------------- Item Details Modal start----------------->
+                <div aria-hidden="true" aria-labelledby="ItemDetailsModalLabel" class="modal fade" id="ItemDetailsModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ItemDetailsModalLabel"  style="font-size: 20px"><strong>Item Code : P001</strong></h5>
+                                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                            </div>
+                            <div class="modal-body">
+                                <section>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputName">Item Name</label>
+                                        <input class="form-control" id="inputName" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputPacketSize">Pack Size</label>
+                                        <input class="form-control" id="inputPacketSize" multiple type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputItemPrice">Price</label>
+                                        <input class="form-control" id="inputItemPrice" type="number">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="inputItemQuantity">Quantity</label>
+                                        <input class="form-control " id="inputItemQuantity" type="number">
+                                    </div>
+                                    <div class="row justify-content-end">
+                                        <div class="col-7 ">
+                                            <button class="btn btn-warning text-white ms-2" type="button">Update Item</button>
+                                            <button class="btn btn-primary" type="button">Reset</button>
+                                            <button class="btn btn-secondary " data-bs-dismiss="modal" type="button">Close</button>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---------------------Item Details Modal end----------------->
+
+
+
                 <button type="button" class="btn btn-success" style="width: 70px">Clear</button>
             </div>
         </div>
