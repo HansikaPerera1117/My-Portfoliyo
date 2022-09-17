@@ -199,3 +199,40 @@
 #orderSearch{
     top: 13px;
 }
+
+.order{
+    height: 353px;
+}
+
+.invoiceBox {
+    height: 338px;
+    background-color: white;
+    position: relative;
+    top: -16px;
+}
+
+.invoiceBoxHeading{
+    height: 40px;
+    background-color:  rgba(255, 204, 204, 1);
+}
+
+.orderD1{
+    font-size: 18px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
+
+.invoice{
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.placeOrderButtons{
+    height: 40px;
+    font-size: 17px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.total{
+    font-size: 27px;
+    font-family: 'Ubuntu', sans-serif;
+}
