@@ -102,14 +102,104 @@
       </ul>
       <div class="row mt-5" id="subBg" >
         <div class="col ">
+          <div class="row " style="height: 475px">
+
+            <div class="col-8 " style="height: 232px">
+              <div class="container text-center" id="orderSearch">
+                <div class="row ms-1 me-1 ">
+                  <div class="col " id="searchBox">
+                    <div class="row">
+                      <div class="col text-start" id="searchBoxHeading">
+                        <span  id="search">Search Order</span>
+                      </div>
+                      <div class="row align-items-center" style="height: 85px">
+                        <div class="col-9">
+                          <input class="form-control"  id="exampleDataList" placeholder="Input Order ID Here" style="height: 53px">
+                        </div>
+                        <div class="col-3" >
+                          <select class="form-select" aria-label="Default select example" style="height: 53px">
+                            <option selected>Order ID</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="row align-items-center" style="height: 70px">
+                        <div class="col-6 text-start" >
+                          <button type="button" class="btn" id="searchButton">Search</button>
+                        </div>
+
+                        <div class="col-3 text-start" >
+                          <select class="form-select" aria-label="Default select example" style="height: 53px">
+                            <option selected>Customer Name</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+
+                        <div class="col-3 text-start" >
+                          <select class="form-select" aria-label="Default select example" style="height: 53px">
+                            <option selected>Item Code</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4" style="height: 232px">
+              <div class="row me-1 " style="height: 80px">
+                <div class="col"></div>
+                <div class="col align-self-end">
+                  <button type="button" class="btn btn-warning text-black" id="newCustomer" style="width: 315px">Get All Customer Orders</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12" style="height: 80px">
+              <div class="btn-group mt-2 ms-5" role="group" aria-label="Basic mixed styles example" style="height: 55px">
+                <button type="button" class="btn btn-danger" style="width: 90px">Delete</button>
+                <button type="button" class="btn btn-primary" style="width: 90px">Details</button>
+                <button type="button" class="btn btn-success" style="width: 70px">Clear</button>
+              </div>
+            </div>
+
+            <div class="col-12" style="height:173px">
+
+              <table class="table table-bordered table-hover mt-2">
+                <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
+                <tr>
+                  <th>Item Code</th>
+                  <th>Item Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                </tr>
+                </thead>
+                <tbdoy>
+                  <tr>
+                    <td>P001</td>
+                    <td>Keerisamba 5Kg</td>
+                    <td>255.00</td>
+                    <td>2</td>
+                    <td>510</td>
+                  </tr>
+                </tbdoy>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!--        <div class="col-9"></div>-->
-    <!--        <div class="col-3"></div>-->
-    <!--        <div class="col-12"></div>-->
-    <!--        <div class="col-12"></div>-->
   </div>
   <!----------------------main bg end------------------------------------->
 </main>
