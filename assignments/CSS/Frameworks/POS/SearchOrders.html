@@ -32,7 +32,7 @@
 
       <div  class=" myf offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" >
         <div class="menu" >
-          <a href="Home.html"> <img src="assests/Images/home.png" alt="home icon" height="60" width="60"></a>
+          <a href="index.html"> <img src="assests/Images/home.png" alt="home icon" height="60" width="60"></a>
           <p>Home</p>
         </div>
         <div class="menu">
@@ -86,7 +86,7 @@
     <div class="col-12" id="navbar">
       <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="Home.html" id="home">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.html" id="home">Home</a></li>
           <li class="breadcrumb-item active" aria-current="page">Orders</li>
         </ol>
       </nav>
@@ -131,7 +131,9 @@
                           <button type="button" class="btn" id="searchButton">Search</button>
                         </div>
 
-                        <div class="col-3 text-start" >
+                        <div class="col-3"></div>
+
+                        <div class="col-3 text-start " >
                           <select class="form-select" aria-label="Default select example" style="height: 53px">
                             <option selected>Customer Name</option>
                             <option value="1">One</option>
@@ -140,14 +142,6 @@
                           </select>
                         </div>
 
-                        <div class="col-3 text-start" >
-                          <select class="form-select" aria-label="Default select example" style="height: 53px">
-                            <option selected>Item Code</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -213,7 +207,90 @@
             <div class="col-12" style="height: 80px">
               <div class="btn-group mt-2 ms-5" role="group" aria-label="Basic mixed styles example" style="height: 55px">
                 <button type="button" class="btn btn-danger" style="width: 90px">Delete</button>
-                <button type="button" class="btn btn-primary" style="width: 90px">Details</button>
+                <button type="button" class="btn btn-primary" style="width: 90px" data-bs-target="#OrderDetailsModal" data-bs-toggle="modal" type="button">Details</button>
+
+                <!--------------------- Order Details Modal start----------------->
+                <div aria-hidden="true" aria-labelledby="OrderDetailsModalLabel" class="modal fade" id="OrderDetailsModal" tabindex="-1">
+                  <div class="modal-dialog" style="--bs-modal-width: 900px">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="OrderDetailsModalLabel"  style="font-size: 20px"><strong>Order ID : D001  <br>Order Date : 2022-11-17 <br> Customer ID : C001</strong></h5>
+                        <button aria-label="Close" class="btn-close mb-5" data-bs-dismiss="modal" type="button"></button>
+                      </div>
+                      <div class="modal-body">
+                        <section>
+                          <form class="row gy-1 ms-0 text-start me-0" style="margin-top: 5px">
+                            <div class="col-6">
+                              <label for="inputItemCode" class="form-label">Item Code :</label>
+                              <input type="text" class="form-control" id="inputItemCode">
+                            </div>
+                            <div class="col-6">
+                              <label for="inputItemName" class="form-label">Item Name :</label>
+                              <input type="text" class="form-control" id="inputItemName" >
+                            </div>
+                            <div class="col-5">
+                              <label for="inputPrice" class="form-label">Price :</label>
+                              <input type="number" class="form-control" id="inputPrice" >
+
+                            </div>
+                            <div class="col-5">
+                              <label for="inputOrderQty" class="form-label">Order Qty :</label>
+                              <input type="number" class="form-control" id="inputOrderQty">
+
+                            </div>
+                            <div class="col-2  ">
+                                <button class="btn btn-warning text-white  mt-4" type="button">Update Item</button>
+                            </div>
+
+                          </form>
+                          <div class="col-12 mt-3" style="height: 200px">
+                            <table class="table table-bordered table-hover mt-2">
+                              <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
+                              <tr>
+                                <th>Item Code</th>
+                                <th>Item Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                              </tr>
+                              </thead>
+                              <tbdoy>
+                                <tr>
+                                  <td>P001</td>
+                                  <td>Keerisamba 5Kg</td>
+                                  <td>255.00</td>
+                                  <td>2</td>
+                                  <td>510</td>
+                                </tr>
+                              </tbdoy>
+                            </table>
+                          </div>
+                          <div class="row justify-content-end mt-3 ">
+                            <div class="col-8 ">
+                                <div class="row">
+                                  <div class="col-12">
+                                    <span class="total" style="color: rgba(20, 130, 202, 1)">Total : Rs 1050/=</span>
+                                  </div>
+                                  <div class="col-12" >
+                                    <span class="total" style="color:rgba(218, 108, 108, 1)">SubTotal : Rs 945/=</span>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="col-4 ">
+                              <button class="btn text-white ms-2 mt-5" style="background-color: rgb(227,133,133)" type="button">Confirm Edits</button>
+                              <button class="btn btn-primary mt-5" type="button">Reset</button>
+                              <button class="btn btn-secondary mt-5" data-bs-dismiss="modal" type="button">Close</button>
+                            </div>
+                          </div>
+
+                        </section>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!---------------------Order Details Modal end----------------->
+
                 <button type="button" class="btn btn-success" style="width: 70px">Clear</button>
               </div>
             </div>

@@ -1,6 +1,3 @@
-.myNav{
-    background-color: rgba(255, 204, 204, 1);
-}
 
 .navbar-brand{
     padding-left: 20px;
@@ -91,14 +88,6 @@
     text-align: right;
     font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
-}
-
-#home-row1{
-    height: 400px;
-}
-
-#home-row2{
-    height: 238px;
 }
 
 .text-center {
