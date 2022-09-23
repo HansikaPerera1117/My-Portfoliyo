@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Framework POS System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+
+    <!------------------------stylesheets--------------------------------->
+    <link rel="stylesheet" href="assests/styles/navbar.css">
+
+    <!---------------------------font links------------------------------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <!-----------------------nav bar start--------------------------------------------->
+    <nav class="myNav">
+        <div class="container-fluid">
+
+            <!---------------------------menu button start---------------------------------->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <img src="assests/Images/menu.png" alt="menu icone" width="40" height="40" class="d-inline-block align-text-top">
+            </button>
+
+            <div  class=" myf offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" >
+                <div class="menu" >
+                    <a href="index.html"> <img src="assests/Images/home.png" alt="home icon" height="60" width="60"></a>
+                    <p>Home</p>
+                </div>
+                <div class="menu">
+                    <a href="PlaceOrders.html"><img src="assests/Images/order.png" alt="Order icon" height="60" width="60"></a>
+                    <p>Orders</p>
+                </div>
+                <div class="menu">
+                    <a href="Customers.html"><img src="assests/Images/customer.png" alt="Customer icon" height="60" width="60"></a>
+                    <p>Customers</p>
+                </div>
+                <div class="menu">
+                    <a href="Items.html"> <img src="assests/Images/items.png" alt="item icon" height="60" width="60"></a>
+                    <p>Items</p>
+                </div>
+
+                <div class="menu1">
+                    <img src="assests/Images/signin.png" alt="signup icon" height="25" width="25">
+                    <a>Sign Up</a>
+                    <img src="assests/Images/logout.png" alt="logout icon" height="25" width="25">
+                    <a>LogOut</a>
+                </div>
+
+            </div>
+            <!---------------------------menu button end---------------------------------->
+
+            <img src="assests/Images/logo.png" alt="Logo" width="83" height="90" class="logo d-inline-block align-text-top">
+            <p class="name">Royal Grocery</p>
+
+
+            <div class="dateTime">
+                <p>Date : 0000-00-00 Time : 0000:00:00</p>
+            </div>
+            <div class="nav">
+                <img src="assests/Images/signin.png" alt="signup icon" height="25" width="25">
+                <a>Sign Up</a>
+                <img src="assests/Images/logout.png" alt="logout icon" height="25" width="25">
+                <a>LogOut</a>
+            </div>
+        </div>
+    </nav>
+    <!-----------------------nav bar end--------------------------------------------->
+</header>
+
+<main class="container-fluid">
+    <!----------------------main bg start------------------------------------->
+    <div class="m-2">
+        <img src="assests/Images/order.png" alt="order icon" width="40" height="40" class="d-inline-block align-text-top">
+        <span id="label">Orders</span>
+    </div>
+    <div class="row mx-auto " id="mainBgOrder" >
+        <div class="col-12" id="navbar">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="Home.html" id="home">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Orders</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="col-12">
+            <ul class="nav nav-tabs col-12" id="list">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" >Place Order</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link border-white" style="color: #495057" href="SearchOrders.html">Search Order</a>
+                </li>
+            </ul>
+            <div class="row mt-5 " id="subBg" >
+
+                <div class="order col-4 ">
+                    <div class="container text-center">
+                        <div class="row ms-0 ">
+                            <div class="col invoiceBox">
+                                <div class="row">
+                                    <div class="col text-start invoiceBoxHeading" >
+                                        <span class="invoice" >Invoice Details</span>
+                                    </div>
+                                    <div class="row mt-2 align-items-center" style="height: 38px">
+                                        <div class="col-5 " >
+                                            <span class="orderD1">Order ID : D001</span>
+                                        </div>
+                                        <div class="col-7 text-start" >
+                                            <span class="orderD1">Order Date : 07/06/2022</span>
+                                        </div>
+                                    </div>
+                                    <form class="row gy-2 ms-0 text-start" style="margin-top: 2px">
+                                        <div class="col-6">
+                                            <label for="selectCustomer" class="form-label">Customer :</label>
+                                            <select class="form-select " aria-label="Default select example" id="selectCustomer">
+                                                <option selected>C001</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="inputCustomerID" class="form-label">Customer ID :</label>
+                                            <input type="text" class="form-control" id="inputCustomerID" placeholder="C001">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="inputName" class="form-label">Name :</label>
+                                            <input type="text" class="form-control" id="inputName" placeholder="Malith">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="inputSalary" class="form-label">Salary :</label>
+                                            <input type="number" class="form-control" id="inputSalary" placeholder="1000.00">
+
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="inputAddress" class="form-label">Address :</label>
+                                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St Panadura">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order col-5">
+                    <div class="container text-center">
+                        <div class="row  ">
+                            <div class="col invoiceBox" >
+                                <div class="row">
+                                    <div class="col text-start invoiceBoxHeading" >
+                                        <span class="invoice" >Item Select</span>
+                                    </div>
+                                    <form class="row gy-3 ms-0 text-start " style="margin-top: 5px">
+                                        <div class="col-6">
+                                            <label for="selectItem" class="form-label">Item :</label>
+                                            <select class="form-select " aria-label="Default select example" id="selectItem">
+                                                <option selected>P001</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="inputItemCode" class="form-label">Item Code :</label>
+                                            <input type="text" class="form-control" id="inputItemCode" placeholder="P001">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="inputItemName" class="form-label">Item Name :</label>
+                                            <input type="text" class="form-control" id="inputItemName" placeholder="Keerisamba 5Kg">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="inputPrice" class="form-label">Price :</label>
+                                            <input type="number" class="form-control" id="inputPrice" placeholder="525.00">
+
+                                        </div>
+                                        <div class="col-4">
+                                            <label for="inputQtyOnHand" class="form-label">QtyOnHand :</label>
+                                            <input type="number" class="form-control" id="inputQtyOnHand" placeholder="200">
+                                        </div>
+                                        <div class="col-4">
+                                            <label for="inputOrderQty" class="form-label">Order Qty :</label>
+                                            <input type="number" class="form-control" id="inputOrderQty" placeholder="2">
+
+                                        </div>
+                                        <div class="col-4 align-self-end">
+                                            <button type="button" class="btn bg-warning ms-3 placeOrderButtons" style=" width: 140px;">Add To Cart</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order col-3">
+                    <div class="container text-center">
+                        <div class="row me-0 ">
+                            <div class="col invoiceBox" >
+                                <div class="row">
+                                    <div class="col-12 mt-3" style="height: 50px">
+                                        <span class="total" style="color: rgba(20, 130, 202, 1)">Total : Rs 1050/=</span>
+                                    </div>
+                                    <div class="col-12 " style="height: 50px">
+                                        <span class="total" style="color:rgba(218, 108, 108, 1)">SubTotal : Rs 945/=</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="inputCash" class="form-label">Cash</label>
+                                        <input type="number" class="form-control" id="inputCash" placeholder="5000.00">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="inputDiscount" class="form-label">Discount</label>
+                                        <input type="number" class="form-control" id="inputDiscount" placeholder="10">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="inputBalance" class="form-label">Balance</label>
+                                        <input type="number" class="form-control" id="inputBalance" placeholder="4055.00">
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="button" class="btn bg-success placeOrderButtons text-white" style="width: 156px">Purchanse</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12" style="height: 132px">
+                    <table class="table table-bordered table-hover mt-1">
+                        <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
+                        <tr>
+                            <th>Item Code</th>
+                            <th>Item Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                        </thead>
+                        <tbdoy>
+                            <tr>
+                                <td>P001</td>
+                                <td>Keerisamba 5Kg</td>
+                                <td>255.00</td>
+                                <td>2</td>
+                                <td>510</td>
+                            </tr>
+                        </tbdoy>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!----------------------main bg end------------------------------------->
+</main>
+
+<script src="assests/js/bootstrap.min.js"></script>
+</body>
+
+</html>

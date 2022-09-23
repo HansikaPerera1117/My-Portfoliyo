@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Framework POS System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+
+    <!------------------------stylesheets--------------------------------->
+    <link rel="stylesheet" href="assests/styles/navbar.css">
+
+    <!---------------------------font links------------------------------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <!-----------------------nav bar start--------------------------------------------->
+    <nav class="myNav">
+        <div class="container-fluid">
+
+            <!---------------------------menu button start---------------------------------->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <img src="assests/Images/menu.png" alt="menu icone" width="40" height="40" class="d-inline-block align-text-top">
+            </button>
+
+            <div  class=" myf offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" >
+                <div class="menu" >
+                    <a href="index.html"> <img src="assests/Images/home.png" alt="home icon" height="60" width="60"></a>
+                    <p>Home</p>
+                </div>
+                <div class="menu">
+                    <a href="PlaceOrders.html"><img src="assests/Images/order.png" alt="Order icon" height="60" width="60"></a>
+                    <p>Orders</p>
+                </div>
+                <div class="menu">
+                    <a href="Customers.html"><img src="assests/Images/customer.png" alt="Customer icon" height="60" width="60"></a>
+                    <p>Customers</p>
+                </div>
+                <div class="menu">
+                    <a href="Items.html"> <img src="assests/Images/items.png" alt="item icon" height="60" width="60"></a>
+                    <p>Items</p>
+                </div>
+
+                <div class="menu1">
+                    <img src="assests/Images/signin.png" alt="signup icon" height="25" width="25">
+                    <a>Sign Up</a>
+                    <img src="assests/Images/logout.png" alt="logout icon" height="25" width="25">
+                    <a>LogOut</a>
+                </div>
+
+            </div>
+            <!---------------------------menu button end---------------------------------->
+
+            <img src="assests/Images/logo.png" alt="Logo" width="83" height="90" class="logo d-inline-block align-text-top">
+            <p class="name">Royal Grocery</p>
+
+
+            <div class="dateTime">
+                <p>Date : 0000-00-00 Time : 0000:00:00</p>
+            </div>
+            <div class="nav">
+                <img src="assests/Images/signin.png" alt="signup icon" height="25" width="25">
+                <a>Sign Up</a>
+                <img src="assests/Images/logout.png" alt="logout icon" height="25" width="25">
+                <a>LogOut</a>
+            </div>
+        </div>
+    </nav>
+    <!-----------------------nav bar end--------------------------------------------->
+</header>
+
+<main class="container-fluid">
+    <!----------------------main bg start------------------------------------->
+    <div class="m-2">
+        <img src="assests/Images/order.png" alt="order icon" width="40" height="40" class="d-inline-block align-text-top">
+        <span id="label">Orders</span>
+    </div>
+    <div class="row mx-auto " id="mainBgOrder" >
+        <div class="col-12" id="navbar">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="Home.html" id="home">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Orders</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-12">
+            <ul class="nav nav-tabs col-12" id="list">
+                <li class="nav-item">
+                    <a class="nav-link border-white" style="color: #495057" href="PlaceOrders.html">Place Order</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" >Search Order</a>
+                </li>
+            </ul>
+            <div class="row mt-5" id="subBg" >
+                <div class="col ">
+                    <div class="row " style="height: 475px">
+
+                        <div class="col-8 " style="height: 232px">
+                            <div class="container text-center" id="orderSearch">
+                                <div class="row ms-1 me-1 ">
+                                    <div class="col " id="searchBox">
+                                        <div class="row">
+                                            <div class="col text-start" id="searchBoxHeading">
+                                                <span  id="search">Search Order</span>
+                                            </div>
+                                            <div class="row align-items-center" style="height: 85px">
+                                                <div class="col-9">
+                                                    <input class="form-control"  id="exampleDataList" placeholder="Input Order ID Here" style="height: 53px">
+                                                </div>
+                                                <div class="col-3" >
+                                                    <select class="form-select" aria-label="Default select example" style="height: 53px">
+                                                        <option selected>Order ID</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="row align-items-center" style="height: 70px">
+                                                <div class="col-6 text-start" >
+                                                    <button type="button" class="btn" id="searchButton">Search</button>
+                                                </div>
+
+                                                <div class="col-3"></div>
+
+                                                <div class="col-3 text-start " >
+                                                    <select class="form-select" aria-label="Default select example" style="height: 53px">
+                                                        <option selected>Customer Name</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4" style="height: 232px">
+                            <div class="row me-1 " style="height: 80px">
+                                <div class="col"></div>
+                                <div class="col align-self-end">
+                                    <button type="button" class="btn btn-warning text-black" id="newCustomer" style="width: 315px" data-bs-target="#ViewAllOrdersModal" data-bs-toggle="modal" type="button">Get All Customer Orders</button>
+
+                                    <!---------------------View all Customer Modal start----------------->
+                                    <div aria-hidden="true" aria-labelledby="ViewAllOrdersModalLabel" class="modal fade" id="ViewAllOrdersModal" tabindex="-1">
+                                        <div class="modal-dialog" style="--bs-modal-width: 1250px">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="ViewAllOrdersModalLabel">List of All Orders</h5>
+                                                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <section>
+                                                        <table class="table table-bordered table-hover mt-2">
+                                                            <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
+                                                            <tr>
+                                                                <th>Order ID</th>
+                                                                <th>Order Date</th>
+                                                                <th>Customer ID</th>
+                                                                <th>Customer Name</th>
+                                                                <th>Address</th>
+                                                                <th>Contact No</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbdoy>
+                                                                <tr>
+                                                                    <td>D001</td>
+                                                                    <td>07/06/2022</td>
+                                                                    <td>C001</td>
+                                                                    <td>Hansika</td>
+                                                                    <td>Kadawatha</td>
+                                                                    <td>0112244668</td>
+                                                                </tr>
+                                                            </tbdoy>
+                                                        </table>
+                                                        <div class="row justify-content-end">
+                                                            <div class="col-1 me-0">
+                                                                <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--------------------View all Customer Modal end----------------->
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12" style="height: 80px">
+                            <div class="btn-group mt-2 ms-5" role="group" aria-label="Basic mixed styles example" style="height: 55px">
+                                <button type="button" class="btn btn-danger" style="width: 90px">Delete</button>
+                                <button type="button" class="btn btn-primary" style="width: 90px" data-bs-target="#OrderDetailsModal" data-bs-toggle="modal" type="button">Details</button>
+
+                                <!--------------------- Order Details Modal start----------------->
+                                <div aria-hidden="true" aria-labelledby="OrderDetailsModalLabel" class="modal fade" id="OrderDetailsModal" tabindex="-1">
+                                    <div class="modal-dialog" style="--bs-modal-width: 900px">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="OrderDetailsModalLabel"  style="font-size: 20px"><strong>Order ID : D001  <br>Order Date : 2022-11-17 <br> Customer ID : C001</strong></h5>
+                                                <button aria-label="Close" class="btn-close mb-5" data-bs-dismiss="modal" type="button"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <section>
+                                                    <form class="row gy-1 ms-0 text-start me-0" style="margin-top: 5px">
+                                                        <div class="col-6">
+                                                            <label for="inputItemCode" class="form-label">Item Code :</label>
+                                                            <input type="text" class="form-control" id="inputItemCode">
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <label for="inputItemName" class="form-label">Item Name :</label>
+                                                            <input type="text" class="form-control" id="inputItemName" >
+                                                        </div>
+                                                        <div class="col-5">
+                                                            <label for="inputPrice" class="form-label">Price :</label>
+                                                            <input type="number" class="form-control" id="inputPrice" >
+
+                                                        </div>
+                                                        <div class="col-5">
+                                                            <label for="inputOrderQty" class="form-label">Order Qty :</label>
+                                                            <input type="number" class="form-control" id="inputOrderQty">
+
+                                                        </div>
+                                                        <div class="col-2  ">
+                                                            <button class="btn btn-warning text-white  mt-4" type="button">Update Item</button>
+                                                        </div>
+
+                                                    </form>
+                                                    <div class="col-12 mt-3" style="height: 200px">
+                                                        <table class="table table-bordered table-hover mt-2">
+                                                            <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
+                                                            <tr>
+                                                                <th>Item Code</th>
+                                                                <th>Item Name</th>
+                                                                <th>Price</th>
+                                                                <th>Quantity</th>
+                                                                <th>Total</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbdoy>
+                                                                <tr>
+                                                                    <td>P001</td>
+                                                                    <td>Keerisamba 5Kg</td>
+                                                                    <td>255.00</td>
+                                                                    <td>2</td>
+                                                                    <td>510</td>
+                                                                </tr>
+                                                            </tbdoy>
+                                                        </table>
+                                                    </div>
+                                                    <div class="row justify-content-end mt-3 ">
+                                                        <div class="col-8 ">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <span class="total" style="color: rgba(20, 130, 202, 1)">Total : Rs 1050/=</span>
+                                                                </div>
+                                                                <div class="col-12" >
+                                                                    <span class="total" style="color:rgba(218, 108, 108, 1)">SubTotal : Rs 945/=</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4 ">
+                                                            <button class="btn text-white ms-2 mt-5" style="background-color: rgb(227,133,133)" type="button">Confirm Edits</button>
+                                                            <button class="btn btn-primary mt-5" type="button">Reset</button>
+                                                            <button class="btn btn-secondary mt-5" data-bs-dismiss="modal" type="button">Close</button>
+                                                        </div>
+                                                    </div>
+
+                                                </section>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!---------------------Order Details Modal end----------------->
+
+                                <button type="button" class="btn btn-success" style="width: 70px">Clear</button>
+                            </div>
+                        </div>
+
+                        <div class="col-12" style="height:173px">
+
+                            <table class="table table-bordered table-hover mt-2">
+                                <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
+                                <tr>
+                                    <th>Item Code</th>
+                                    <th>Item Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                </tr>
+                                </thead>
+                                <tbdoy>
+                                    <tr>
+                                        <td>P001</td>
+                                        <td>Keerisamba 5Kg</td>
+                                        <td>255.00</td>
+                                        <td>2</td>
+                                        <td>510</td>
+                                    </tr>
+                                </tbdoy>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!----------------------main bg end------------------------------------->
+</main>
+
+<script src="assests/js/bootstrap.min.js"></script>
+</body>
+
+</html>

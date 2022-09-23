@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Framework POS System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+
+    <!------------------------stylesheets--------------------------------->
+    <link rel="stylesheet" href="assests/styles/navbar.css">
+
+    <!---------------------------font links------------------------------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <!-----------------------nav bar start--------------------------------------------->
+    <nav class="myNav">
+        <div class="container-fluid">
+
+            <!---------------------------menu button start---------------------------------->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <img src="assests/Images/menu.png" alt="menu icone" width="40" height="40" class="d-inline-block align-text-top">
+            </button>
+
+            <div  class=" myf offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" >
+                <div class="menu" >
+                    <a href="Home.html"> <img src="assests/Images/home.png" alt="home icon" height="60" width="60"></a>
+                    <p>Home</p>
+                </div>
+                <div class="menu">
+                    <a href="PlaceOrders.html"><img src="assests/Images/order.png" alt="Order icon" height="60" width="60"></a>
+                    <p>Orders</p>
+                </div>
+                <div class="menu">
+                    <a href="Customers.html"><img src="assests/Images/customer.png" alt="Customer icon" height="60" width="60"></a>
+                    <p>Customers</p>
+                </div>
+                <div class="menu">
+                    <a href="Items.html"> <img src="assests/Images/items.png" alt="item icon" height="60" width="60"></a>
+                    <p>Items</p>
+                </div>
+
+                <div class="menu1">
+                    <img src="assests/Images/signin.png" alt="signup icon" height="25" width="25">
+                    <a>Sign Up</a>
+                    <img src="assests/Images/logout.png" alt="logout icon" height="25" width="25">
+                    <a>LogOut</a>
+                </div>
+
+            </div>
+            <!---------------------------menu button end---------------------------------->
+
+            <img src="assests/Images/logo.png" alt="Logo" width="83" height="90" class="logo d-inline-block align-text-top">
+            <p class="name">Royal Grocery</p>
+
+
+            <div class="dateTime">
+                <p>Date : 0000-00-00 Time : 0000:00:00</p>
+            </div>
+            <div class="nav">
+                <img src="assests/Images/signin.png" alt="signup icon" height="25" width="25">
+                <a>Sign Up</a>
+                <img src="assests/Images/logout.png" alt="logout icon" height="25" width="25">
+                <a>LogOut</a>
+            </div>
+        </div>
+    </nav>
+    <!-----------------------nav bar end--------------------------------------------->
+</header>
+
+<main class="container-fluid">
+    <!----------------body og home start--------------------------------------->
+    <section class="row" id="home-row1">
+        <div class="col">
+
+            <div class="container overflow-hidden text-center">
+                <div class="row gy-5">
+                    <!-----------------------------box one---------------------->
+                    <div class="col">
+                        <div class="card col border-dark" id="card1" style="width: 213px">
+                            <img src="assests/Images/fruits.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Now get flat <strong>10%</strong> off to fruits on your grocery bill purchase.<br> Minimum spend to be <strong><br> Rs : 1000 /= <br> From 1st September to 31 September</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-----------------------------box two---------------------->
+                    <div class="col">
+                        <div class="card col border-dark" id="card2" style="width: 213px">
+                            <img src="assests/Images/variety-of-beans.webp" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Now get flat <strong>15% </strong> off to grocery items your grocery bill purchase. <br>Minimum spend to be <strong><br>Rs : 3000 /= <br>From 1st September to 31st Octomber</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-----------------------------box three---------------------->
+                    <div class="col">
+                        <div class="card col border-dark" id="card3" style="width: 213px">
+                            <img src="assests/Images/meat-and-fish.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Now get flat <strong>5% </strong>off to items in meat category, your grocery bill purchase.<br>Minimum spend to be <strong><br>Rs : 4000 /= <br>From 1st September to 31 September</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            <strong> Super Grocery Offer 01 </strong>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            <strong> Offer</strong> - Up to <strong>30%</strong> savings on the Credit card offer range at Royal Grocery <br>(includes the additional <strong> 5% </strong> saving offered exclusively for American Express Credit Cardmembers) <br><br> Valid for <strong>bills above LKR 4000</strong> <br>Maximum savings per <strong>bill LKR 1,500</strong> <br>Maximum <strong>3KG</strong> or 3 Units from Each Item.<br> Validity - Till <strong>30th September 2022</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                            <strong> Super Grocery Offer 02 </strong>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+                            <strong> Offer</strong> - Up to <strong>25%</strong> savings on the Credit card offer range at Royal Grocery <br><br> Valid for <strong>bills above LKR 3500</strong> <br>Maximum savings per <strong>bill LKR 1000</strong> <br>Maximum <strong>4 Units</strong> from Each Item.<br> Validity - Till <strong>30th September 2022</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                            <strong> Super Grocery Offer 03 </strong>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body">
+                            <strong> Offer</strong> - Up to <strong>45%</strong> savings on the Credit card offer range at Royal Grocery <br>(includes the additional <strong> 6% </strong> saving offered exclusively for Capital One, American Express and Mastercard Credit Cardmembers) <br><br> Valid for <strong>bills above LKR 4000</strong> <br>Maximum savings per <strong>bill LKR 1,500</strong> <br>Maximum <strong>3KG</strong> or 3 Units from Each Item.<br> Validity - Till <strong>30th September 2022</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row" id="home-row2">
+        <div class="col">
+
+            <b>Most Movable Items</b>
+
+            <table class="table table-bordered table-hover">
+                <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
+                <tr>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+                </thead>
+                <tbdoy>
+                    <tr>
+                        <td>P001</td>
+                        <td>Keerisamba 5Kg</td>
+                        <td>255.00</td>
+                        <td>15</td>
+                    </tr>
+                </tbdoy>
+            </table>
+
+        </div>
+    </section>
+
+    <!----------------body og home end--------------------------------------->
+</main>
+
+
+<script src="assests/js/bootstrap.min.js"></script>
+</body>
+
+</html>
