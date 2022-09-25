@@ -13,10 +13,147 @@
             background-size: cover;
             background-position: center;
         }
+        body>section{
+            height: 550px;
+            width: 500px;
+            background-color: rgba(0, 0, 0, 0.65);
+            border-radius: 3%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        #input{
+            width: 100%;
+            height: 65px;
+            font-weight: bold;
+            font-size: 30px;
+            text-align: right;
+        }
+        #calRow>div>div>button{
+            height: 80px;
+            width: 103px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        #buttonC{
+            height: 65px;
+            width: 93px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        #buttonCBg{
+            width: 93px;
+            border-radius: 7px;
+        }
+        #calRow>div>div{
+            border-radius: 7px;
+        }
     </style>
 </head>
 <body>
 
+<section>
+    <form class="row container text-center ms-0 mt-3" id="inputbar">
+         <div class="col-3">
+        <div class="bg-light mt-2 " id="buttonCBg">
+            <button id="buttonC" type="reset" class="btn btn-outline-danger" form="inputbar" >C</button>
+        </div>
+    </div>
+         <div class="col-9">
+          <input class="form-control form-control-lg mt-2" type="text" aria-label=".form-control-lg example" id="input">
+        </div>
+    </form>
+        <div class="container text-center">
+            <div class="row row-cols-4 row-cols-lg-4 g-2 g-lg-3 mt-2 ms-0 me-0" style="height: 440px" id="calRow">
+                <div class="col">
+                    <div class="bg-light">
+                        <button type="button" class="btn btn-outline-dark" >7</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light">
+                        <button type="button" class="btn btn-outline-dark" >8</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light" >
+                        <button type="button" class="btn btn-outline-dark" >9</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light">
+                        <button type="button" class="btn btn-outline-success" >+</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light">
+                        <button type="button" class="btn btn-outline-dark" >4</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light">
+                        <button type="button" class="btn btn-outline-dark" >5</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light" >
+                        <button type="button" class="btn btn-outline-dark" >6</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light">
+                        <button type="button" class="btn btn-outline-success" >-</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light">
+                        <button type="button" class="btn btn-outline-dark" >1</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light">
+                        <button type="button" class="btn btn-outline-dark" >2</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light" >
+                        <button type="button" class="btn btn-outline-dark" >3</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light">
+                        <button type="button" class="btn btn-outline-success" >/</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light">
+                        <button type="button" class="btn btn-outline-dark" >.</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light">
+                        <button type="button" class="btn btn-outline-dark" >0</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light" >
+                        <button type="button" class="btn btn-outline-success" >=</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-light">
+                        <button type="button" class="btn btn-outline-success" >x</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+</section>
 
 
 
