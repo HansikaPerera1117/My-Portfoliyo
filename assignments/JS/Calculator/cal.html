@@ -87,7 +87,7 @@
                 </div>
                 <div class="col">
                     <div class="bg-light">
-                        <button type="button" class="btn btn-outline-success" id="+" onclick="Plus()">+</button>
+                        <button type="button" class="btn btn-outline-success" id="plus">+</button>
                     </div>
                 </div>
                 <div class="col">
@@ -107,7 +107,7 @@
                 </div>
                 <div class="col">
                     <div class="bg-light">
-                        <button type="button" class="btn btn-outline-success" id="-" onclick="Minus()">-</button>
+                        <button type="button" class="btn btn-outline-success" id="minus">-</button>
                     </div>
                 </div>
                 <div class="col">
@@ -127,12 +127,12 @@
                 </div>
                 <div class="col">
                     <div class="bg-light">
-                        <button type="button" class="btn btn-outline-success" id="/" onclick="Divition()" >/</button>
+                        <button type="button" class="btn btn-outline-success" id="division">/</button>
                     </div>
                 </div>
                 <div class="col">
                     <div class="bg-light">
-                        <button type="button" class="btn btn-outline-dark" id=".">.</button>
+                        <button type="button" class="btn btn-outline-dark" id="point" onclick="fnPoint()">.</button>
                     </div>
                 </div>
                 <div class="col">
@@ -142,12 +142,12 @@
                 </div>
                 <div class="col">
                     <div class="bg-light" >
-                        <button type="button" class="btn btn-outline-success" id="=" onclick="Equal()" >=</button>
+                        <button type="button" class="btn btn-outline-success" id="equal" >=</button>
                     </div>
                 </div>
                 <div class="col">
                     <div class="bg-light">
-                        <button type="button" class="btn btn-outline-success" >x</button>
+                        <button type="button" class="btn btn-outline-success" id="multiply" >x</button>
                     </div>
                 </div>
 
@@ -210,6 +210,72 @@
         let first = $("#input").val();
         $("#input").val(first+9);
     }
+
+    function fnPoint(){
+        let first = $("#input").val();
+        $("#input").val(first+".");
+
+    }
+
+    // ===================symbuls=========================
+
+    let op;
+    let firstNum;
+
+    $("#plus").click(function () {
+        firstNum = $("#input").val();
+
+        let previous =firstNum
+        let clear =previous.slice(0,0);
+        $("#input").val(clear);
+        op = "plus"
+    });
+
+    $("#minus").click(function () {
+        firstNum = $("#input").val();
+
+        let previous =firstNum
+        let clear =previous.slice(0,0);
+        $("#input").val(clear);
+        op = "minus"
+    });
+
+    $("#division").click(function () {
+        firstNum = $("#input").val();
+
+        let previous =firstNum
+        let clear =previous.slice(0,0);
+        $("#input").val(clear);
+        op = "division"
+    });
+
+    $("#multiply").click(function () {
+        firstNum = $("#input").val();
+
+        let previous =firstNum
+        let clear =previous.slice(0,0);
+        $("#input").val(clear);
+        op = "multiply"
+    });
+
+
+
+    //==================== equal==========================
+    $("#equal").click(function (){
+        let secondNum = $("#input").val();
+        if (op == "plus"){
+            $("#input").val(parseInt(firstNum) + parseInt(secondNum));
+        }
+        if (op == "minus"){
+            $("#input").val(parseInt(firstNum) - parseInt(secondNum));
+        }
+        if (op == "division"){
+            $("#input").val(parseInt(firstNum) / parseInt(secondNum));
+        }
+        if (op == "multiply"){
+            $("#input").val(parseInt(firstNum) * parseInt(secondNum));
+        }
+    });
 
 </script>
 </body>
