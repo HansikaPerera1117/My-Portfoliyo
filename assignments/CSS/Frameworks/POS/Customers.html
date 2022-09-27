@@ -141,35 +141,35 @@
                                 <div class="modal-body">
                                     <section>
                                         <div class="mb-3">
-                                            <span style="font-size: 20px"><strong>Customer ID : C001</strong></span>
+                                            <span style="font-size: 20px" id="CusID"><strong>Customer ID : <label class="form-label" for="CusID" id="CustomerId">C001</label></strong></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="inputCustomerName">Customer Name</label>
                                             <input class="form-control" id="inputCustomerName" type="text" placeholder="Name with initials">
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputCusAddress">Customer Address</label>
-                                            <input class="form-control" id="inputCusAddress" multiple type="text" placeholder="1234 Main St Panadura">
+                                            <label class="form-label" for="inputCustomerAddress">Customer Address</label>
+                                            <input class="form-control" id="inputCustomerAddress" multiple type="text" placeholder="1234 Main St Panadura">
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputContactNo">Contact Number</label>
-                                            <input class="form-control" id="inputContactNo" type="tel" placeholder="+9400000000">
+                                            <label class="form-label" for="inputCustomerContactNo">Contact Number</label>
+                                            <input class="form-control" id="inputCustomerContactNo" type="tel" placeholder="+9400000000">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="radioGender">Gender</label>
                                             <div class="row" id="radioGender">
                                                 <div class="col">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioMale">
-                                                        <label class="form-check-label" for="radioMale">
+                                                        <input class="form-check-input ,Male" type="radio" name="flexRadioDefault" id="radioMale">
+                                                        <label class="form-check-label ,Male" for="radioMale">
                                                             Male
                                                         </label>
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioFemale" checked>
-                                                        <label class="form-check-label" for="radioFemale">
+                                                        <input class="form-check-input ,Female" type="radio" name="flexRadioDefault" id="radioFemale" checked>
+                                                        <label class="form-check-label ,Female" for="radioFemale">
                                                             Female
                                                         </label>
                                                     </div>
@@ -177,12 +177,12 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputSalary">Customer Salary</label>
-                                            <input class="form-control " id="inputSalary" type="number" placeholder="0000.00">
+                                            <label class="form-label" for="inputCustomerSalary">Customer Salary</label>
+                                            <input class="form-control " id="inputCustomerSalary" type="number" placeholder="0000.00">
                                         </div>
                                         <div class="row justify-content-end">
                                             <div class="col-8 me-0">
-                                                <button class="btn text-white ms-4 " style="background-color: rgb(227,133,133)" type="button">Save Customer</button>
+                                                <button class="btn text-white ms-4 " style="background-color: rgb(227,133,133)" type="button" id="btnSaveCustomer">Save Customer</button>
                                                 <button class="btn btn-primary" type="button">Renew</button>
                                                 <button class="btn btn-secondary " data-bs-dismiss="modal" type="button">Close</button>
                                             </div>
@@ -222,16 +222,9 @@
                                                 <th>Salary</th>
                                             </tr>
                                             </thead>
-                                            <tbdoy>
-                                                <tr>
-                                                    <td>C001</td>
-                                                    <td>Hansika</td>
-                                                    <td>Kadawatha</td>
-                                                    <td>0112244668</td>
-                                                    <td>Female</td>
-                                                    <td>56000</td>
-                                                </tr>
-                                            </tbdoy>
+                                            <tbody class="tblCustomer">
+
+                                            </tbody>
                                         </table>
                                         <div class="row justify-content-end">
                                             <div class="col-1 me-0">
@@ -334,16 +327,9 @@
                     <th>Salary</th>
                 </tr>
                 </thead>
-                <tbdoy>
-                    <tr>
-                        <td>C001</td>
-                        <td>Hansika</td>
-                        <td>Kadawatha</td>
-                        <td>0112244668</td>
-                        <td>Female</td>
-                        <td>56000</td>
-                    </tr>
-                </tbdoy>
+                <tbody class="tblCustomer">
+
+                </tbody>
             </table>
         </div>
     </div>
@@ -352,6 +338,69 @@
 
 
 <script src="assests/js/bootstrap.min.js"></script>
+<script src="assests/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+
+    var customers=[];
+
+    $("#btnSaveCustomer").click(function (){
+        let customerID = $("#CustomerId").text();
+        let customerName = $("#inputCustomerName").val();
+        let customerAddress = $("#inputCustomerAddress").val();
+        let customerContact = $("#inputCustomerContactNo").val();
+
+        let customerGender;
+        var radios = document.getElementsByName('flexRadioDefault');
+
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                let Gender = (radios[i].className);
+                let gName = Gender.split(",");
+                for (let j = 0; j < gName.length; j++) {
+                    customerGender = gName[j];
+                }
+                break;
+            }
+        }
+
+        let customerSalary = $("#inputCustomerSalary").val();
+
+
+        var customerObject = {
+            id: customerID,
+            name: customerName,
+            address: customerAddress,
+            contact: customerContact,
+            gender: customerGender,
+            salary: customerSalary
+        }
+
+        customers.push(customerObject);
+
+        console.log(customers);
+
+        loadAllCustomers()
+
+    });
+
+
+    function loadAllCustomers(){
+        $(".tblCustomer").empty();
+
+        for(var customer of customers){
+            console.log(customer);// customer object
+            var row= `<tr> <td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.contact}</td><td>${customer.gender}</td><td>${customer.salary}</td></tr>`;
+
+            $(".tblCustomer").append(row);
+        }
+    }
+
+
+
+    $("#viewAll").click(function (){
+        loadAllCustomers();
+    });
+</script>
 </body>
 
 </html>
