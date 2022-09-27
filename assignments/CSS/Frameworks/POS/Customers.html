@@ -139,7 +139,7 @@
                                     <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <section>
+                                    <form id="newCustomerForm">
                                         <div class="mb-3">
                                             <span style="font-size: 20px" id="CusID"><strong>Customer ID : <label class="form-label" for="CusID" id="CustomerId">C001</label></strong></span>
                                         </div>
@@ -168,7 +168,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-check">
-                                                        <input class="form-check-input ,Female" type="radio" name="flexRadioDefault" id="radioFemale" checked>
+                                                        <input class="form-check-input ,Female" type="radio" name="flexRadioDefault" id="radioFemale">
                                                         <label class="form-check-label ,Female" for="radioFemale">
                                                             Female
                                                         </label>
@@ -183,11 +183,11 @@
                                         <div class="row justify-content-end">
                                             <div class="col-8 me-0">
                                                 <button class="btn text-white ms-4 " style="background-color: rgb(227,133,133)" type="button" id="btnSaveCustomer">Save Customer</button>
-                                                <button class="btn btn-primary" type="button">Renew</button>
+                                                <button class="btn btn-primary" type="reset" form="newCustomerForm">Renew</button>
                                                 <button class="btn btn-secondary " data-bs-dismiss="modal" type="button">Close</button>
                                             </div>
                                         </div>
-                                    </section>
+                                    </form>
                                 </div>
                             </div>
                         </div>
