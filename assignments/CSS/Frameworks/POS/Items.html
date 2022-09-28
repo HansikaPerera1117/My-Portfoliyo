@@ -139,34 +139,34 @@
                                     <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <section>
+                                    <form id="newItemForm">
                                         <div class="mb-3">
-                                            <span style="font-size: 20px"><strong>Item Code : P001</strong></span>
+                                            <span style="font-size: 20px" id="Code"><strong>Item Code : <label class="form-label" for="Code" id="ItemCode">P001</label></strong></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="inputItemName">Item Name</label>
                                             <input class="form-control" id="inputItemName" type="text" placeholder="Keerisamba 5Kg">
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputPackSize">Pack Size</label>
-                                            <input class="form-control" id="inputPackSize" multiple type="text" placeholder="Kg/g/l/ml...">
+                                            <label class="form-label" for="inputItemPackSize">Pack Size</label>
+                                            <input class="form-control" id="inputItemPackSize" multiple type="text" placeholder="Kg/g/l/ml...">
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputPrice">Price</label>
-                                            <input class="form-control" id="inputPrice" type="number" placeholder="0000.00">
+                                            <label class="form-label" for="inputItemPrice">Price</label>
+                                            <input class="form-control" id="inputItemPrice" type="number" placeholder="0000.00">
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputQuantity">Quantity</label>
-                                            <input class="form-control " id="inputQuantity" type="number" placeholder="0000">
+                                            <label class="form-label" for="inputItemQuantity">Quantity</label>
+                                            <input class="form-control " id="inputItemQuantity" type="number" placeholder="0000">
                                         </div>
                                         <div class="row justify-content-end">
                                             <div class="col-7 me-0">
-                                                <button class="btn text-white ms-3 " style="background-color: rgb(227,133,133)" type="button">Save Item</button>
-                                                <button class="btn btn-primary" type="button">Renew</button>
+                                                <button class="btn text-white ms-3 " style="background-color: rgb(227,133,133)" type="button" id="btnSaveItem">Save Item</button>
+                                                <button class="btn btn-primary" type="reset" form="newItemForm">Renew</button>
                                                 <button class="btn btn-secondary " data-bs-dismiss="modal" type="button">Close</button>
                                             </div>
                                         </div>
-                                    </section>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -200,15 +200,9 @@
                                                 <th>Quantity</th>
                                             </tr>
                                             </thead>
-                                            <tbdoy>
-                                                <tr>
-                                                    <td>P001</td>
-                                                    <td>Keerisamba 5Kg</td>
-                                                    <td>5Kg</td>
-                                                    <td>255.00</td>
-                                                    <td>15</td>
-                                                </tr>
-                                            </tbdoy>
+                                            <tbody class="tblItems">
+
+                                            </tbody>
                                         </table>
                                         <div class="row justify-content-end">
                                             <div class="col-1 me-0">
@@ -251,12 +245,12 @@
                                         <input class="form-control" id="inputPacketSize" multiple type="text">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputItemPrice">Price</label>
-                                        <input class="form-control" id="inputItemPrice" type="number">
+                                        <label class="form-label" for="inputPrice">Price</label>
+                                        <input class="form-control" id="inputPrice" type="number">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputItemQuantity">Quantity</label>
-                                        <input class="form-control " id="inputItemQuantity" type="number">
+                                        <label class="form-label" for="inputQuantity">Quantity</label>
+                                        <input class="form-control " id="inputQuantity" type="number">
                                     </div>
                                     <div class="row justify-content-end">
                                         <div class="col-7 ">
@@ -290,15 +284,9 @@
                     <th>Quantity</th>
                 </tr>
                 </thead>
-                <tbdoy>
-                    <tr>
-                        <td>P001</td>
-                        <td>Keerisamba 5Kg</td>
-                        <td>5Kg</td>
-                        <td>255.00</td>
-                        <td>15</td>
-                    </tr>
-                </tbdoy>
+                <tbody class="tblItems">
+
+                </tbody>
             </table>
         </div>
     </div>
@@ -306,6 +294,52 @@
 </main>
 
 <script src="assests/js/bootstrap.min.js"></script>
+<script src="assests/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+
+    var items=[];
+
+    $("#btnSaveItem").click(function (){
+        let itemCode = $("#ItemCode").text();
+        let itemName = $("#inputItemName").val();
+        let packSize = $("#inputItemPackSize").val();
+        let price = $("#inputItemPrice").val();
+        let quantity = $("#inputItemQuantity").val();
+
+
+        var itemObject = {
+            code: itemCode,
+            name: itemName,
+            packSize: packSize,
+            price: price,
+            qty: quantity,
+        }
+
+        items.push(itemObject);
+
+        console.log(items);
+
+        loadAllItems()
+
+    });
+
+    function loadAllItems(){
+        $(".tblItems").empty();
+
+        for(var item of items){
+            console.log(item);
+            var row= `<tr> <td>${item.code}</td><td>${item.name}</td><td>${item.packSize}</td><td>${item.price}</td><td>${item.qty}</td></tr>`;
+
+            $(".tblItems").append(row);
+        }
+    }
+
+    $("#viewAll").click(function (){
+        loadAllItems();
+    });
+
+
+</script>
 </body>
 
 </html>
