@@ -219,7 +219,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 <section>
-                                                    <form class="row gy-1 ms-0 text-start me-0" style="margin-top: 5px">
+                                                    <form class="row gy-1 ms-0 text-start me-0" id="OrderDetailsForm" style="margin-top: 5px">
                                                         <div class="col-6">
                                                             <label for="inputItemCode" class="form-label">Item Code :</label>
                                                             <input type="text" class="form-control" id="inputItemCode">
@@ -278,7 +278,7 @@
                                                         </div>
                                                         <div class="col-4 ">
                                                             <button class="btn text-white ms-2 mt-5" style="background-color: rgb(227,133,133)" type="button">Confirm Edits</button>
-                                                            <button class="btn btn-primary mt-5" type="button">Reset</button>
+                                                            <button class="btn btn-primary mt-5" type="reset" form="OrderDetailsForm">Reset</button>
                                                             <button class="btn btn-secondary mt-5" data-bs-dismiss="modal" type="button">Close</button>
                                                         </div>
                                                     </div>
