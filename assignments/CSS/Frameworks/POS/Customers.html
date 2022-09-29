@@ -101,7 +101,7 @@
                             </div>
                             <div class="row align-items-center" style="height: 85px">
                                 <div class="col-9">
-                                    <input class="form-control"  id="exampleDataList" placeholder="Input Name / NIC / Tp Here" style="height: 53px">
+                                    <input class="form-control"  id="searchBar" placeholder="Input ID / Name Here" style="height: 53px">
                                 </div>
                                 <div class="col-3" >
                                     <select class="form-select" aria-label="Default select example" style="height: 53px">
@@ -248,26 +248,26 @@
                 <button type="button" class="btn btn-primary" style="width: 90px" data-bs-target="#CustomerDetailsModal" data-bs-toggle="modal" type="button">Details</button>
 
                 <!--------------------- Customer Details Modal start----------------->
-                <div aria-hidden="true" aria-labelledby="CustomerDetailsModalLabel" class="modal fade" id="CustomerDetailsModal" tabindex="-1">
+                <div aria-hidden="true" aria-labelledby="CustomerDetailsModalLabel" class="modal fade" id="CustomerDetailsModal"  tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="CustomerDetailsModalLabel"  style="font-size: 20px"><strong>Customer ID : C001</strong></h5>
+                                <h5 class="modal-title" id="CustomerDetailsModalLabel"  style="font-size: 20px"><strong>Customer ID : <label class="form-label" for="CusID" id="CID">C001</label></strong></h5>
                                 <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                             </div>
                             <div class="modal-body">
                                 <section>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputName">Customer Name</label>
-                                        <input class="form-control" id="inputName" type="text">
+                                        <label class="form-label" for="inputCName">Customer Name</label>
+                                        <input class="form-control" id="inputCName" type="text">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputAddress">Customer Address</label>
-                                        <input class="form-control" id="inputAddress" multiple type="text">
+                                        <label class="form-label" for="inputCAddress">Customer Address</label>
+                                        <input class="form-control" id="inputCAddress" multiple type="text">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputContact">Contact Number</label>
-                                        <input class="form-control" id="inputContact" type="tel">
+                                        <label class="form-label" for="inputCContact">Contact Number</label>
+                                        <input class="form-control" id="inputCContact" type="tel">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="radioGender">Gender</label>
@@ -291,8 +291,8 @@
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputCusSalary">Customer Salary</label>
-                                        <input class="form-control " id="inputCusSalary" type="number">
+                                        <label class="form-label" for="inputCSalary">Customer Salary</label>
+                                        <input class="form-control " id="inputCSalary" type="number">
                                     </div>
                                     <div class="row justify-content-end">
                                         <div class="col-8 ">
@@ -395,6 +395,71 @@
     $("#viewAll").click(function (){
         loadAllCustomers();
     });
+
+
+    $("#searchButton").click(function (){
+        
+        let search = $("#searchBar").val();
+
+        for (let i = 0; i < customers.length; i++) {
+           let id = customers[i].id;
+           let name = customers[i].name;
+            let address = customers[i].address;
+            let contact = customers[i].contact;
+            let gender = customers[i].gender;
+            let salary = customers[i].salary;
+
+            console.log(salary)
+
+           if(search == id){
+
+
+               $("#CID").text(id);
+               $("#inputCName").val(name);
+               $("#inputCAddress").val(address);
+               $("#inputCContact").val(contact);
+
+               // ================aul start   deweniyata dana kenage gender eka pennanwa.e gender eke ayage gender eka pennanwa.anith 1 weni gender eke ekkage gender eka pennanne na================
+               if (gender == "Male"){
+                   $("#Male").attr('checked', true);
+                   $("#Female").attr('checked', false);
+               }
+               if (gender == "Female"){
+                   $("#Female").attr('checked', true);
+                   $("#Male").attr('checked', false);
+               }
+
+               // ================aul end================
+
+               $("#inputCSalary").val(salary);
+
+
+           }
+
+            if(search == name){
+
+
+                $("#CID").text(id);
+                $("#inputCName").val(name);
+                $("#inputCAddress").val(address);
+                $("#inputCContact").val(contact);
+
+                if (gender == "Male"){
+                    $("#Male").attr('checked', true);
+                    $("#Female").attr('checked', false);
+                }
+                if (gender == "Female"){
+                    $("#Female").attr('checked', true);
+                    $("#Male").attr('checked', false);
+                }
+
+                $("#inputCSalary").val(salary);
+
+            }
+        }
+
+    });
+
 
 </script>
 </body>
