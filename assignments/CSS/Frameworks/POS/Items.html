@@ -101,7 +101,7 @@
                             </div>
                             <div class="row align-items-center" style="height: 85px">
                                 <div class="col-9">
-                                    <input class="form-control"  id="exampleDataList" placeholder="Input Item Name / Code Here" style="height: 53px">
+                                    <input class="form-control"  id="searchBar" placeholder="Input Item Code / Name Here" style="height: 53px">
                                 </div>
                                 <div class="col-3" >
                                     <select class="form-select" aria-label="Default select example" style="height: 53px">
@@ -231,26 +231,26 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="ItemDetailsModalLabel"  style="font-size: 20px"><strong>Item Code : P001</strong></h5>
+                                <h5 class="modal-title" id="ItemDetailsModalLabel"  style="font-size: 20px"><strong>Item Code : <label class="form-label" id="ICode">P001</label></strong></h5>
                                 <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                             </div>
                             <div class="modal-body">
                                 <section>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputName">Item Name</label>
-                                        <input class="form-control" id="inputName" type="text">
+                                        <label class="form-label" for="inputIName">Item Name</label>
+                                        <input class="form-control" id="inputIName" type="text">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputPacketSize">Pack Size</label>
-                                        <input class="form-control" id="inputPacketSize" multiple type="text">
+                                        <label class="form-label" for="inputIPacketSize">Pack Size</label>
+                                        <input class="form-control" id="inputIPacketSize" multiple type="text">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputPrice">Price</label>
-                                        <input class="form-control" id="inputPrice" type="number">
+                                        <label class="form-label" for="inputIPrice">Price</label>
+                                        <input class="form-control" id="inputIPrice" type="number">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputQuantity">Quantity</label>
-                                        <input class="form-control " id="inputQuantity" type="number">
+                                        <label class="form-label" for="inputIQuantity">Quantity</label>
+                                        <input class="form-control " id="inputIQuantity" type="number">
                                     </div>
                                     <div class="row justify-content-end">
                                         <div class="col-7 ">
@@ -336,6 +336,42 @@
 
     $("#viewAll").click(function (){
         loadAllItems();
+    });
+
+
+    $("#searchButton").click(function (){
+
+        let search = $("#searchBar").val();
+
+        for (let i = 0; i < items.length; i++) {
+            let code = items[i].code;
+            let name =  items[i].name;
+            let packSize =  items[i].packSize;
+            let price =  items[i].price;
+            let quantity =  items[i].qty;
+
+
+
+            if(search == code){
+
+                $("#ICode").text(code);
+                $("#inputIName").val(name);
+                $("#inputIPacketSize").val(packSize);
+                $("#inputIPrice").val(price);
+                $("#inputIQuantity").val(quantity);
+
+            }
+
+            if(search == name){
+
+                $("#ICode").text(code);
+                $("#inputIName").val(name);
+                $("#inputIPacketSize").val(packSize);
+                $("#inputIPrice").val(price);
+                $("#inputIQuantity").val(quantity);
+            }
+        }
+
     });
 
 

@@ -252,7 +252,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="CustomerDetailsModalLabel"  style="font-size: 20px"><strong>Customer ID : <label class="form-label" for="CusID" id="CID">C001</label></strong></h5>
+                                <h5 class="modal-title" id="CustomerDetailsModalLabel"  style="font-size: 20px"><strong>Customer ID : <label class="form-label" id="CID">C001</label></strong></h5>
                                 <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                             </div>
                             <div class="modal-body">
@@ -398,7 +398,7 @@
 
 
     $("#searchButton").click(function (){
-        
+
         let search = $("#searchBar").val();
 
         for (let i = 0; i < customers.length; i++) {
@@ -409,7 +409,6 @@
             let gender = customers[i].gender;
             let salary = customers[i].salary;
 
-            console.log(salary)
 
            if(search == id){
 
