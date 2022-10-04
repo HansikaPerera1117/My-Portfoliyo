@@ -56,8 +56,27 @@ main>section:first-child>article>p:nth-child(2){
     font-size: 60px;
     position: absolute;
     top: 125px;
-    left: 201px;
+    left: 182px;
     z-index: 1;
+    color: #5f5f5f;
+}
+
+p::before{
+    content: attr(data-text);
+    position: absolute;
+    color: white;
+    width: 350px;
+    overflow: hidden;white-space: nowrap;
+    animation: animate 6s linear infinite;
+    filter: drop-shadow(0 0 20px white) drop-shadow(0 0 50px white);
+}
+@keyframes animate {
+    0%,10%,100%{
+        width: 0;
+    }
+    70%,90%{
+        width: 100%;
+    }
 }
 
 main>section:first-child>article>p:nth-child(3){
@@ -68,6 +87,8 @@ main>section:first-child>article>p:nth-child(3){
     left: 200px;
     z-index: 1;
 }
+
+
 
 main>section:first-child>article>p:nth-child(4){
     font-family: 'Ubuntu', sans-serif;
