@@ -45,6 +45,39 @@
 
     <style>
 
+        #loader{
+            background-color: #030303;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 3;
+        }
+
+        #loader>div{
+            height: 400px;
+            width: 600px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-size: cover;
+            background-position: center;
+        }
+
+        small {
+            font-size: 175%;
+            width: max-content;
+            position: relative;
+            left: 262px;
+            color: #fbb30b;
+            font-family: Calibri;
+        }
+
+
         main>section:nth-child(2)>section:nth-child(2)>div>div{
             background: url("assests/images/projects/assignments_bc/bc-2.webp");
             background-position: center;
@@ -78,6 +111,13 @@
 </head>
 
 <body>
+<div id="loader">
+    <div>
+        <img src="assests/images/gif/loading.gif" alt="loading gif" height="400" width="600">
+        <small>Loading...</small>
+    </div>
+</div>
+
 <header>
     <h1><span style="color:rgba(192, 64, 0, 1)">Hansika </span> Perera</h1>
     <nav>
@@ -89,6 +129,7 @@
         </ol>
     </nav>
 </header>
+
 <main>
     <section>
 
@@ -324,5 +365,14 @@
         </h4>
     </section>
 </footer>
+
+<script src="assests/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+
+    $(window).on('load',function (){
+        $("#loader").fadeOut(1000);
+    });
+
+</script>
 </body>
 </html>
