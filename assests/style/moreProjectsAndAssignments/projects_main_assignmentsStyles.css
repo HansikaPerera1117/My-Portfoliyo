@@ -1,7 +1,6 @@
 main>section:nth-child(2){
     height: 2100px;
     position: relative;
-    background-color: red;
 }
 
 main>section:nth-child(2)>p:nth-child(1){
