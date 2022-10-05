@@ -19,6 +19,14 @@
 </head>
 
 <body>
+
+<div id="loader">
+    <div>
+        <img src="assests/Images/loading_Pos.gif" alt="loading gif" height="300px" width="400px">
+    </div>
+</div>
+
+
 <header>
 <!-----------------------nav bar start--------------------------------------------->
 <nav id="header">
@@ -1145,60 +1153,68 @@
 <script src="assests/JQuery/jquery-3.6.1.min.js"></script>
 <script>
 
-    $("#mainCustomer").css('display','none');
-    $("#mainItem").css('display','none');
-    $("#mainPlaceOrders").css('display','none');
-    $("#mainSearchOrders").css('display','none');
+    $(window).on('load',function (){
+        $("#loader").fadeOut(1000);
+    });
 
+    $(document).ready(function () {
 
-    $("#imgHome").mousedown(function(){
-        $("#mainHome").css('display','block');
         $("#mainCustomer").css('display','none');
         $("#mainItem").css('display','none');
         $("#mainPlaceOrders").css('display','none');
         $("#mainSearchOrders").css('display','none');
-    });
 
-    $("#imgCustomer").mousedown(function(){
-        $("#mainHome").css('display','none');
-        $("#mainCustomer").css('display','block');
-        $("#mainItem").css('display','none');
-        $("#mainPlaceOrders").css('display','none');
-        $("#mainSearchOrders").css('display','none');
-    });
 
-    $("#imgItem").mousedown(function(){
-        $("#mainHome").css('display','none');
-        $("#mainCustomer").css('display','none');
-        $("#mainItem").css('display','block');
-        $("#mainPlaceOrders").css('display','none');
-        $("#mainSearchOrders").css('display','none');
-    });
+        $("#imgHome").mousedown(function(){
+            $("#mainHome").css('display','block');
+            $("#mainCustomer").css('display','none');
+            $("#mainItem").css('display','none');
+            $("#mainPlaceOrders").css('display','none');
+            $("#mainSearchOrders").css('display','none');
+        });
 
-    $("#imgOrders").mousedown(function(){
-        $("#mainHome").css('display','none');
-        $("#mainCustomer").css('display','none');
-        $("#mainItem").css('display','none');
-        $("#mainPlaceOrders").css('display','block');
-        $("#mainSearchOrders").css('display','none');
-    });
+        $("#imgCustomer").mousedown(function(){
+            $("#mainHome").css('display','none');
+            $("#mainCustomer").css('display','block');
+            $("#mainItem").css('display','none');
+            $("#mainPlaceOrders").css('display','none');
+            $("#mainSearchOrders").css('display','none');
+        });
 
-    $("#searchOrderButton").mousedown(function(){
-        $("#mainPlaceOrders").css('display','none');
-        $("#mainSearchOrders").css('display','block');
-    });
+        $("#imgItem").mousedown(function(){
+            $("#mainHome").css('display','none');
+            $("#mainCustomer").css('display','none');
+            $("#mainItem").css('display','block');
+            $("#mainPlaceOrders").css('display','none');
+            $("#mainSearchOrders").css('display','none');
+        });
 
-    $("#placeOrderButton").mousedown(function(){
-        $("#mainPlaceOrders").css('display','block');
-        $("#mainSearchOrders").css('display','none');
-    });
+        $("#imgOrders").mousedown(function(){
+            $("#mainHome").css('display','none');
+            $("#mainCustomer").css('display','none');
+            $("#mainItem").css('display','none');
+            $("#mainPlaceOrders").css('display','block');
+            $("#mainSearchOrders").css('display','none');
+        });
 
-    $(".homepage").mousedown(function(){
-        $("#mainHome").css('display','block');
-        $("#mainCustomer").css('display','none');
-        $("#mainItem").css('display','none');
-        $("#mainPlaceOrders").css('display','none');
-        $("#mainSearchOrders").css('display','none');
+        $("#searchOrderButton").mousedown(function(){
+            $("#mainPlaceOrders").css('display','none');
+            $("#mainSearchOrders").css('display','block');
+        });
+
+        $("#placeOrderButton").mousedown(function(){
+            $("#mainPlaceOrders").css('display','block');
+            $("#mainSearchOrders").css('display','none');
+        });
+
+        $(".homepage").mousedown(function(){
+            $("#mainHome").css('display','block');
+            $("#mainCustomer").css('display','none');
+            $("#mainItem").css('display','none');
+            $("#mainPlaceOrders").css('display','none');
+            $("#mainSearchOrders").css('display','none');
+        });
+
     });
 
 </script>

@@ -1,3 +1,27 @@
+#loader{
+    background-color: #f4e2e1;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#loader>div{
+    height: 300px;
+    width: 400px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-size: cover;
+    background-position: center;
+}
+
+
 #header{
     background-color: rgba(255, 204, 204, 1);
     box-shadow: 0px 0px 8px 2px #1c1717e8;
