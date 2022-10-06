@@ -316,9 +316,13 @@
 
         console.log(items);
 
-        loadAllItems()
+        loadAllItems();
 
-        loadItemNames()
+        loadItemNames();
+
+        bindValueClickEvents();
+
+        bindRowClickEvents();
 
     });
 
@@ -339,14 +343,41 @@
         $("#cmbNames").append(selected);
 
         for (var item of items){
-            console.log(item);
+            // console.log(item);
 
             var names =  `<option>${item.name}</option>`;
 
-            console.log(names);
+            // console.log(names);
 
             $("#cmbNames").append(names);
         }
+    }
+
+    function bindValueClickEvents() {
+        $("#cmbNames>option").click(function () {
+            // let name = $(this).children(":eq(1)").text();
+            // console.log(this);
+            // console.log(name);
+            //
+            // //setting table details values to text fields
+            // $("#searchBar").val(name);
+            //
+            // var e = $("#cmbNames")
+            // var value = e.value;
+            // var text = e.options[e.selectedIndex].text;
+            // console.log(value);
+            // console.log(text);
+        });
+    }
+
+    function bindRowClickEvents() {
+        $(".tblItems>tr").click(function () {
+            let id = $(this).children(":eq(0)").text();
+            // let name = $(this).children(":eq(1)").text();
+
+            $("#searchBar").val(id);
+            // $("#searchBar").val(name);
+        });
     }
 
     $("#viewAll").click(function (){
