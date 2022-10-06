@@ -333,7 +333,7 @@
             $(".tblItems").append(row);
         }
     }
-    
+
     function bindRowClickEvents() {
         $(".tblItems>tr").click(function () {
             let id = $(this).children(":eq(0)").text();
@@ -359,7 +359,16 @@
 
     $("#cmbNames").click(function () {
         let name = $('#cmbNames>option:selected').val();
-        $("#searchBar").val(name);
+
+        for (let i = 0; i < items.length; i++) {
+            let itemName = items[i].name;
+
+            if (itemName == name){
+                $("#searchBar").val(name);
+            }
+
+        }
+
     })
 
 
@@ -378,8 +387,6 @@
             let packSize =  items[i].packSize;
             let price =  items[i].price;
             let quantity =  items[i].qty;
-
-
 
             if(search == code){
 

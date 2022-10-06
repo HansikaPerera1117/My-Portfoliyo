@@ -415,7 +415,15 @@
 
     $("#cmbNames").click(function () {
         let name = $('#cmbNames>option:selected').val();
-        $("#searchBar").val(name);
+
+        for (let i = 0; i < customers.length; i++) {
+            let CustomerName = customers[i].name;
+
+            if (CustomerName == name){
+                $("#searchBar").val(name);
+            }
+        }
+
     });
 
 
