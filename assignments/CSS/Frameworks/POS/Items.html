@@ -320,8 +320,6 @@
 
         loadItemNames();
 
-        bindValueClickEvents();
-
         bindRowClickEvents();
 
     });
@@ -335,7 +333,13 @@
             $(".tblItems").append(row);
         }
     }
-
+    
+    function bindRowClickEvents() {
+        $(".tblItems>tr").click(function () {
+            let id = $(this).children(":eq(0)").text();
+            $("#searchBar").val(id);
+        });
+    }
 
     function loadItemNames(){
         $("#cmbNames").empty();
@@ -353,32 +357,11 @@
         }
     }
 
-    function bindValueClickEvents() {
-        $("#cmbNames>option").click(function () {
-            // let name = $(this).children(":eq(1)").text();
-            // console.log(this);
-            // console.log(name);
-            //
-            // //setting table details values to text fields
-            // $("#searchBar").val(name);
-            //
-            // var e = $("#cmbNames")
-            // var value = e.value;
-            // var text = e.options[e.selectedIndex].text;
-            // console.log(value);
-            // console.log(text);
-        });
-    }
+    $("#cmbNames").click(function () {
+        let name = $('#cmbNames>option:selected').val();
+        $("#searchBar").val(name);
+    })
 
-    function bindRowClickEvents() {
-        $(".tblItems>tr").click(function () {
-            let id = $(this).children(":eq(0)").text();
-            // let name = $(this).children(":eq(1)").text();
-
-            $("#searchBar").val(id);
-            // $("#searchBar").val(name);
-        });
-    }
 
     $("#viewAll").click(function (){
         loadAllItems();
