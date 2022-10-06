@@ -104,11 +104,8 @@
                                     <input class="form-control"  id="searchBar" placeholder="Input ID / Name Here" style="height: 53px">
                                 </div>
                                 <div class="col-3" >
-                                    <select class="form-select" aria-label="Default select example" style="height: 53px">
-                                        <option selected>Name</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <select id="cmbNames" class="form-select" aria-label="Default select example" style="height: 53px" >
+                                        <option selected>Customer Names</option>
                                     </select>
                                 </div>
                             </div>
@@ -375,9 +372,8 @@
 
         customers.push(customerObject);
 
-        console.log(customers);
-
         loadAllCustomers()
+        loadCustomerNames()
 
     });
 
@@ -385,12 +381,28 @@
         $(".tblCustomer").empty();
 
         for(var customer of customers){
-            console.log(customer);// customer object
             var row= `<tr> <td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.contact}</td><td>${customer.gender}</td><td>${customer.salary}</td></tr>`;
-
             $(".tblCustomer").append(row);
         }
     }
+    
+
+    function loadCustomerNames(){
+        $("#cmbNames").empty();
+        var selected = ` <option selected>Customer Names</option>`;
+        $("#cmbNames").append(selected);
+
+        for (var customer of customers){
+            console.log(customer);
+
+            var names =  `<option>${customer.name}</option>`;
+
+            console.log(names);
+
+            $("#cmbNames").append(names);
+        }
+    }
+
 
     $("#viewAll").click(function (){
         loadAllCustomers();
