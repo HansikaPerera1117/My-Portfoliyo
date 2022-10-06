@@ -253,7 +253,7 @@
                                 <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                             </div>
                             <div class="modal-body">
-                                <section>
+                                <form>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputCName">Customer Name</label>
                                         <input class="form-control" id="inputCName" type="text">
@@ -298,7 +298,7 @@
                                             <button class="btn btn-secondary " data-bs-dismiss="modal" type="button">Close</button>
                                         </div>
                                     </div>
-                                </section>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -306,7 +306,7 @@
                 <!---------------------Customer Details Modal end----------------->
 
 
-                <button type="reset" form="searchBox" class="btn btn-success" style="width: 70px">Clear</button>
+                <button type="reset" form="searchBox"  class="btn btn-success" style="width: 70px">Clear</button>
             </div>
         </div>
 
@@ -377,6 +377,8 @@
         loadCustomerNames();
 
         bindRowClickEvents();
+
+
     });
 
     function loadAllCustomers(){
@@ -398,7 +400,6 @@
         });
     }
 
-
     function loadCustomerNames(){
         $("#cmbNames").empty();
         var selected = ` <option selected>Customer Names</option>`;
@@ -414,6 +415,11 @@
             $("#cmbNames").append(names);
         }
     }
+
+    $("#cmbNames").click(function () {
+        let name = $('#cmbNames>option:selected').val();
+        $("#searchBar").val(name);
+    });
 
 
     $("#viewAll").click(function (){
