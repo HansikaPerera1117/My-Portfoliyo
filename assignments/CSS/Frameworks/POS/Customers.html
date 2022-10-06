@@ -334,6 +334,7 @@
 
 <script src="assests/js/bootstrap.min.js"></script>
 <script src="assests/JQuery/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.37/dist/sweetalert2.all.min.js"></script>
 <script>
 
     var customers=[];
@@ -371,6 +372,17 @@
         }
 
         customers.push(customerObject);
+
+        Swal.fire({
+            title: 'Customer has bees saved Successfully !..',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
+
 
         loadAllCustomers();
 
