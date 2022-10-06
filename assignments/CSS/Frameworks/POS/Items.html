@@ -104,11 +104,8 @@
                                     <input class="form-control"  id="searchBar" placeholder="Input Item Code / Name Here" style="height: 53px">
                                 </div>
                                 <div class="col-3" >
-                                    <select class="form-select" aria-label="Default select example" style="height: 53px">
-                                        <option selected>Name</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <select id="cmbNames" class="form-select" aria-label="Default select example" style="height: 53px">
+                                        <option selected>Item Names</option>
                                     </select>
                                 </div>
                             </div>
@@ -321,16 +318,34 @@
 
         loadAllItems()
 
+        loadItemNames()
+
     });
 
     function loadAllItems(){
         $(".tblItems").empty();
 
         for(var item of items){
-            console.log(item);
             var row= `<tr> <td>${item.code}</td><td>${item.name}</td><td>${item.packSize}</td><td>${item.price}</td><td>${item.qty}</td></tr>`;
 
             $(".tblItems").append(row);
+        }
+    }
+
+
+    function loadItemNames(){
+        $("#cmbNames").empty();
+        var selected = `<option selected>Item Names</option>`;
+        $("#cmbNames").append(selected);
+
+        for (var item of items){
+            console.log(item);
+
+            var names =  `<option>${item.name}</option>`;
+
+            console.log(names);
+
+            $("#cmbNames").append(names);
         }
     }
 
