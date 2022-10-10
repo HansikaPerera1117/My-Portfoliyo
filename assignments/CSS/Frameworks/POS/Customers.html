@@ -425,6 +425,7 @@
         bindRowClickEvents();
 
     }
+
     function loadAllCustomers(){
         $(".tblCustomer").empty();
 
@@ -517,15 +518,15 @@
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                    'Deleted!',
-                    'Customer ' +search + ' has been deleted.',
-                    'success'
-                )
+
                 if (deleteCustomer(search)) {
-                    alert("Customer Successfully Deleted..");
+                    Swal.fire(
+                        'Deleted!',
+                        'Customer ' +search + ' has been deleted successfully',
+                        'success'
+                    )
                 } else {
-                    alert("No such customer to delete. please check the id");
+                    alert("No such customer to delete. please check the id or name");
                 }
 
                 loadAllCustomers();
@@ -544,10 +545,21 @@
 
         let response = updateCustomer(search);
         if (response) {
-            alert("Customer Updated Successfully");
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Customer has been updated successfully...',
+                showConfirmButton: false,
+                timer: 1500
+            })
         } else {
-            alert("Update Failed..!");
-
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Unsuccessful...',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
     });
 
@@ -557,7 +569,7 @@
         if (customer != null) {
             setTextfieldValues(customer.name, customer.address,customer.contact, customer.salary);
         } else {
-            alert("There is no cusotmer available for that " + typedCus);
+            alert("There is no customer available for that " + typedCus);
             setTextfieldValues("", "", "", "");
         }
     });

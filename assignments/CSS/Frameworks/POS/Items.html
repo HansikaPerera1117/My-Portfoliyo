@@ -143,18 +143,22 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="inputItemName">Item Name</label>
                                             <input class="form-control" id="inputItemName" type="text" placeholder="Keerisamba 5Kg">
+                                            <span class="control-error" id="lblitmname"></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="inputItemPackSize">Pack Size</label>
                                             <input class="form-control" id="inputItemPackSize" multiple type="text" placeholder="Kg/g/l/ml...">
+                                            <span class="control-error" id="lblitmpacksize"></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="inputItemPrice">Price</label>
                                             <input class="form-control" id="inputItemPrice" type="number" placeholder="0000.00">
+                                            <span class="control-error" id="lblitmprice"></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="inputItemQuantity">Quantity</label>
                                             <input class="form-control " id="inputItemQuantity" type="number" placeholder="0000">
+                                            <span class="control-error" id="lblitmqty"></span>
                                         </div>
                                         <div class="row justify-content-end">
                                             <div class="col-7 me-0">
@@ -238,23 +242,27 @@
                                     <div class="mb-3">
                                         <label class="form-label" for="inputIName">Item Name</label>
                                         <input class="form-control" id="inputIName" type="text">
+                                        <span class="control-error" id="lblitamname"></span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputIPacketSize">Pack Size</label>
                                         <input class="form-control" id="inputIPacketSize" multiple type="text">
+                                        <span class="control-error" id="lblitampacksize"></span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputIPrice">Price</label>
                                         <input class="form-control" id="inputIPrice" type="number">
+                                        <span class="control-error" id="lblitamprice"></span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputIQuantity">Quantity</label>
                                         <input class="form-control " id="inputIQuantity" type="number">
+                                        <span class="control-error" id="lblitamqty"></span>
                                     </div>
                                     <div class="row justify-content-end">
                                         <div class="col-7 ">
-                                            <button class="btn btn-warning text-white ms-2" type="button">Update Item</button>
-                                            <button class="btn btn-primary" type="button">Reset</button>
+                                            <button class="btn btn-warning text-white ms-2" type="button" id="updateItem">Update Item</button>
+                                            <button class="btn btn-primary" type="button" id="btnReset">Reset</button>
                                             <button class="btn btn-secondary " data-bs-dismiss="modal" type="button">Close</button>
                                         </div>
                                     </div>
@@ -298,9 +306,15 @@
 
 <script>
 
+    $("#searchBar").focus();
+
     var items=[];
 
     $("#btnSaveItem").click(function (){
+       saveItem();
+    });
+
+    function saveItem(){
         let itemCode = $("#ItemCode").text();
         let itemName = $("#inputItemName").val();
         let packSize = $("#inputItemPackSize").val();
@@ -349,7 +363,7 @@
 
         bindRowClickEvents();
 
-    });
+    }
 
     function loadAllItems(){
         $(".tblItems").empty();
@@ -408,24 +422,14 @@
 
         let search = $("#searchBar").val();
 
-        for (let i = 0; i < items.length; i++) {
-            let code = items[i].code;
-            let name =  items[i].name;
-            let packSize =  items[i].packSize;
-            let price =  items[i].price;
-            let quantity =  items[i].qty;
+        let item = searchItem(search);
 
-            if(search == code || search == name){
+                $("#ICode").text(item.code);
+                $("#inputIName").val(item.name);
+                $("#inputIPacketSize").val(item.packSize);
+                $("#inputIPrice").val(item.price);
+                $("#inputIQuantity").val(item.qty);
 
-                $("#ICode").text(code);
-                $("#inputIName").val(name);
-                $("#inputIPacketSize").val(packSize);
-                $("#inputIPrice").val(price);
-                $("#inputIQuantity").val(quantity);
-
-            }
-
-        }
 
     });
 
@@ -445,30 +449,235 @@
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                    'Deleted!',
-                    'Item ' +search + ' has been deleted.',
-                    'success'
-                )
 
-                for (let i = 0; i < items.length; i++) {
-                    let id = items[i].id;
-                    let name = items[i].name;
-
-                    if (id == search || name == search){
-                        items.splice(i,1);
-                    }
+                if (deleteItem(search)) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Item ' +search + ' has been deleted successfully',
+                        'success'
+                    )
+                } else {
+                    alert("No such Item to delete. please check the code or name");
                 }
 
-                loadAllItems();
+                loadAllItems()
 
-                loadItemNames();
+                loadItemNames()
 
                 console.log(items);
 
             }
         })
     });
+
+    $("#updateItem").click(function () {
+
+        let search = $("#searchBar").val();
+
+        let response = updateItem(search);
+        if (response) {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Item has been updated successfully...',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        } else {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Unsuccessful...',
+                showConfirmButton: false,
+                timer: 1500
+            })
+
+        }
+    });
+
+    $("#btnReset").click(function (){
+        let typedItm = $("#searchBar").val();
+        let item = searchItem(typedItm);
+        if (item != null) {
+            setTextfieldValues(item.name, item.packSize, item.price, item.qty);
+        } else {
+            alert("There is no item available for that " + typedItm);
+            setTextfieldValues("", "", "", "");
+        }
+    });
+
+    function setTextfieldValues( name, packSize,price, qty) {
+
+        $("#inputIName").val(name);
+        $("#inputIPacketSize").val(packSize);
+        $("#inputIPrice").val(price);
+        $("#inputIQuantity").val(qty);
+    }
+
+    function updateItem(itm) {
+        let item = searchItem(itm);
+        if (item != null) {
+
+            item.name = $("#inputIName").val();
+            item.packSize = $("#inputIPacketSize").val();
+            item.price = $("#inputIPrice").val();
+            item.qty = $("#inputIQuantity").val();
+
+            loadAllItems()
+
+            loadItemNames()
+
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    function deleteItem(itm) {
+        let item = searchItem(itm);
+        if (item != null) {
+            let indexNumber = items.indexOf(item);
+            items.splice(indexNumber, 1);
+            loadAllItems()
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function searchItem(itm) {
+        for (let item of items) {
+            if (item.code == itm || item.name == itm) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+
+    $("#inputItemName").focus();
+
+    const itmNameRegEx = /^[A-z ]{5,40}$/;
+    const itmPackSizesRegEx = /^[1-9][0-9]{0,5}(g|kg|ml|l)$/;
+    const itmPriceRegEx = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
+    const itmQtyRegEx = /^[1-9][0-9]{0,3}$/;
+
+    let itemValidations = [];
+    itemValidations.push({reg: itmNameRegEx, field: $('#inputItemName'),error:'Item Name Pattern is Wrong : A-z 5-40'});
+    itemValidations.push({reg: itmPackSizesRegEx, field: $('#inputItemPackSize'),error:'Item PackSizes Pattern is Wrong : 0-9 with g/kg/ml/l'});
+    itemValidations.push({reg: itmPriceRegEx, field: $('#inputItemPrice'),error:'Item Price Pattern is Wrong : 100 or 100.00'});
+    itemValidations.push({reg: itmQtyRegEx, field: $('#inputItemQuantity'),error:'Item Quantity Pattern is Wrong : 1-9'});
+
+
+    $("#inputItemName,#inputItemPackSize,#inputItemPrice,#inputItemQuantity").on('keydown', function (event) {
+        if (event.key == "Tab") {
+            event.preventDefault();
+        }
+    });
+
+    $("#inputItemName,#inputItemPackSize,#inputItemPrice,#inputItemQuantity").on('keyup', function (event) {
+        checkValidity();
+    });
+
+    $("#inputItemName,#inputItemPackSize,#inputItemPrice,#inputItemQuantity").on('blur', function (event) {
+        checkValidity();
+    });
+
+
+    $("#inputItemName").on('keydown', function (event) {
+        if (event.key == "Enter" && check(itmNameRegEx, $("#inputItemName"))) {
+            $("#inputItemPackSize").focus();
+        } else {
+            focusText($("#inputItemName"));
+        }
+    });
+
+
+    $("#inputItemPackSize").on('keydown', function (event) {
+        if (event.key == "Enter" && check(itmPackSizesRegEx, $("#inputItemPackSize"))) {
+            focusText($("#inputItemPrice"));
+        }
+    });
+
+
+    $("#inputItemPrice").on('keydown', function (event) {
+        if (event.key == "Enter" && check(itmPriceRegEx, $("#inputItemPrice"))) {
+            focusText($("#inputItemQuantity"));
+        }
+    });
+
+
+    $("#inputItemQuantity").on('keydown', function (event) {
+        if (event.key == "Enter" && check(itmQtyRegEx, $("#inputItemQuantity"))) {
+            let res = confirm("Do you want to add this item.?");
+            if (res) {
+                saveItem();
+                clearAllTexts();
+            }
+        }
+    });
+
+    function checkValidity() {
+        let errorCount=0;
+        for (let validation of itemValidations) {
+            if (check(validation.reg,validation.field)) {
+                textSuccess(validation.field,"");
+            } else {
+                errorCount=errorCount+1;
+                setTextError(validation.field,validation.error);
+            }
+
+        }
+        setButtonState(errorCount);
+
+    }
+
+    function check(regex, txtField) {
+        let inputValue = txtField.val();
+        return regex.test(inputValue) ? true : false;
+    }
+
+    function setTextError(txtField,error) {
+        if (txtField.val().length <= 0) {
+            defaultText(txtField,"");
+        } else {
+            txtField.css('border', '2px solid red');
+            txtField.parent().children('span').text(error);
+        }
+    }
+
+    function textSuccess(txtField,error) {
+        if (txtField.val().length <= 0) {
+            defaultText(txtField,"");
+        } else {
+            txtField.css('border', '2px solid green');
+            txtField.parent().children('span').text(error);
+        }
+    }
+
+    function defaultText(txtField,error) {
+        txtField.css("border", "1px solid #ced4da");
+        txtField.parent().children('span').text(error);
+    }
+
+    function focusText(txtField) {
+        txtField.focus();
+    }
+
+    function setButtonState(value){
+        if (value>0){
+            $("#btnSaveItem").attr('disabled',true);
+        }else{
+            $("#btnSaveItem").attr('disabled',false);
+        }
+    }
+
+    function clearAllTexts() {
+        $("#inputItemName").focus();
+        $("#inputItemName,#inputItemPackSize,#inputItemPrice,#inputItemQuantity").val("");
+        checkValidity();
+    }
 
 
 </script>
