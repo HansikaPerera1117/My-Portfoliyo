@@ -415,7 +415,7 @@
             let price =  items[i].price;
             let quantity =  items[i].qty;
 
-            if(search == code){
+            if(search == code || search == name){
 
                 $("#ICode").text(code);
                 $("#inputIName").val(name);
@@ -425,14 +425,6 @@
 
             }
 
-            if(search == name){
-
-                $("#ICode").text(code);
-                $("#inputIName").val(name);
-                $("#inputIPacketSize").val(packSize);
-                $("#inputIPrice").val(price);
-                $("#inputIQuantity").val(quantity);
-            }
         }
 
     });

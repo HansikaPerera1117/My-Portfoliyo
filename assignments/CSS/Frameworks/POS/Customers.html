@@ -143,14 +143,17 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="inputCustomerName">Customer Name</label>
                                             <input class="form-control" id="inputCustomerName" type="text" placeholder="Name with initials">
+                                            <span class="control-error" id="lblcusname"></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="inputCustomerAddress">Customer Address</label>
                                             <input class="form-control" id="inputCustomerAddress" multiple type="text" placeholder="1234 Main St Panadura">
+                                            <span class="control-error" id="lblcusaddress"></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="inputCustomerContactNo">Contact Number</label>
                                             <input class="form-control" id="inputCustomerContactNo" type="tel" placeholder="+9400000000">
+                                            <span class="control-error" id="lblcuscontactno"></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="radioGender">Gender</label>
@@ -176,6 +179,7 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="inputCustomerSalary">Customer Salary</label>
                                             <input class="form-control " id="inputCustomerSalary" type="number" placeholder="0000.00">
+                                            <span class="control-error" id="lblcussalary"></span>
                                         </div>
                                         <div class="row justify-content-end">
                                             <div class="col-8 me-0">
@@ -258,14 +262,20 @@
                                     <div class="mb-3">
                                         <label class="form-label" for="inputCName">Customer Name</label>
                                         <input class="form-control" id="inputCName" type="text">
+                                        <span class="control-error" id="lblcustname"></span>
+
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputCAddress">Customer Address</label>
                                         <input class="form-control" id="inputCAddress" multiple type="text">
+                                        <span class="control-error" id="lblcustaddress"></span>
+
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputCContact">Contact Number</label>
                                         <input class="form-control" id="inputCContact" type="tel">
+                                        <span class="control-error" id="lblcustcontactno"></span>
+
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="radioGender">Gender</label>
@@ -291,11 +301,13 @@
                                     <div class="mb-3">
                                         <label class="form-label" for="inputCSalary">Customer Salary</label>
                                         <input class="form-control " id="inputCSalary" type="number">
+                                        <span class="control-error" id="lblcustsalary"></span>
+
                                     </div>
                                     <div class="row justify-content-end">
                                         <div class="col-8 ">
-                                            <button class="btn btn-warning text-white ms-2" type="button">Update Customer</button>
-                                            <button class="btn btn-primary" type="button">Reset</button>
+                                            <button class="btn btn-warning text-white ms-2" type="button" id="updateCustomer">Update Customer</button>
+                                            <button class="btn btn-primary" type="button" id="btnReset">Reset</button>
                                             <button class="btn btn-secondary " data-bs-dismiss="modal" type="button">Close</button>
                                         </div>
                                     </div>
@@ -338,9 +350,16 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.37/dist/sweetalert2.all.min.js"></script>
 <script>
 
+    $("#searchBar").focus();
+
+
     var customers=[];
 
     $("#btnSaveCustomer").click(function (){
+        saveCustomer();
+    });
+
+    function saveCustomer(){
         let customerID = $("#CustomerId").text();
         let customerName = $("#inputCustomerName").val();
         let customerAddress = $("#inputCustomerAddress").val();
@@ -405,9 +424,7 @@
 
         bindRowClickEvents();
 
-
-    });
-
+    }
     function loadAllCustomers(){
         $(".tblCustomer").empty();
 
@@ -463,62 +480,25 @@
 
         let search = $("#searchBar").val();
 
-        for (let i = 0; i < customers.length; i++) {
-           let id = customers[i].id;
-           let name = customers[i].name;
-            let address = customers[i].address;
-            let contact = customers[i].contact;
-            let gender = customers[i].gender;
-            let salary = customers[i].salary;
+        let customer = searchCustomer(search);
 
+             $("#CID").text(customer.id);
+             $("#inputCName").val(customer.name);
+             $("#inputCAddress").val(customer.address);
+             $("#inputCContact").val(customer.contact);
 
-           if(search == id){
+             // ================aul start   deweniyata dana kenage gender eka pennanwa.e gender eke ayage gender eka pennanwa.anith 1 weni gender eke ekkage gender eka pennanne na================
+             if (customer.gender == "Male") {
+                 $("#Male").prop('checked', true);
+                 $("#Female").prop('checked', false);
+             }
+             if (customer.gender == "Female") {
+                 $("#Female").prop('checked', true);
+                 $("#Male").prop('checked', false);
+             }
+             // ================aul end================
 
-
-               $("#CID").text(id);
-               $("#inputCName").val(name);
-               $("#inputCAddress").val(address);
-               $("#inputCContact").val(contact);
-
-               // ================aul start   deweniyata dana kenage gender eka pennanwa.e gender eke ayage gender eka pennanwa.anith 1 weni gender eke ekkage gender eka pennanne na================
-               if (gender == "Male"){
-                   $("#Male").attr('checked', true);
-                   $("#Female").attr('checked', false);
-               }
-               if (gender == "Female"){
-                   $("#Female").attr('checked', true);
-                   $("#Male").attr('checked', false);
-               }
-
-               // ================aul end================
-
-               $("#inputCSalary").val(salary);
-
-
-           }
-
-            if(search == name){
-
-
-                $("#CID").text(id);
-                $("#inputCName").val(name);
-                $("#inputCAddress").val(address);
-                $("#inputCContact").val(contact);
-
-                if (gender == "Male"){
-                    $("#Male").attr('checked', true);
-                    $("#Female").attr('checked', false);
-                }
-                if (gender == "Female"){
-                    $("#Female").attr('checked', true);
-                    $("#Male").attr('checked', false);
-                }
-
-                $("#inputCSalary").val(salary);
-
-            }
-        }
-
+             $("#inputCSalary").val(customer.salary);
     });
 
     $("#btnCustomerDelete").click(function (){
@@ -542,14 +522,10 @@
                     'Customer ' +search + ' has been deleted.',
                     'success'
                 )
-
-                for (let i = 0; i < customers.length; i++) {
-                    let id = customers[i].id;
-                    let name = customers[i].name;
-
-                    if (id == search || name == search){
-                        customers.splice(i,1);
-                    }
+                if (deleteCustomer(search)) {
+                    alert("Customer Successfully Deleted..");
+                } else {
+                    alert("No such customer to delete. please check the id");
                 }
 
                 loadAllCustomers();
@@ -561,6 +537,247 @@
             }
         })
     });
+
+    $("#updateCustomer").click(function () {
+
+        let search = $("#searchBar").val();
+
+        let response = updateCustomer(search);
+        if (response) {
+            alert("Customer Updated Successfully");
+        } else {
+            alert("Update Failed..!");
+
+        }
+    });
+
+    $("#btnReset").click(function (){
+        let typedCus = $("#searchBar").val();
+        let customer = searchCustomer(typedCus);
+        if (customer != null) {
+            setTextfieldValues(customer.name, customer.address,customer.contact, customer.salary);
+        } else {
+            alert("There is no cusotmer available for that " + typedCus);
+            setTextfieldValues("", "", "", "");
+        }
+    });
+
+    function setTextfieldValues( name, address,contact, salary) {
+
+        $("#inputCName").val(name);
+        $("#inputCAddress").val(address);
+        $("#inputCContact").val(contact);
+        $("#inputCSalary").val(salary);
+    }
+
+    function updateCustomer(cust) {
+        let customer = searchCustomer(cust);
+        if (customer != null) {
+            customer.name =   $("#inputCName").val();
+            customer.address = $("#inputCAddress").val();
+            customer.contact =$("#inputCContact").val();
+            customer.salary =$("#inputCSalary").val();
+
+            loadAllCustomers();
+
+            loadCustomerNames();
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    function deleteCustomer(cust) {
+        let customer = searchCustomer(cust);
+        if (customer != null) {
+            let indexNumber = customers.indexOf(customer);
+            customers.splice(indexNumber, 1);
+            loadAllCustomers();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function searchCustomer(cus) {
+        for (let customer of customers) {
+            if (customer.id == cus || customer.name == cus) {
+                return customer;
+            }
+        }
+        return null;
+    }
+
+
+    $("#inputCustomerName").focus();
+
+    const cusNameRegEx = /^[A-z ]{5,20}$/;
+    const cusAddressRegEx = /^[0-9/A-z. ,]{15,}$/;
+    const cusContactNoRegEx = /^(011|070|071|072|074|075|076|077|078)[0-9]{7}$/;
+    const cusSalaryRegEx = /^[0-9]{3,}[.]?[0-9]{1,2}$/;
+
+    let customerValidations = [];
+    customerValidations.push({reg: cusNameRegEx, field: $('#inputCustomerName'),error:'Customer Name Pattern is Wrong : A-z 5-20'});
+    customerValidations.push({reg: cusAddressRegEx, field: $('#inputCustomerAddress'),error:'Customer Address Pattern is Wrong : A-z 0-9'});
+    customerValidations.push({reg: cusContactNoRegEx, field: $('#inputCustomerContactNo'),error:'Customer Contact No Pattern is Wrong : start : 011|070|071|072|074|075|076|077|078'});
+    customerValidations.push({reg: cusSalaryRegEx, field: $('#inputCustomerSalary'),error:'Customer Salary Pattern is Wrong : 100 or 100.00'});
+
+
+    $("#inputCustomerName,#inputCustomerAddress,#inputCustomerContactNo,#inputCustomerSalary").on('keydown', function (event) {
+        if (event.key == "Tab") {
+            event.preventDefault();
+        }
+    });
+
+    $("#inputCustomerName,#inputCustomerAddress,#inputCustomerContactNo,#inputCustomerSalary").on('keyup', function (event) {
+        checkValidity();
+    });
+
+    $("#inputCustomerName,#inputCustomerAddress,#inputCustomerContactNo,#inputCustomerSalary").on('blur', function (event) {
+        checkValidity();
+    });
+
+
+    $("#inputCustomerName").on('keydown', function (event) {
+        if (event.key == "Enter" && check(cusNameRegEx, $("#inputCustomerName"))) {
+            $("#inputCustomerAddress").focus();
+        } else {
+            focusText($("#inputCustomerName"));
+        }
+    });
+
+
+    $("#inputCustomerAddress").on('keydown', function (event) {
+        if (event.key == "Enter" && check(cusAddressRegEx, $("#inputCustomerAddress"))) {
+            focusText($("#inputCustomerContactNo"));
+        }
+    });
+
+
+    $("#inputCustomerContactNo").on('keydown', function (event) {
+        if (event.key == "Enter" && check(cusContactNoRegEx, $("#inputCustomerContactNo"))) {
+            focusText($("#inputCustomerSalary"));
+        }
+    });
+
+
+    $("#inputCustomerSalary").on('keydown', function (event) {
+        if (event.key == "Enter" && check(cusSalaryRegEx, $("#inputCustomerSalary"))) {
+            let res = confirm("Do you want to add this customer.?");
+            if (res) {
+                saveCustomer();
+                clearAllTexts();
+            }
+        }
+    });
+
+    function checkValidity() {
+        let errorCount=0;
+        for (let validation of customerValidations) {
+            if (check(validation.reg,validation.field)) {
+                textSuccess(validation.field,"");
+            } else {
+                errorCount=errorCount+1;
+                setTextError(validation.field,validation.error);
+            }
+
+        }
+        setButtonState(errorCount);
+
+    }
+
+    function check(regex, txtField) {
+        let inputValue = txtField.val();
+        return regex.test(inputValue) ? true : false;
+    }
+
+    function setTextError(txtField,error) {
+        if (txtField.val().length <= 0) {
+            defaultText(txtField,"");
+        } else {
+            txtField.css('border', '2px solid red');
+            txtField.parent().children('span').text(error);
+        }
+    }
+
+    function textSuccess(txtField,error) {
+        if (txtField.val().length <= 0) {
+            defaultText(txtField,"");
+        } else {
+            txtField.css('border', '2px solid green');
+            txtField.parent().children('span').text(error);
+        }
+    }
+
+    function defaultText(txtField,error) {
+        txtField.css("border", "1px solid #ced4da");
+        txtField.parent().children('span').text(error);
+    }
+
+    function focusText(txtField) {
+        txtField.focus();
+    }
+
+    function setButtonState(value){
+        if (value>0){
+            $("#btnSaveCustomer").attr('disabled',true);
+        }else{
+            $("#btnSaveCustomer").attr('disabled',false);
+        }
+    }
+
+    function clearAllTexts() {
+        $("#inputCustomerName").focus();
+        $("#inputCustomerName,#inputCustomerAddress,#inputCustomerContactNo,#inputCustomerSalary").val("");
+        $("#Female").prop('checked', false);
+        $("#Male").prop('checked', false);
+        checkValidity();
+    }
+
+    // let customerValidations2 = [];
+    // customerValidations.push({reg: cusNameRegEx, field: $('#inputCName'),error:'Customer Name Pattern is Wrong : A-z 5-20'});
+    // customerValidations.push({reg: cusAddressRegEx, field: $('#inputCAddress'),error:'Customer Address Pattern is Wrong : A-z 0-9'});
+    // customerValidations.push({reg: cusContactNoRegEx, field: $('#inputCContact'),error:'Customer Contact No Pattern is Wrong : start : 011|070|071|072|074|075|076|077|078'});
+    // customerValidations.push({reg: cusSalaryRegEx, field: $('#inputCSalary'),error:'Customer Salary Pattern is Wrong : 100 or 100.00'});
+    //
+    // $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('keydown', function (event) {
+    //     if (event.key == "Tab") {
+    //         event.preventDefault();
+    //     }
+    // });
+    //
+    // $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('keyup', function (event) {
+    //     checkValidity();
+    // });
+    //
+    // $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('blur', function (event) {
+    //     checkValidity();
+    // });
+    //
+    //
+    // $("#inputCName").on('keydown', function (event) {
+    //     if (event.key == "Enter" && check(cusNameRegEx, $("#inputCName"))) {
+    //         $("#inputCAddress").focus();
+    //     } else {
+    //         focusText($("#inputCName"));
+    //     }
+    // });
+    //
+    //
+    // $("#inputCAddress").on('keydown', function (event) {
+    //     if (event.key == "Enter" && check(cusAddressRegEx, $("#inputCAddress"))) {
+    //         focusText($("#inputCContact"));
+    //     }
+    // });
+    //
+    //
+    // $("#inputCContact").on('keydown', function (event) {
+    //     if (event.key == "Enter" && check(cusContactNoRegEx, $("#inputCContact"))) {
+    //         focusText($("#inputCSalary"));
+    //     }
+    // });
+
 
 </script>
 </body>

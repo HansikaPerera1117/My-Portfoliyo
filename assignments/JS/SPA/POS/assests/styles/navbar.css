@@ -121,15 +121,7 @@
     position: relative;
     top: 23px;
 }
-#card1{
-    height: 355px;
-    background-color: rgba(236, 236, 236, 1);
-}
-#card2{
-    background-color: rgba(236, 236, 236, 1);
-}
-#card3{
-    height: 355px;
+.card{
     background-color: rgba(236, 236, 236, 1);
 }
 

@@ -236,3 +236,7 @@
     font-size: 27px;
     font-family: 'Ubuntu', sans-serif;
 }
+.control-error{
+    color: red;
+    font-size: 12px;
+}
