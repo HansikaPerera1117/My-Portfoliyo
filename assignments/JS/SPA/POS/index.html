@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Framework POS System</title>
+    <title>SPA POS System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="assests/css/bootstrap.min.css" rel="stylesheet">
 
@@ -218,32 +218,29 @@
         <div class="col-8 " style="height: 240px">
             <div class="container text-center">
                 <div class="row ms-1 me-1">
-                    <div class="col searchBox">
+                    <form class="col searchBox" id="sbox">
                         <div class="row">
                             <div class="col text-start searchBoxHeading">
                                 <span class="search">Search Customer</span>
                             </div>
                             <div class="row align-items-center" style="height: 85px">
                                 <div class="col-9">
-                                    <input class="form-control exampleDataList"  placeholder="Input Name / NIC / Tp Here" style="height: 53px">
+                                    <input class="form-control exampleDataList" id="searchBar" placeholder="Input ID / Name Here" style="height: 53px">
                                 </div>
                                 <div class="col-3" >
-                                    <select class="form-select" aria-label="Default select example" style="height: 53px">
-                                        <option selected>Name</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <select id="cmbNames" class="form-select" aria-label="Default select example" style="height: 53px">
+                                        <option selected>Customer Names</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="row align-items-center" style="height: 70px">
                                 <div class="col text-start" >
-                                    <button class="btn searchButton" data-bs-target="#CustomerDetailsModal" data-bs-toggle="modal" type="button">Search</button>
+                                    <button class="btn searchButton"  id="searchButton" data-bs-target="#CustomerDetailsModal" data-bs-toggle="modal" type="button">Search</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -263,37 +260,40 @@
                                     <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <section>
+                                    <form id="newCustomerForm">
                                         <div class="mb-3">
-                                            <span style="font-size: 20px"><strong>Customer ID : C001</strong></span>
+                                            <span style="font-size: 20px" id="CusID"><strong>Customer ID : <label class="form-label" for="CusID" id="CustomerId">C001</label></strong></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="inputCustomerName">Customer Name</label>
                                             <input class="form-control" id="inputCustomerName" type="text" placeholder="Name with initials">
+                                            <span class="control-error" id="lblcusname"></span>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputCusAddress">Customer Address</label>
-                                            <input class="form-control" id="inputCusAddress" multiple type="text" placeholder="1234 Main St Panadura">
+                                            <label class="form-label" for="inputCustomerAddress">Customer Address</label>
+                                            <input class="form-control" id="inputCustomerAddress" multiple type="text" placeholder="1234 Main St Panadura">
+                                            <span class="control-error" id="lblcusaddress"></span>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputContactNo">Contact Number</label>
-                                            <input class="form-control" id="inputContactNo" type="tel" placeholder="+9400000000">
+                                            <label class="form-label" for="inputCustomerContactNo">Contact Number</label>
+                                            <input class="form-control" id="inputCustomerContactNo" type="tel" placeholder="+9400000000">
+                                            <span class="control-error" id="lblcuscontactno"></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="radioGender">Gender</label>
                                             <div class="row" id="radioGender">
                                                 <div class="col">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioMale">
-                                                        <label class="form-check-label" for="radioMale">
+                                                        <input class="form-check-input ,Male" type="radio" name="flexRadioDefault" id="radioMale">
+                                                        <label class="form-check-label ,Male" for="radioMale">
                                                             Male
                                                         </label>
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioFemale" checked>
-                                                        <label class="form-check-label" for="radioFemale">
+                                                        <input class="form-check-input ,Female" type="radio" name="flexRadioDefault" id="radioFemale">
+                                                        <label class="form-check-label ,Female" for="radioFemale">
                                                             Female
                                                         </label>
                                                     </div>
@@ -301,17 +301,18 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputCSalary">Customer Salary</label>
-                                            <input class="form-control " id="inputCSalary" type="number" placeholder="0000.00">
+                                            <label class="form-label" for="inputCustomerSalary">Customer Salary</label>
+                                            <input class="form-control " id="inputCustomerSalary" type="number" placeholder="0000.00">
+                                            <span class="control-error" id="lblcussalary"></span>
                                         </div>
                                         <div class="row justify-content-end">
                                             <div class="col-8 me-0">
-                                                <button class="btn text-white ms-4 " style="background-color: rgb(227,133,133)" type="button">Save Customer</button>
-                                                <button class="btn btn-primary" type="button">Renew</button>
+                                                <button class="btn text-white ms-4 " style="background-color: rgb(227,133,133)" type="button" id="btnSaveCustomer">Save Customer</button>
+                                                <button class="btn btn-primary" type="reset" form="newCustomerForm">Renew</button>
                                                 <button class="btn btn-secondary " data-bs-dismiss="modal" type="button">Close</button>
                                             </div>
                                         </div>
-                                    </section>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -346,16 +347,8 @@
                                                 <th>Salary</th>
                                             </tr>
                                             </thead>
-                                            <tbdoy>
-                                                <tr>
-                                                    <td>C001</td>
-                                                    <td>Hansika</td>
-                                                    <td>Kadawatha</td>
-                                                    <td>0112244668</td>
-                                                    <td>Female</td>
-                                                    <td>56000</td>
-                                                </tr>
-                                            </tbdoy>
+                                            <tbody class="tblCustomer">
+                                            </tbody>
                                         </table>
                                         <div class="row justify-content-end">
                                             <div class="col-1 me-0">
@@ -376,30 +369,36 @@
 
         <div class="col-12" style="height: 80px">
             <div class="btn-group mt-2 ms-5" role="group" aria-label="Basic mixed styles example" style="height: 55px">
-                <button type="button" class="btn btn-danger"  style="width: 90px">Delete</button>
+                <button  id="btnCustomerDelete" type="button" class="btn btn-danger"  style="width: 90px">Delete</button>
                 <button type="button" class="btn btn-primary" style="width: 90px" data-bs-target="#CustomerDetailsModal" data-bs-toggle="modal" type="button">Details</button>
 
                 <!--------------------- Customer Details Modal start----------------->
-                <div aria-hidden="true" aria-labelledby="CustomerDetailsModalLabel" class="modal fade" id="CustomerDetailsModal" tabindex="-1">
+                <div aria-hidden="true" aria-labelledby="CustomerDetailsModalLabel" class="modal fade" id="CustomerDetailsModal"  tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="CustomerDetailsModalLabel"  style="font-size: 20px"><strong>Customer ID : C001</strong></h5>
+                                <h5 class="modal-title" id="CustomerDetailsModalLabel"  style="font-size: 20px"><strong>Customer ID : <label class="form-label" id="CID">C001</label></strong></h5>
                                 <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                             </div>
                             <div class="modal-body">
-                                <section>
+                                <form>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputCName">Customer Name</label>
                                         <input class="form-control" id="inputCName" type="text">
+                                        <span class="control-error" id="lblcustname"></span>
+
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="inputCAddress">Customer Address</label>
                                         <input class="form-control" id="inputCAddress" multiple type="text">
+                                        <span class="control-error" id="lblcustaddress"></span>
+
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputContact">Contact Number</label>
-                                        <input class="form-control" id="inputContact" type="tel">
+                                        <label class="form-label" for="inputCContact">Contact Number</label>
+                                        <input class="form-control" id="inputCContact" type="tel">
+                                        <span class="control-error" id="lblcustcontactno"></span>
+
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="radioGender">Gender</label>
@@ -414,7 +413,7 @@
                                             </div>
                                             <div class="col">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Female" disabled>
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Female"  disabled>
                                                     <label class="form-check-label" for="radioFemale">
                                                         Female
                                                     </label>
@@ -423,25 +422,27 @@
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputCusSalary">Customer Salary</label>
-                                        <input class="form-control " id="inputCusSalary" type="number">
+                                        <label class="form-label" for="inputCSalary">Customer Salary</label>
+                                        <input class="form-control " id="inputCSalary" type="number">
+                                        <span class="control-error" id="lblcustsalary"></span>
+
                                     </div>
                                     <div class="row justify-content-end">
                                         <div class="col-8 ">
-                                            <button class="btn btn-warning text-white ms-2" type="button">Update Customer</button>
-                                            <button class="btn btn-primary" type="button">Reset</button>
+                                            <button class="btn btn-warning text-white ms-2" type="button" id="updateCustomer">Update Customer</button>
+                                            <button class="btn btn-primary" type="button" id="btnReset">Reset</button>
                                             <button class="btn btn-secondary " data-bs-dismiss="modal" type="button">Close</button>
                                         </div>
                                     </div>
-                                </section>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!---------------------Customer Details Modal end----------------->
 
+                <button type="reset" form="sbox"  class="btn btn-success" style="width: 70px">Clear</button>
 
-                <button type="button" class="btn btn-success" style="width: 70px">Clear</button>
             </div>
         </div>
 
@@ -458,16 +459,8 @@
                     <th>Salary</th>
                 </tr>
                 </thead>
-                <tbdoy>
-                    <tr>
-                        <td>C001</td>
-                        <td>Hansika</td>
-                        <td>Kadawatha</td>
-                        <td>0112244668</td>
-                        <td>Female</td>
-                        <td>56000</td>
-                    </tr>
-                </tbdoy>
+                <tbody class="tblCustomer">
+                </tbody>
             </table>
         </div>
     </div>
@@ -1151,8 +1144,11 @@
 
 <script src="assests/js/bootstrap.min.js"></script>
 <script src="assests/JQuery/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.37/dist/sweetalert2.all.min.js"></script>
 <script src="db/db.js"></script>
 <script src="controllers/DashboardController.js"></script>
+<script src="controllers/CustomerController.js"></script>
+
 </body>
 
 </html>
