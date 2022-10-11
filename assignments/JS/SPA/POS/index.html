@@ -370,6 +370,7 @@
         <div class="col-12" style="height: 80px">
             <div class="btn-group mt-2 ms-5" role="group" aria-label="Basic mixed styles example" style="height: 55px">
                 <button  id="btnCustomerDelete" type="button" class="btn btn-danger"  style="width: 90px">Delete</button>
+
                 <button type="button" class="btn btn-primary" style="width: 90px" data-bs-target="#CustomerDetailsModal" data-bs-toggle="modal" type="button">Details</button>
 
                 <!--------------------- Customer Details Modal start----------------->
@@ -489,32 +490,29 @@
         <div class="col-8 " style="height: 240px">
             <div class="container text-center">
                 <div class="row ms-1 me-1">
-                    <div class="col searchBox">
+                    <form class="col searchBox" id="sItemBox">
                         <div class="row">
                             <div class="col text-start searchBoxHeading">
                                 <span  class="search">Search Items</span>
                             </div>
                             <div class="row align-items-center" style="height: 85px">
                                 <div class="col-9">
-                                    <input class="form-control exampleDataList"  placeholder="Input Item Name / Code Here" style="height: 53px">
+                                    <input class="form-control exampleDataList" id="ItemSearchBar"  placeholder="Input Item Name / Code Here" style="height: 53px">
                                 </div>
                                 <div class="col-3" >
-                                    <select class="form-select" aria-label="Default select example" style="height: 53px">
-                                        <option selected>Name</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <select class="form-select" id="cmbItemNames" aria-label="Default select example" style="height: 53px">
+                                        <option selected>Item Names</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="row align-items-center" style="height: 70px">
                                 <div class="col text-start" >
-                                    <button class="btn searchButton" data-bs-target="#ItemDetailsModal" data-bs-toggle="modal" type="button">Search</button>
+                                    <button class="btn searchButton" id="ItemSearchButton" data-bs-target="#ItemDetailsModal" data-bs-toggle="modal" type="button">Search</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -534,34 +532,38 @@
                                     <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <section>
+                                    <form id="newItemForm">
                                         <div class="mb-3">
-                                            <span style="font-size: 20px"><strong>Item Code : P001</strong></span>
+                                            <span style="font-size: 20px" id="Code"><strong>Item Code : <label class="form-label" for="Code" id="ItemCode"></label></strong></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="inputItemName">Item Name</label>
                                             <input class="form-control" id="inputItemName" type="text" placeholder="Keerisamba 5Kg">
+                                            <span class="control-error" id="lblitmname"></span>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputPackSize">Pack Size</label>
-                                            <input class="form-control" id="inputPackSize" multiple type="text" placeholder="Kg/g/l/ml...">
+                                            <label class="form-label" for="inputItemPackSize">Pack Size</label>
+                                            <input class="form-control" id="inputItemPackSize" multiple type="text" placeholder="Kg/g/l/ml...">
+                                            <span class="control-error" id="lblitmpacksize"></span>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputPrice">Price</label>
-                                            <input class="form-control" id="inputPrice" type="number" placeholder="0000.00">
+                                            <label class="form-label" for="inputItemPrice">Price</label>
+                                            <input class="form-control" id="inputItemPrice" type="number" placeholder="0000.00">
+                                            <span class="control-error" id="lblitmprice"></span>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputQuantity">Quantity</label>
-                                            <input class="form-control " id="inputQuantity" type="number" placeholder="0000">
+                                            <label class="form-label" for="inputItemQuantity">Quantity</label>
+                                            <input class="form-control " id="inputItemQuantity" type="number" placeholder="0000">
+                                            <span class="control-error" id="lblitmqty"></span>
                                         </div>
                                         <div class="row justify-content-end">
                                             <div class="col-7 me-0">
-                                                <button class="btn text-white ms-3 " style="background-color: rgb(227,133,133)" type="button">Save Item</button>
-                                                <button class="btn btn-primary" type="button">Renew</button>
+                                                <button class="btn text-white ms-3 " style="background-color: rgb(227,133,133)" type="button" id="btnSaveItem">Save Item</button>
+                                                <button class="btn btn-primary" type="reset" form="newItemForm">Renew</button>
                                                 <button class="btn btn-secondary " data-bs-dismiss="modal" type="button">Close</button>
                                             </div>
                                         </div>
-                                    </section>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -570,6 +572,7 @@
 
                 </div>
             </div>
+
             <div class="row me-1" style="height: 80px">
                 <div class="col"></div>
                 <div class="col text-start align-self-end" >
@@ -595,15 +598,9 @@
                                                 <th>Quantity</th>
                                             </tr>
                                             </thead>
-                                            <tbdoy>
-                                                <tr>
-                                                    <td>P001</td>
-                                                    <td>Keerisamba 5Kg</td>
-                                                    <td>5Kg</td>
-                                                    <td>255.00</td>
-                                                    <td>15</td>
-                                                </tr>
-                                            </tbdoy>
+                                            <tbody class="tblItems">
+
+                                            </tbody>
                                         </table>
                                         <div class="row justify-content-end">
                                             <div class="col-1 me-0">
@@ -617,46 +614,50 @@
                     </div>
                     <!--------------------View all Customer Modal end----------------->
 
-
                 </div>
             </div>
         </div>
 
         <div class="col-12" style="height: 80px">
             <div class="btn-group mt-2 ms-5" role="group" aria-label="Basic mixed styles example" style="height: 55px">
-                <button type="button" class="btn btn-danger" style="width: 90px">Delete</button>
-                <button class="btn btn-primary" style="width: 90px" data-bs-target="#ItemDetailsModal" data-bs-toggle="modal" type="button">Details</button>
+                <button type="button" id="btnItemDelete" class="btn btn-danger" style="width: 90px">Delete</button>
+
+                <button class="btn btn-primary"  style="width: 90px" data-bs-target="#ItemDetailsModal" data-bs-toggle="modal" type="button">Details</button>
 
                 <!--------------------- Item Details Modal start----------------->
                 <div aria-hidden="true" aria-labelledby="ItemDetailsModalLabel" class="modal fade" id="ItemDetailsModal" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="ItemDetailsModalLabel"  style="font-size: 20px"><strong>Item Code : P001</strong></h5>
+                                <h5 class="modal-title" id="ItemDetailsModalLabel"  style="font-size: 20px"><strong>Item Code : <label class="form-label" id="ICode">P001</label></strong></h5>
                                 <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                             </div>
                             <div class="modal-body">
                                 <section>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputName">Item Name</label>
-                                        <input class="form-control" id="inputName" type="text">
+                                        <label class="form-label" for="inputIName">Item Name</label>
+                                        <input class="form-control" id="inputIName" type="text">
+                                        <span class="control-error" id="lblitamname"></span>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputPacketSize">Pack Size</label>
-                                        <input class="form-control" id="inputPacketSize" multiple type="text">
+                                        <label class="form-label" for="inputIPacketSize">Pack Size</label>
+                                        <input class="form-control" id="inputIPacketSize" multiple type="text">
+                                        <span class="control-error" id="lblitampacksize"></span>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputItemPrice">Price</label>
-                                        <input class="form-control" id="inputItemPrice" type="number">
+                                        <label class="form-label" for="inputIPrice">Price</label>
+                                        <input class="form-control" id="inputIPrice" type="number">
+                                        <span class="control-error" id="lblitamprice"></span>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label" for="inputItemQuantity">Quantity</label>
-                                        <input class="form-control " id="inputItemQuantity" type="number">
+                                        <label class="form-label" for="inputIQuantity">Quantity</label>
+                                        <input class="form-control " id="inputIQuantity" type="number">
+                                        <span class="control-error" id="lblitamqty"></span>
                                     </div>
                                     <div class="row justify-content-end">
                                         <div class="col-7 ">
-                                            <button class="btn btn-warning text-white ms-2" type="button">Update Item</button>
-                                            <button class="btn btn-primary" type="button">Reset</button>
+                                            <button class="btn btn-warning text-white ms-2" type="button" id="updateItem">Update Item</button>
+                                            <button class="btn btn-primary" type="button" id="ItemBtnReset">Reset</button>
                                             <button class="btn btn-secondary " data-bs-dismiss="modal" type="button">Close</button>
                                         </div>
                                     </div>
@@ -667,13 +668,12 @@
                 </div>
                 <!---------------------Item Details Modal end----------------->
 
+                <button type="reset" form="sItemBox" class="btn btn-success" style="width: 70px">Clear</button>
 
-
-                <button type="button" class="btn btn-success" style="width: 70px">Clear</button>
             </div>
         </div>
 
-        <div class="col-12" style="height:210px">
+        <div class="col-12" style="overflow:scroll;height:210px;overflow:auto">
 
             <table class="table table-bordered table-hover mt-2">
                 <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
@@ -685,16 +685,11 @@
                     <th>Quantity</th>
                 </tr>
                 </thead>
-                <tbdoy>
-                    <tr>
-                        <td>P001</td>
-                        <td>Keerisamba 5Kg</td>
-                        <td>5Kg</td>
-                        <td>255.00</td>
-                        <td>15</td>
-                    </tr>
-                </tbdoy>
+                <tbody class="tblItems">
+
+                </tbody>
             </table>
+
         </div>
     </div>
     <!----------------------main bg end------------------------------------->
@@ -1148,6 +1143,9 @@
 <script src="db/db.js"></script>
 <script src="controllers/DashboardController.js"></script>
 <script src="controllers/CustomerController.js"></script>
+<script src="controllers/ItemController.js"></script>
+
+
 
 </body>
 

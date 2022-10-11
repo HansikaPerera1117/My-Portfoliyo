@@ -138,7 +138,7 @@
                                 <div class="modal-body">
                                     <form id="newItemForm">
                                         <div class="mb-3">
-                                            <span style="font-size: 20px" id="Code"><strong>Item Code : <label class="form-label" for="Code" id="ItemCode">P001</label></strong></span>
+                                            <span style="font-size: 20px" id="Code"><strong>Item Code : <label class="form-label" for="Code" id="ItemCode"></label></strong></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="inputItemName">Item Name</label>
@@ -176,6 +176,7 @@
 
                 </div>
             </div>
+
             <div class="row me-1" style="height: 80px">
                 <div class="col"></div>
                 <div class="col text-start align-self-end" >
@@ -201,9 +202,15 @@
                                                 <th>Quantity</th>
                                             </tr>
                                             </thead>
-                                            <tbody class="tblItems">
-
-                                            </tbody>
+                                            <tbdoy>
+                                                <tr>
+                                                    <td>P001</td>
+                                                    <td>Keerisamba 5Kg</td>
+                                                    <td>5Kg</td>
+                                                    <td>255.00</td>
+                                                    <td>15</td>
+                                                </tr>
+                                            </tbdoy>
                                         </table>
                                         <div class="row justify-content-end">
                                             <div class="col-1 me-0">
@@ -412,11 +419,9 @@
 
     })
 
-
     $("#viewAll").click(function (){
         loadAllItems();
     });
-
 
     $("#searchButton").click(function (){
 

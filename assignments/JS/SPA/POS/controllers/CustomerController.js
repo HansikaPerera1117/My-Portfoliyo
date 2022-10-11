@@ -29,7 +29,6 @@ function generateID(){
         $("#CustomerId").text(GenerateId);
 
     }
-
 }
 
 generateID();
@@ -452,11 +451,17 @@ function clearAllTexts() {
     checkValidity();
 }
 
+//
+// //---------------update customer form validation------------------------
+//
+// $("#inputCName").focus();
+//
 // let customerValidations2 = [];
 // customerValidations.push({reg: cusNameRegEx, field: $('#inputCName'),error:'Customer Name Pattern is Wrong : A-z 5-20'});
 // customerValidations.push({reg: cusAddressRegEx, field: $('#inputCAddress'),error:'Customer Address Pattern is Wrong : A-z 0-9'});
 // customerValidations.push({reg: cusContactNoRegEx, field: $('#inputCContact'),error:'Customer Contact No Pattern is Wrong : start : 011|070|071|072|074|075|076|077|078'});
 // customerValidations.push({reg: cusSalaryRegEx, field: $('#inputCSalary'),error:'Customer Salary Pattern is Wrong : 100 or 100.00'});
+//
 //
 // $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('keydown', function (event) {
 //     if (event.key == "Tab") {
@@ -464,35 +469,112 @@ function clearAllTexts() {
 //     }
 // });
 //
+//
+//
 // $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('keyup', function (event) {
-//     checkValidity();
+//     checkValidityInUpdate();
 // });
 //
 // $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('blur', function (event) {
-//     checkValidity();
+//     checkValidityInUpdate();
 // });
 //
 //
 // $("#inputCName").on('keydown', function (event) {
-//     if (event.key == "Enter" && check(cusNameRegEx, $("#inputCName"))) {
+//     if (event.key == "Enter" && checkInUpdate(cusNameRegEx, $("#inputCName"))) {
 //         $("#inputCAddress").focus();
 //     } else {
-//         focusText($("#inputCName"));
+//         focusTextInUpdate($("#inputCName"));
 //     }
 // });
 //
 //
 // $("#inputCAddress").on('keydown', function (event) {
-//     if (event.key == "Enter" && check(cusAddressRegEx, $("#inputCAddress"))) {
-//         focusText($("#inputCContact"));
+//     if (event.key == "Enter" && checkInUpdate(cusAddressRegEx, $("#inputCAddress"))) {
+//         focusTextInUpdate($("#inputCContact"));
 //     }
 // });
 //
 //
 // $("#inputCContact").on('keydown', function (event) {
-//     if (event.key == "Enter" && check(cusContactNoRegEx, $("#inputCContact"))) {
-//         focusText($("#inputCSalary"));
+//     if (event.key == "Enter" && checkInUpdate(cusContactNoRegEx, $("#inputCContact"))) {
+//         focusTextInUpdate()($("#inputCSalary"));
 //     }
 // });
+//
+//
+// $("#inputCSalary").on('keydown', function (event) {
+//     if (event.key == "Enter" && checkInUpdate(cusSalaryRegEx, $("#inputCSalary"))) {
+//         let res = confirm("Do you want to add this customer.?");
+//         if (res) {
+//             saveCustomer();
+//             clearAllTextsInUpdate();
+//         }
+//     }
+// });
+//
+//
+//
+// function checkValidityInUpdate() {
+//     let errorCount=0;
+//     for (let validation of customerValidations2) {
+//         if (checkInUpdate(validation.reg,validation.field)) {
+//             textSuccessInUpdate(validation.field,"");
+//         } else {
+//             errorCount=errorCount+1;
+//             setTextErrorInUpdate(validation.field,validation.error);
+//         }
+//
+//     }
+//     setButtonStateInUpdate(errorCount);
+//
+// }
+//
+// function checkInUpdate(regex, txtField) {
+//     let inputValue = txtField.val();
+//     return regex.test(inputValue) ? true : false;
+// }
+//
+// function setTextErrorInUpdate(txtField,error) {
+//     if (txtField.val().length <= 0) {
+//         defaultTextInUpdate(txtField,"");
+//     } else {
+//         txtField.css('border', '2px solid red');
+//         txtField.parent().children('span').text(error);
+//     }
+// }
+//
+// function textSuccessInUpdate(txtField,error) {
+//     if (txtField.val().length <= 0) {
+//         defaultTextInUpdate(txtField,"");
+//     } else {
+//         txtField.css('border', '2px solid green');
+//         txtField.parent().children('span').text(error);
+//     }
+// }
+//
+// function defaultTextInUpdate(txtField,error) {
+//     txtField.css("border", "1px solid #ced4da");
+//     txtField.parent().children('span').text(error);
+// }
+//
+// function focusTextInUpdate(txtField) {
+//     txtField.focus();
+// }
+//
+// function setButtonStateInUpdate(value){
+//     if (value>0){
+//         $("#updateCustomer").attr('disabled',true);
+//     }else{
+//         $("#updateCustomer").attr('disabled',false);
+//     }
+// }
+//
+// function clearAllTextsInUpdate() {
+//     $("#inputCName").focus();
+//     $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").val("");
+//     checkValidityInUpdate();
+// }
+//
 
 

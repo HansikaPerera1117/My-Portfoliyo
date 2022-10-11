@@ -1,6 +1,5 @@
 
 
-
 var customers=[];
 
 var items=[];
