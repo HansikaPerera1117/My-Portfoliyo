@@ -89,3 +89,101 @@ $("#selectItem").click(function () {
         }
     }
 });
+
+$("#btnAddToCart").click(function (){
+    addToCart();
+});
+
+function addToCart(){
+    let orderID = $("#OrderId").text();
+    let itemCode = $("#inputPOItemCode").val();
+    let itemName = $("#inputPOItemName").val();
+    let price = $("#inputPOPrice").val();
+    let quantity =  $("#inputPOQtyOnHand").val();
+    let orderItemQty =$("#inputPOOrderQty").val();
+
+    let total = price * orderItemQty;
+
+
+    var addToCartObject = {
+        code: itemCode,
+        name: itemName,
+        price: price,
+        qty: orderItemQty,
+        total: total,
+    }
+
+    // $(".tblCart").empty();
+    var row= `<tr> <td>${addToCartObject.code}</td><td>${addToCartObject.name}</td><td>${addToCartObject.price}</td><td>${addToCartObject.qty}</td><td>${addToCartObject.total}</td></tr>`;
+    $(".tblCart").append(row);
+
+
+
+    var orderDetailsObject = {
+        oId:orderID,
+        code: itemCode,
+        orderItemQty: orderItemQty,
+        total: total,
+    }
+
+    let afterCount = orderDetails.length;
+    console.log(afterCount);
+    let beforCount = afterCount+1;
+    console.log(beforCount);
+
+    orderDetails.push(orderDetailsObject);
+
+    if (beforCount == orderDetails.length){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Item add to cart successfully...',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }else{
+        Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: 'Unsuccessful...',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
+
+    console.log(orderDetails);
+
+    let updateQtyOnHand = manageQtyOnHand(quantity,orderItemQty);
+    console.log(updateQtyOnHand)
+    for (let item of items) {
+        if(itemCode == item.code){
+            item.qty = updateQtyOnHand;
+        }
+    }
+
+    let TOTAL = manageTotal(total);
+
+    $("#Total").text(TOTAL);
+
+    setItemTextfieldValues("","","","","")
+
+}
+
+function setItemTextfieldValues( code, name, price, qtyOHand, orderQty) {
+    $("#inputPOItemCode").val(code);
+    $("#inputPOItemName").val(name);
+    $("#inputPOPrice").val(price);
+    $("#inputPOQtyOnHand").val(qtyOHand);
+    $("#inputPOOrderQty").val(orderQty);
+}
+
+function manageQtyOnHand(qtyOnHand , orderQty){
+    let updatedQtyOnHand = qtyOnHand-orderQty;
+    return updatedQtyOnHand;
+}
+
+function manageTotal(total){
+    let tot += total;
+    return tot;
+}
+
