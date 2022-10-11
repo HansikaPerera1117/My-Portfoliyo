@@ -469,7 +469,7 @@
 </main>
 <!---------------------Customer start------------------------------------>
 
-
+<!---------------------Item start------------------------------------>
 <main id="mainItem" class="container-fluid">
     <!----------------------main bg start------------------------------------->
     <div class="m-2">
@@ -808,7 +808,7 @@
 
                                         </div>
                                         <div class="col-4 align-self-end">
-                                            <button type="button" class="btn bg-warning ms-3 placeOrderButtons" style=" width: 140px;">Add To Cart</button>
+                                            <button id="btnAddToCart" type="button" class="btn bg-warning ms-3 placeOrderButtons" style=" width: 140px">Add To Cart</button>
                                         </div>
                                     </form>
                                 </div>
@@ -850,8 +850,8 @@
                     </div>
                 </div>
 
-                <div class="col-12" style="height: 132px">
-                    <table class="table table-bordered table-hover mt-1">
+                <div class="col-12"  style="overflow:scroll;height:132px;overflow:auto">
+                    <table class="table table-bordered table-hover mt-2">
                         <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
                         <tr>
                             <th>Item Code</th>
@@ -861,15 +861,9 @@
                             <th>Total</th>
                         </tr>
                         </thead>
-                        <tbdoy>
-                            <tr>
-                                <td>P001</td>
-                                <td>Keerisamba 5Kg</td>
-                                <td>255.00</td>
-                                <td>2</td>
-                                <td>510</td>
-                            </tr>
-                        </tbdoy>
+                        <tbody class="tblCart">
+
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -1141,7 +1135,7 @@
 <script src="db/db.js"></script>
 <script src="controllers/DashboardController.js"></script>
 <script src="controllers/CustomerController.js"></script>
-<!--<script src="controllers/ItemController.js"></script>-->
+<script src="controllers/ItemController.js"></script>
 <script src="controllers/placeOrderController.js"></script>
 
 

@@ -1,7 +1,7 @@
 
 $("#ItemSearchBar").focus();
 
-function generateID(){
+function generateItemID(){
     let lastItmId ="";
     for (const item of items) {
         lastItmId = item.code;
@@ -32,7 +32,7 @@ function generateID(){
     }
 }
 
-generateID();
+generateItemID();
 
 $("#btnSaveItem").click(function (){
     saveItem();
@@ -85,9 +85,11 @@ function saveItem(){
 
     loadItemNames();
 
-    generateID();
+    generateItemID();
 
     bindRowClickEvents();
+
+    loadAllItemsForOption();
 
 }
 
