@@ -104,6 +104,8 @@ function saveCustomer(){
 
     bindRowClickEvents();
 
+    loadAllCustomersForOption();
+
 }
 
 function loadAllCustomers(){

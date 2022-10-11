@@ -470,7 +470,6 @@
 <!---------------------Customer start------------------------------------>
 
 
-<!---------------------Item start------------------------------------>
 <main id="mainItem" class="container-fluid">
     <!----------------------main bg start------------------------------------->
     <div class="m-2">
@@ -735,35 +734,35 @@
                                     </div>
                                     <div class="row mt-2 align-items-center" style="height: 38px">
                                         <div class="col-5 " >
-                                            <span class="orderD1">Order ID : D001</span>
+
+                                            <span class="orderD1" id="OID">Order ID : <label class="form-label" for="OID" id="OrderId"></label></span>
                                         </div>
                                         <div class="col-7 text-start" >
-                                            <span class="orderD1">Order Date : 07/06/2022</span>
+                                            <span class="orderD1" id="OD">Order Date : <label class="form-label" for="OD" id="OrderDate"></label></span>
                                         </div>
                                     </div>
                                     <form class="row gy-2 ms-0 text-start" style="margin-top: 2px">
                                         <div class="col-6">
                                             <label for="selectCustomer" class="form-label">Customer :</label>
                                             <select class="form-select " aria-label="Default select example" id="selectCustomer">
-                                                <option selected>C001</option>
                                             </select>
                                         </div>
                                         <div class="col-6">
                                             <label for="inputPOCustomerID" class="form-label">Customer ID :</label>
-                                            <input type="text" class="form-control" id="inputPOCustomerID" placeholder="C001">
+                                            <input type="text" class="form-control" id="inputPOCustomerID">
                                         </div>
                                         <div class="col-6">
                                             <label for="inputPOCName" class="form-label">Name :</label>
-                                            <input type="text" class="form-control" id="inputPOCName" placeholder="Malith">
+                                            <input type="text" class="form-control" id="inputPOCName">
                                         </div>
                                         <div class="col-6">
                                             <label for="inputPOCSalary" class="form-label">Salary :</label>
-                                            <input type="number" class="form-control" id="inputPOCSalary" placeholder="1000.00">
+                                            <input type="number" class="form-control" id="inputPOCSalary">
 
                                         </div>
                                         <div class="col-12">
                                             <label for="inputAddress" class="form-label">Address :</label>
-                                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St Panadura">
+                                            <input type="text" class="form-control" id="inputAddress">
                                         </div>
                                     </form>
                                 </div>
@@ -784,29 +783,28 @@
                                         <div class="col-6">
                                             <label for="selectItem" class="form-label">Item :</label>
                                             <select class="form-select " aria-label="Default select example" id="selectItem">
-                                                <option selected>P001</option>
                                             </select>
                                         </div>
                                         <div class="col-6">
                                             <label for="inputPOItemCode" class="form-label">Item Code :</label>
-                                            <input type="text" class="form-control" id="inputPOItemCode" placeholder="P001">
+                                            <input type="text" class="form-control" id="inputPOItemCode">
                                         </div>
                                         <div class="col-6">
                                             <label for="inputPOItemName" class="form-label">Item Name :</label>
-                                            <input type="text" class="form-control" id="inputPOItemName" placeholder="Keerisamba 5Kg">
+                                            <input type="text" class="form-control" id="inputPOItemName">
                                         </div>
                                         <div class="col-6">
                                             <label for="inputPOPrice" class="form-label">Price :</label>
-                                            <input type="number" class="form-control" id="inputPOPrice" placeholder="525.00">
+                                            <input type="number" class="form-control" id="inputPOPrice">
 
                                         </div>
                                         <div class="col-4">
                                             <label for="inputPOQtyOnHand" class="form-label">QtyOnHand :</label>
-                                            <input type="number" class="form-control" id="inputPOQtyOnHand" placeholder="200">
+                                            <input type="number" class="form-control" id="inputPOQtyOnHand">
                                         </div>
                                         <div class="col-4">
                                             <label for="inputPOOrderQty" class="form-label">Order Qty :</label>
-                                            <input type="number" class="form-control" id="inputPOOrderQty" placeholder="2">
+                                            <input type="number" class="form-control" id="inputPOOrderQty">
 
                                         </div>
                                         <div class="col-4 align-self-end">
@@ -825,22 +823,23 @@
                             <div class="col invoiceBox" >
                                 <div class="row">
                                     <div class="col-12 mt-3" style="height: 50px">
-                                        <span class="total" style="color: rgba(20, 130, 202, 1)">Total : Rs 1050/=</span>
+                                        <span class="total" id="tot" style="color: rgba(20, 130, 202, 1)">Total : Rs <label class="form-label" for="tot" id="Total"></label>/=</span>
                                     </div>
                                     <div class="col-12 " style="height: 50px">
-                                        <span class="total" style="color:rgba(218, 108, 108, 1)">SubTotal : Rs 945/=</span>
+                                        <span class="total" id="sbtot" style="color:rgba(218, 108, 108, 1)">SubTotal : Rs <label class="form-label" for="sbtot" id="SubTotal"></label>/=</span>
+
                                     </div>
                                     <div class="col-6">
                                         <label for="inputCash" class="form-label">Cash</label>
-                                        <input type="number" class="form-control" id="inputCash" placeholder="5000.00">
+                                        <input type="number" class="form-control" id="inputCash" placeholder="0000.00">
                                     </div>
                                     <div class="col-6">
                                         <label for="inputDiscount" class="form-label">Discount</label>
-                                        <input type="number" class="form-control" id="inputDiscount" placeholder="10">
+                                        <input type="number" class="form-control" id="inputDiscount" placeholder="00">
                                     </div>
                                     <div class="col-12">
                                         <label for="inputBalance" class="form-label">Balance</label>
-                                        <input type="number" class="form-control" id="inputBalance" placeholder="4055.00">
+                                        <input type="number" class="form-control" id="inputBalance" placeholder="0000.00">
                                     </div>
                                     <div class="col-12 mt-4">
                                         <button type="button" class="btn bg-success placeOrderButtons text-white" style="width: 156px">Purchanse</button>
@@ -879,7 +878,6 @@
     </div>
     <!----------------------main bg end------------------------------------->
 </main>
-<!---------------------place Order end------------------------------------>
 
 
 <!---------------------Search Order start------------------------------------>
@@ -1143,7 +1141,9 @@
 <script src="db/db.js"></script>
 <script src="controllers/DashboardController.js"></script>
 <script src="controllers/CustomerController.js"></script>
-<script src="controllers/ItemController.js"></script>
+<!--<script src="controllers/ItemController.js"></script>-->
+<script src="controllers/placeOrderController.js"></script>
+
 
 
 
