@@ -178,7 +178,7 @@ $("#btnItemDelete").click(function (){
                 alert("No such Item to delete. please check the code or name");
             }
 
-            setItemTextfieldValues("","","","");
+            setTextfieldValuesItem("","","","");
 
             $("#ItemSearchBar").val("");
 
@@ -187,6 +187,8 @@ $("#btnItemDelete").click(function (){
             loadItemNames();
 
             bindItemRowClickEvents();
+
+            loadAllItemsForOption();
 
             console.log(items);
         }

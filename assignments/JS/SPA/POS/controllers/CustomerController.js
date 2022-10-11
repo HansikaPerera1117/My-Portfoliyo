@@ -221,6 +221,8 @@ $("#btnCustomerDelete").click(function (){
 
             bindRowClickEvents();
 
+            loadAllCustomersForOption();
+
             console.log(customers);
 
         }
@@ -458,11 +460,16 @@ function clearAllTexts() {
 //
 // $("#inputCName").focus();
 //
+// const cusUNameRegEx = /^[A-z ]{5,20}$/;
+// const cusUAddressRegEx = /^[0-9/A-z. ,]{15,}$/;
+// const cusUContactNoRegEx = /^(011|070|071|072|074|075|076|077|078)[0-9]{7}$/;
+// const cusUSalaryRegEx = /^[0-9]{3,}[.]?[0-9]{1,2}$/;
+//
 // let customerValidations2 = [];
-// customerValidations.push({reg: cusNameRegEx, field: $('#inputCName'),error:'Customer Name Pattern is Wrong : A-z 5-20'});
-// customerValidations.push({reg: cusAddressRegEx, field: $('#inputCAddress'),error:'Customer Address Pattern is Wrong : A-z 0-9'});
-// customerValidations.push({reg: cusContactNoRegEx, field: $('#inputCContact'),error:'Customer Contact No Pattern is Wrong : start : 011|070|071|072|074|075|076|077|078'});
-// customerValidations.push({reg: cusSalaryRegEx, field: $('#inputCSalary'),error:'Customer Salary Pattern is Wrong : 100 or 100.00'});
+// customerValidations.push({reg: cusUNameRegEx, field: $('#inputCName'),error:'Customer Name Pattern is Wrong : A-z 5-20'});
+// customerValidations.push({reg: cusUAddressRegEx, field: $('#inputCAddress'),error:'Customer Address Pattern is Wrong : A-z 0-9'});
+// customerValidations.push({reg: cusUContactNoRegEx, field: $('#inputCContact'),error:'Customer Contact No Pattern is Wrong : start : 011|070|071|072|074|075|076|077|078'});
+// customerValidations.push({reg: cusUSalaryRegEx, field: $('#inputCSalary'),error:'Customer Salary Pattern is Wrong : 100 or 100.00'});
 //
 //
 // $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('keydown', function (event) {
@@ -483,7 +490,7 @@ function clearAllTexts() {
 //
 //
 // $("#inputCName").on('keydown', function (event) {
-//     if (event.key == "Enter" && checkInUpdate(cusNameRegEx, $("#inputCName"))) {
+//     if (event.key == "Enter" && checkInUpdate(cusUNameRegEx, $("#inputCName"))) {
 //         $("#inputCAddress").focus();
 //     } else {
 //         focusTextInUpdate($("#inputCName"));
@@ -492,21 +499,21 @@ function clearAllTexts() {
 //
 //
 // $("#inputCAddress").on('keydown', function (event) {
-//     if (event.key == "Enter" && checkInUpdate(cusAddressRegEx, $("#inputCAddress"))) {
+//     if (event.key == "Enter" && checkInUpdate(cusUAddressRegEx, $("#inputCAddress"))) {
 //         focusTextInUpdate($("#inputCContact"));
 //     }
 // });
 //
 //
 // $("#inputCContact").on('keydown', function (event) {
-//     if (event.key == "Enter" && checkInUpdate(cusContactNoRegEx, $("#inputCContact"))) {
+//     if (event.key == "Enter" && checkInUpdate(cusUContactNoRegEx, $("#inputCContact"))) {
 //         focusTextInUpdate()($("#inputCSalary"));
 //     }
 // });
 //
 //
 // $("#inputCSalary").on('keydown', function (event) {
-//     if (event.key == "Enter" && checkInUpdate(cusSalaryRegEx, $("#inputCSalary"))) {
+//     if (event.key == "Enter" && checkInUpdate(cusUSalaryRegEx, $("#inputCSalary"))) {
 //         let res = confirm("Do you want to add this customer.?");
 //         if (res) {
 //             saveCustomer();
@@ -578,5 +585,5 @@ function clearAllTexts() {
 //     checkValidityInUpdate();
 // }
 //
-
-
+//
+//

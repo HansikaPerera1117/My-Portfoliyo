@@ -74,7 +74,6 @@ function loadAllItemsForOption() {
 
 }
 
-
 $("#selectItem").click(function () {
     let selectedCode = $('#selectItem>option:selected').val();
 
@@ -113,7 +112,6 @@ function addToCart(){
         total: total,
     }
 
-    // $(".tblCart").empty();
     var row= `<tr> <td>${addToCartObject.code}</td><td>${addToCartObject.name}</td><td>${addToCartObject.price}</td><td>${addToCartObject.qty}</td><td>${addToCartObject.total}</td></tr>`;
     $(".tblCart").append(row);
 
@@ -161,15 +159,15 @@ function addToCart(){
         }
     }
 
-    let TOTAL = manageTotal(total);
-    console.log(TOTAL);
-    $("#Total").text(TOTAL);
+    // let TOTAL = manageTotal(total);
+    // console.log(TOTAL);
+    // $("#Total").text(TOTAL);
 
-    setItemTextfieldValues("","","","","")
+    setTextInItemTextfields("","","","","")
 
 }
 
-function setItemTextfieldValues( code, name, price, qtyOHand, orderQty) {
+function setTextInItemTextfields( code, name, price, qtyOHand, orderQty) {
     $("#inputPOItemCode").val(code);
     $("#inputPOItemName").val(name);
     $("#inputPOPrice").val(price);
