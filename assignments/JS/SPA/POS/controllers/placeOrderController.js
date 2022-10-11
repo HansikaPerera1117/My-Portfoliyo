@@ -162,7 +162,7 @@ function addToCart(){
     }
 
     let TOTAL = manageTotal(total);
-
+    console.log(TOTAL);
     $("#Total").text(TOTAL);
 
     setItemTextfieldValues("","","","","")
@@ -182,8 +182,11 @@ function manageQtyOnHand(qtyOnHand , orderQty){
     return updatedQtyOnHand;
 }
 
-function manageTotal(total){
-    let tot += total;
-    return tot;
-}
+// function manageTotal(total){
+// //     console.log(total);
+// //     let tot = 0;
+// //     tot = tot + total;
+// //     console.log(tot);
+// //     return tot;
+// // }
 

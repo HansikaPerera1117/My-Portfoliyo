@@ -5,6 +5,12 @@ $(window).on('load',function (){
 
 $(document).ready(function () {
 
+    var date = new Date();
+    var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+    var current_time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();
+
+    $("#dateTime").text("Date : "+current_date+ "  Time : "+current_time)
+
     $("#mainCustomer").css('display','none');
     $("#mainItem").css('display','none');
     $("#mainPlaceOrders").css('display','none');

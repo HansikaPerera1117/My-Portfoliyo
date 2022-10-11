@@ -87,7 +87,7 @@ function saveItem(){
 
     generateItemID();
 
-    bindRowClickEvents();
+    bindItemRowClickEvents();
 
     loadAllItemsForOption();
 
@@ -103,7 +103,7 @@ function loadAllItems(){
     }
 }
 
-function bindRowClickEvents() {
+function bindItemRowClickEvents() {
     $(".tblItems>tr").click(function () {
         let id = $(this).children(":eq(0)").text();
         $("#ItemSearchBar").val(id);
@@ -114,14 +114,8 @@ function loadItemNames(){
     $("#cmbItemNames").empty();
     var selected = `<option selected>Item Names</option>`;
     $("#cmbItemNames").append(selected);
-
     for (var item of items){
-        // console.log(item);
-
         var names =  `<option>${item.name}</option>`;
-
-        // console.log(names);
-
         $("#cmbItemNames").append(names);
     }
 }
@@ -155,8 +149,6 @@ $("#ItemSearchButton").click(function (){
     $("#inputIPacketSize").val(item.packSize);
     $("#inputIPrice").val(item.price);
     $("#inputIQuantity").val(item.qty);
-
-
 });
 
 $("#btnItemDelete").click(function (){
@@ -186,7 +178,7 @@ $("#btnItemDelete").click(function (){
                 alert("No such Item to delete. please check the code or name");
             }
 
-            setTextfieldValues("","","","");
+            setItemTextfieldValues("","","","");
 
             $("#ItemSearchBar").val("");
 
@@ -194,10 +186,9 @@ $("#btnItemDelete").click(function (){
 
             loadItemNames();
 
-            bindRowClickEvents();
+            bindItemRowClickEvents();
 
             console.log(items);
-
         }
     })
 });
@@ -216,7 +207,7 @@ $("#updateItem").click(function () {
             timer: 1500
         })
 
-        setTextfieldValues("","","","");
+        setTextfieldValuesItem("","","","");
         $("#ItemSearchBar").val("");
 
     } else {
@@ -235,15 +226,14 @@ $("#ItemBtnReset").click(function (){
     let typedItm = $("#ItemSearchBar").val();
     let item = searchItem(typedItm);
     if (item != null) {
-        setTextfieldValues(item.name, item.packSize, item.price, item.qty);
+        setTextfieldValuesItem(item.name, item.packSize, item.price, item.qty);
     } else {
         alert("There is no item available for that " + typedItm);
-        setTextfieldValues("", "", "", "");
+        setTextfieldValuesItem("", "", "", "");
     }
 });
 
-function setTextfieldValues( name, packSize,price, qty) {
-
+function setTextfieldValuesItem( name, packSize,price, qty) {
     $("#inputIName").val(name);
     $("#inputIPacketSize").val(packSize);
     $("#inputIPrice").val(price);
@@ -263,7 +253,7 @@ function updateItem(itm) {
 
         loadItemNames()
 
-        bindRowClickEvents();
+        bindItemRowClickEvents();
 
         return true;
     } else {
@@ -316,43 +306,43 @@ $("#inputItemName,#inputItemPackSize,#inputItemPrice,#inputItemQuantity").on('ke
 });
 
 $("#inputItemName,#inputItemPackSize,#inputItemPrice,#inputItemQuantity").on('keyup', function (event) {
-    checkValidity();
+    checkItemValidity()
 });
 
 $("#inputItemName,#inputItemPackSize,#inputItemPrice,#inputItemQuantity").on('blur', function (event) {
-    checkValidity();
+    checkItemValidity()
 });
 
 
 $("#inputItemName").on('keydown', function (event) {
-    if (event.key == "Enter" && check(itmNameRegEx, $("#inputItemName"))) {
+    if (event.key == "Enter" && checkItem(itmNameRegEx, $("#inputItemName"))) {
         $("#inputItemPackSize").focus();
     } else {
-        focusText($("#inputItemName"));
+        focusItemText($("#inputItemName"));
     }
 });
 
 
 $("#inputItemPackSize").on('keydown', function (event) {
-    if (event.key == "Enter" && check(itmPackSizesRegEx, $("#inputItemPackSize"))) {
-        focusText($("#inputItemPrice"));
+    if (event.key == "Enter" && checkItem(itmPackSizesRegEx, $("#inputItemPackSize"))) {
+        focusItemText($("#inputItemPrice"));
     }
 });
 
 
 $("#inputItemPrice").on('keydown', function (event) {
-    if (event.key == "Enter" && check(itmPriceRegEx, $("#inputItemPrice"))) {
-        focusText($("#inputItemQuantity"));
+    if (event.key == "Enter" && checkItem(itmPriceRegEx, $("#inputItemPrice"))) {
+        focusItemText($("#inputItemQuantity"));
     }
 });
 
 
 $("#inputItemQuantity").on('keydown', function (event) {
-    if (event.key == "Enter" && check(itmQtyRegEx, $("#inputItemQuantity"))) {
+    if (event.key == "Enter" && checkItem(itmQtyRegEx, $("#inputItemQuantity"))) {
         let res = confirm("Do you want to add this item.?");
         if (res) {
             saveItem();
-            clearAllTexts();
+            clearAllItemTexts();
         }
     }
 });
@@ -360,59 +350,58 @@ $("#inputItemQuantity").on('keydown', function (event) {
 
 $("#inputItemQuantity").on('keydown', function (event) {
     if (event.key == "Enter") {
-        focusText($("#inputItemName"));
+        focusItemText($("#inputItemName"));
     }
 });
 
-function checkValidity() {
+function checkItemValidity() {
     let errorCount=0;
     for (let validation of itemValidations) {
-        if (check(validation.reg,validation.field)) {
-            textSuccess(validation.field,"");
+        if (checkItem(validation.reg,validation.field)) {
+            ItemtextSuccess(validation.field,"");
         } else {
             errorCount=errorCount+1;
-            setTextError(validation.field,validation.error);
+            setItemTextError(validation.field,validation.error);
         }
 
     }
-    setButtonState(errorCount);
+    setItemButtonState(errorCount);
 
 }
 
-function check(regex, txtField) {
+function checkItem(regex, txtField) {
     let inputValue = txtField.val();
     return regex.test(inputValue) ? true : false;
 }
 
-function setTextError(txtField,error) {
+function setItemTextError(txtField,error) {
     if (txtField.val().length <= 0) {
-        defaultText(txtField,"");
+        defaultItemText(txtField,"");
     } else {
         txtField.css('border', '2px solid red');
         txtField.parent().children('span').text(error);
     }
 }
 
-function textSuccess(txtField,error) {
+function ItemtextSuccess(txtField,error) {
     if (txtField.val().length <= 0) {
-        defaultText(txtField,"");
+        defaultItemText(txtField,"");
     } else {
         txtField.css('border', '2px solid green');
         txtField.parent().children('span').text(error);
     }
 }
 
-function defaultText(txtField,error) {
+function defaultItemText(txtField,error) {
     txtField.css("border", "1px solid #ced4da");
     txtField.parent().children('span').text(error);
 }
 
-function focusText(txtField) {
+function focusItemText(txtField) {
     txtField.focus();
 }
 
-
-function setButtonState(value){
+function setItemButtonState(value){
     if (value>0){
         $("#btnSaveItem").attr('disabled',true);
     }else{
@@ -420,10 +409,10 @@ function setButtonState(value){
     }
 }
 
-function clearAllTexts() {
+function clearAllItemTexts() {
     $("#inputItemName").focus();
     $("#inputItemName,#inputItemPackSize,#inputItemPrice,#inputItemQuantity").val("");
-    checkValidity();
+    checkItemValidity()
 }
 
 
