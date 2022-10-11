@@ -3,6 +3,41 @@ var date = new Date();
 var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
 $("#OrderDate").text(current_date);
 
+function generateOrderID(){
+    let lastOId ="";
+    for (const ords of order) {
+        lastOId = ords.id;
+        console.log(lastOId)
+    }
+
+    if (order.length == 0){
+        $("#OrderId").text("D00-1");
+    }else {
+
+        let co = lastOId.length;
+        console.log(co);
+        let text = lastOId.substring(0,4);
+        console.log(text);
+        let num= lastOId.substring(4,co);
+        console.log(num);
+
+        let n = parseInt(num);
+        n++;
+        console.log(n);
+
+
+
+        let GenerateId = text+n;
+
+        console.log(GenerateId);
+
+        $("#OrderId").text(GenerateId);
+
+    }
+}
+
+generateOrderID();
+
 
 function loadAllCustomersForOption() {
     $("#selectCustomer").empty();
