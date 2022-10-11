@@ -1,6 +1,39 @@
 
 $("#searchBar").focus();
 
+
+function generateID(){
+    let lastId ="";
+    for (const customer of customers) {
+        lastId = customer.id;
+    }
+
+    if (customers.length == 0){
+        $("#CustomerId").text("C00-1");
+    }else {
+        let co = lastId.length;
+        console.log(co);
+        let text = lastId.substring(0,4);
+        console.log(text);
+        let num= lastId.substring(4,co);
+        console.log(num);
+
+        let n = parseInt(num);
+        n++;
+        console.log(n);
+
+        let GenerateId = text+n;
+
+        console.log(GenerateId);
+
+        $("#CustomerId").text(GenerateId);
+
+    }
+
+}
+
+generateID();
+
 $("#btnSaveCustomer").click(function (){
     saveCustomer();
 });
@@ -67,6 +100,8 @@ function saveCustomer(){
     loadAllCustomers();
 
     loadCustomerNames();
+
+    generateID();
 
     bindRowClickEvents();
 
@@ -183,6 +218,8 @@ $("#btnCustomerDelete").click(function (){
 
             loadCustomerNames();
 
+            bindRowClickEvents();
+
             console.log(customers);
 
         }
@@ -248,6 +285,9 @@ function updateCustomer(cust) {
         loadAllCustomers();
 
         loadCustomerNames();
+
+        bindRowClickEvents();
+
         return true;
     } else {
         return false;
@@ -260,7 +300,9 @@ function deleteCustomer(cust) {
     if (customer != null) {
         let indexNumber = customers.indexOf(customer);
         customers.splice(indexNumber, 1);
+
         loadAllCustomers();
+
         return true;
     } else {
         return false;
@@ -336,8 +378,14 @@ $("#inputCustomerSalary").on('keydown', function (event) {
         if (res) {
             saveCustomer();
             clearAllTexts();
-            focusText($("#inputCustomerName"));
+
         }
+    }
+});
+
+$("#inputCustomerSalary").on('keydown', function (event) {
+    if (event.key == "Enter") {
+        focusText($("#inputCustomerName"));
     }
 });
 
