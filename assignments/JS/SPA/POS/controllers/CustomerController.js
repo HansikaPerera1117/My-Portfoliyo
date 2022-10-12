@@ -455,135 +455,135 @@ function clearAllTexts() {
     checkValidity();
 }
 
-//
-// //---------------update customer form validation------------------------
-//
-// $("#inputCName").focus();
-//
-// const cusUNameRegEx = /^[A-z ]{5,20}$/;
-// const cusUAddressRegEx = /^[0-9/A-z. ,]{15,}$/;
-// const cusUContactNoRegEx = /^(011|070|071|072|074|075|076|077|078)[0-9]{7}$/;
-// const cusUSalaryRegEx = /^[0-9]{3,}[.]?[0-9]{1,2}$/;
-//
-// let customerValidations2 = [];
-// customerValidations.push({reg: cusUNameRegEx, field: $('#inputCName'),error:'Customer Name Pattern is Wrong : A-z 5-20'});
-// customerValidations.push({reg: cusUAddressRegEx, field: $('#inputCAddress'),error:'Customer Address Pattern is Wrong : A-z 0-9'});
-// customerValidations.push({reg: cusUContactNoRegEx, field: $('#inputCContact'),error:'Customer Contact No Pattern is Wrong : start : 011|070|071|072|074|075|076|077|078'});
-// customerValidations.push({reg: cusUSalaryRegEx, field: $('#inputCSalary'),error:'Customer Salary Pattern is Wrong : 100 or 100.00'});
-//
-//
-// $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('keydown', function (event) {
-//     if (event.key == "Tab") {
-//         event.preventDefault();
-//     }
-// });
-//
-//
-//
-// $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('keyup', function (event) {
-//     checkValidityInUpdate();
-// });
-//
-// $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('blur', function (event) {
-//     checkValidityInUpdate();
-// });
-//
-//
-// $("#inputCName").on('keydown', function (event) {
-//     if (event.key == "Enter" && checkInUpdate(cusUNameRegEx, $("#inputCName"))) {
-//         $("#inputCAddress").focus();
-//     } else {
-//         focusTextInUpdate($("#inputCName"));
-//     }
-// });
-//
-//
-// $("#inputCAddress").on('keydown', function (event) {
-//     if (event.key == "Enter" && checkInUpdate(cusUAddressRegEx, $("#inputCAddress"))) {
-//         focusTextInUpdate($("#inputCContact"));
-//     }
-// });
-//
-//
-// $("#inputCContact").on('keydown', function (event) {
-//     if (event.key == "Enter" && checkInUpdate(cusUContactNoRegEx, $("#inputCContact"))) {
-//         focusTextInUpdate()($("#inputCSalary"));
-//     }
-// });
-//
-//
-// $("#inputCSalary").on('keydown', function (event) {
-//     if (event.key == "Enter" && checkInUpdate(cusUSalaryRegEx, $("#inputCSalary"))) {
-//         let res = confirm("Do you want to add this customer.?");
-//         if (res) {
-//             saveCustomer();
-//             clearAllTextsInUpdate();
-//         }
-//     }
-// });
-//
-//
-//
-// function checkValidityInUpdate() {
-//     let errorCount=0;
-//     for (let validation of customerValidations2) {
-//         if (checkInUpdate(validation.reg,validation.field)) {
-//             textSuccessInUpdate(validation.field,"");
-//         } else {
-//             errorCount=errorCount+1;
-//             setTextErrorInUpdate(validation.field,validation.error);
-//         }
-//
-//     }
-//     setButtonStateInUpdate(errorCount);
-//
-// }
-//
-// function checkInUpdate(regex, txtField) {
-//     let inputValue = txtField.val();
-//     return regex.test(inputValue) ? true : false;
-// }
-//
-// function setTextErrorInUpdate(txtField,error) {
-//     if (txtField.val().length <= 0) {
-//         defaultTextInUpdate(txtField,"");
-//     } else {
-//         txtField.css('border', '2px solid red');
-//         txtField.parent().children('span').text(error);
-//     }
-// }
-//
-// function textSuccessInUpdate(txtField,error) {
-//     if (txtField.val().length <= 0) {
-//         defaultTextInUpdate(txtField,"");
-//     } else {
-//         txtField.css('border', '2px solid green');
-//         txtField.parent().children('span').text(error);
-//     }
-// }
-//
-// function defaultTextInUpdate(txtField,error) {
-//     txtField.css("border", "1px solid #ced4da");
-//     txtField.parent().children('span').text(error);
-// }
-//
-// function focusTextInUpdate(txtField) {
-//     txtField.focus();
-// }
-//
-// function setButtonStateInUpdate(value){
-//     if (value>0){
-//         $("#updateCustomer").attr('disabled',true);
-//     }else{
-//         $("#updateCustomer").attr('disabled',false);
-//     }
-// }
-//
-// function clearAllTextsInUpdate() {
-//     $("#inputCName").focus();
-//     $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").val("");
-//     checkValidityInUpdate();
-// }
-//
-//
-//
+
+//---------------update customer form validation------------------------
+
+$("#inputCName").focus();
+
+const cusUNameRegEx = /^[A-z ]{5,20}$/;
+const cusUAddressRegEx = /^[0-9/A-z. ,]{15,}$/;
+const cusUContactNoRegEx = /^(011|070|071|072|074|075|076|077|078)[0-9]{7}$/;
+const cusUSalaryRegEx = /^[0-9]{3,}[.]?[0-9]{1,2}$/;
+
+let customerUpdateValidations = [];
+customerUpdateValidations.push({reg: cusUNameRegEx, field: $('#inputCName'),error:'Customer Name Pattern is Wrong : A-z 5-20'});
+customerUpdateValidations.push({reg: cusUAddressRegEx, field: $('#inputCAddress'),error:'Customer Address Pattern is Wrong : A-z 0-9'});
+customerUpdateValidations.push({reg: cusUContactNoRegEx, field: $('#inputCContact'),error:'Customer Contact No Pattern is Wrong : start : 011|070|071|072|074|075|076|077|078'});
+customerUpdateValidations.push({reg: cusUSalaryRegEx, field: $('#inputCSalary'),error:'Customer Salary Pattern is Wrong : 100 or 100.00'});
+
+
+$("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('keydown', function (event) {
+    if (event.key == "Tab") {
+        event.preventDefault();
+    }
+});
+
+
+
+$("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('keyup', function (event) {
+    checkValidityInUpdate();
+});
+
+$("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").on('blur', function (event) {
+    checkValidityInUpdate();
+});
+
+
+$("#inputCName").on('keydown', function (event) {
+    if (event.key == "Enter" && checkInUpdate(cusUNameRegEx, $("#inputCName"))) {
+        $("#inputCAddress").focus();
+    } else {
+        focusTextInUpdate($("#inputCName"));
+    }
+});
+
+
+$("#inputCAddress").on('keydown', function (event) {
+    if (event.key == "Enter" && checkInUpdate(cusUAddressRegEx, $("#inputCAddress"))) {
+        focusTextInUpdate($("#inputCContact"));
+    }
+});
+
+
+$("#inputCContact").on('keydown', function (event) {
+    if (event.key == "Enter" && checkInUpdate(cusUContactNoRegEx, $("#inputCContact"))) {
+        focusTextInUpdate()($("#inputCSalary"));
+    }
+});
+
+
+$("#inputCSalary").on('keydown', function (event) {
+    if (event.key == "Enter" && checkInUpdate(cusUSalaryRegEx, $("#inputCSalary"))) {
+        let res = confirm("Do you want to add this customer.?");
+        if (res) {
+            saveCustomer();
+            clearAllTextsInUpdate();
+        }
+    }
+});
+
+
+
+function checkValidityInUpdate() {
+    let errorCount=0;
+    for (let validation of customerUpdateValidations) {
+        if (checkInUpdate(validation.reg,validation.field)) {
+            textSuccessInUpdate(validation.field,"");
+        } else {
+            errorCount=errorCount+1;
+            setTextErrorInUpdate(validation.field,validation.error);
+        }
+
+    }
+    setButtonStateInUpdate(errorCount);
+
+}
+
+function checkInUpdate(regex, txtField) {
+    let inputValue = txtField.val();
+    return regex.test(inputValue) ? true : false;
+}
+
+function setTextErrorInUpdate(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultTextInUpdate(txtField,"");
+    } else {
+        txtField.css('border', '2px solid red');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function textSuccessInUpdate(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultTextInUpdate(txtField,"");
+    } else {
+        txtField.css('border', '2px solid green');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function defaultTextInUpdate(txtField,error) {
+    txtField.css("border", "1px solid #ced4da");
+    txtField.parent().children('span').text(error);
+}
+
+function focusTextInUpdate(txtField) {
+    txtField.focus();
+}
+
+function setButtonStateInUpdate(value){
+    if (value>0){
+        $("#updateCustomer").attr('disabled',true);
+    }else{
+        $("#updateCustomer").attr('disabled',false);
+    }
+}
+
+function clearAllTextsInUpdate() {
+    $("#inputCName").focus();
+    $("#inputCName,#inputCAddress,#inputCContact,#inputCSalary").val("");
+    checkValidityInUpdate();
+}
+
+
+
