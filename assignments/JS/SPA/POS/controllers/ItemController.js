@@ -418,4 +418,156 @@ function clearAllItemTexts() {
 }
 
 
+//---------------update item form validation------------------------
+
+$("#inputIName").focus();
+
+// const itmUNameRegEx = /^[A-z ]{5,40}$/;
+// const itmUPackSizesRegEx = /^[1-9][0-9]{0,5}(g|kg|ml|l)$/;
+// const itmUPriceRegEx = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
+// const itmUQtyRegEx = /^[1-9][0-9]{0,3}$/;
+
+let updateItemValidations = [];
+updateItemValidations.push({reg: itmNameRegEx, field: $('#inputIName'),error:'Item Name Pattern is Wrong : A-z 5-40'});
+updateItemValidations.push({reg: itmPackSizesRegEx, field: $('#inputIPacketSize'),error:'Item PackSizes Pattern is Wrong : 0-9 with g/kg/ml/l'});
+updateItemValidations.push({reg: itmPriceRegEx, field: $('#inputIPrice'),error:'Item Price Pattern is Wrong : 100 or 100.00'});
+updateItemValidations.push({reg: itmQtyRegEx, field: $('#inputIQuantity'),error:'Item Quantity Pattern is Wrong : 1-9'});
+
+
+$("#inputIName,#inputIPacketSize,#inputIPrice,#inputIQuantity").on('keydown', function (event) {
+    if (event.key == "Tab") {
+        event.preventDefault();
+    }
+});
+
+
+
+$("#inputIName,#inputIPacketSize,#inputIPrice,#inputIQuantity").on('keyup', function (event) {
+    checkValidityInUpdateItem();
+});
+
+$("#inputIName,#inputIPacketSize,#inputIPrice,#inputIQuantity").on('blur', function (event) {
+    checkValidityInUpdateItem();
+});
+
+
+$("#inputIName").on('keydown', function (event) {
+    if (event.key == "Enter" && checkInUpdateItem(itmNameRegEx, $("#inputIName"))) {
+        $("#inputIPacketSize").focus();
+    } else {
+        focusTextInUpdateItem($("#inputIName"));
+    }
+});
+
+
+$("#inputIPacketSize").on('keydown', function (event) {
+    if (event.key == "Enter" && checkInUpdateItem(itmPackSizesRegEx, $("#inputIPacketSize"))) {
+        focusTextInUpdateItem($("#inputIPrice"));
+    }
+});
+
+
+$("#inputIPrice").on('keydown', function (event) {
+    if (event.key == "Enter" && checkInUpdateItem(itmPriceRegEx, $("#inputIPrice"))) {
+        focusTextInUpdateItem($("#inputIQuantity"));
+    }
+});
+
+
+$("#inputIQuantity").on('keydown', function (event) {
+    if (event.key == "Enter" && checkInUpdateItem(itmQtyRegEx, $("#inputIQuantity"))) {
+        let res = confirm("Do you want to add this customer.?");
+        if (res) {
+            let code = $("#ICode").text();
+            let response = updateItem(code)
+            if (response) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Item has been updated successfully...',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+                clearAllTextsInUpdateItem();
+                $("#ItemSearchBar").val("");
+
+            } else {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Unsuccessful...',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+            }
+        }
+    }
+});
+
+
+
+function checkValidityInUpdateItem() {
+    let errorCount=0;
+    for (let validation of updateItemValidations) {
+        if (checkInUpdateItem(validation.reg,validation.field)) {
+            textSuccessInUpdateItem(validation.field,"");
+        } else {
+            errorCount=errorCount+1;
+            setTextErrorInUpdateItem(validation.field,validation.error);
+        }
+
+    }
+    setButtonStateInUpdateItem(errorCount);
+
+}
+
+function checkInUpdateItem(regex, txtField) {
+    let inputValue = txtField.val();
+    return regex.test(inputValue) ? true : false;
+}
+
+function setTextErrorInUpdateItem(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultTextInUpdateItem(txtField,"");
+    } else {
+        txtField.css('border', '2px solid red');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function textSuccessInUpdateItem(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultTextInUpdateItem(txtField,"");
+    } else {
+        txtField.css('border', '2px solid green');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function defaultTextInUpdateItem(txtField,error) {
+    txtField.css("border", "1px solid #ced4da");
+    txtField.parent().children('span').text(error);
+}
+
+function focusTextInUpdateItem(txtField) {
+    txtField.focus();
+}
+
+function setButtonStateInUpdateItem(value){
+    if (value>0){
+        $("#updateItem").attr('disabled',true);
+    }else{
+        $("#updateItem").attr('disabled',false);
+    }
+}
+
+function clearAllTextsInUpdateItem() {
+    $("#inputIName").focus();
+    $("#inputIName,#inputIPacketSize,#inputIPrice,#inputIQuantity").val("");
+    checkValidityInUpdateItem();
+}
+
+
 

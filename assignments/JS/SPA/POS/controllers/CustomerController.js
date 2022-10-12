@@ -514,10 +514,26 @@ $("#inputCContact").on('keydown', function (event) {
 
 $("#inputCSalary").on('keydown', function (event) {
     if (event.key == "Enter" && checkInUpdate(cusUSalaryRegEx, $("#inputCSalary"))) {
-        let res = confirm("Do you want to add this customer.?");
-        if (res) {
-            saveCustomer();
+        let id = $("#CID").text();
+        let response =  updateCustomer(id);
+        if (response) {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Customer has been updated successfully...',
+                showConfirmButton: false,
+                timer: 1500
+            })
             clearAllTextsInUpdate();
+            $("#searchBar").val("");
+        } else {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Unsuccessful...',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
     }
 });
