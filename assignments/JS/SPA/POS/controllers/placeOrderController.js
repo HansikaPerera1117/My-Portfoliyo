@@ -336,8 +336,8 @@ function purchaseOrder() {
     console.log(orderDetails);
 }
 
-// function cancelOrder(oId) {
-//
+ function cancelOrder(oId) {
+
     for(var i of orderDetails){
         if(i.oId == oId){
             var index= orderDetails.indexOf(i);
@@ -370,7 +370,7 @@ function purchaseOrder() {
 //     // } else {
 //     //     return false;
 //     // }
-// }
+}
 
 // function searchOrderDetails(oId) {
 //     for (let od of orderDetails) {
