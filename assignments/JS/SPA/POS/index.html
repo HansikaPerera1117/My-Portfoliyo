@@ -827,7 +827,6 @@
                                     </div>
                                     <div class="col-12 " style="height: 50px">
                                         <span class="total" id="sbtot" style="color:rgba(218, 108, 108, 1)">SubTotal : Rs <label class="form-label" for="sbtot" id="SubTotal"></label>/=</span>
-
                                     </div>
                                     <div class="col-6">
                                         <label for="inputDiscount" class="form-label">Discount</label>
@@ -910,44 +909,38 @@
                         <div class="col-8 " style="height: 232px">
                             <div class="container text-center" id="orderSearch">
                                 <div class="row ms-1 me-1 ">
-                                    <div class="col searchBox">
+                                    <form class="col searchBox" id="searchOrderBox">
                                         <div class="row">
                                             <div class="col text-start searchBoxHeading">
                                                 <span  class="search">Search Order</span>
                                             </div>
                                             <div class="row align-items-center" style="height: 85px">
                                                 <div class="col-9">
-                                                    <input class="form-control exampleDataList"  placeholder="Input Order ID Here" style="height: 53px">
+                                                    <input id="searchOrderBar" class="form-control exampleDataList"  placeholder="Input Order ID Here" style="height: 53px">
                                                 </div>
                                                 <div class="col-3" >
-                                                    <select class="form-select" aria-label="Default select example" style="height: 53px">
-                                                        <option selected>Order ID</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                    <select id="cmbOrderIDs" class="form-select" aria-label="Default select example" style="height: 53px">
+                                                        <option selected>Order IDs</option>
                                                     </select>
                                                 </div>
                                             </div>
 
                                             <div class="row align-items-center" style="height: 70px">
                                                 <div class="col-6 text-start" >
-                                                    <button class="btn searchButton" data-bs-target="#OrderDetailsModal" data-bs-toggle="modal" type="button">Search</button>
+                                                    <button id="btnSearchOrder" class="btn searchButton" data-bs-target="#OrderDetailsModal" data-bs-toggle="modal" type="button">Search</button>
                                                 </div>
 
                                                 <div class="col-3"></div>
 
                                                 <div class="col-3 text-start " >
-                                                    <select class="form-select" aria-label="Default select example" style="height: 53px">
-                                                        <option selected>Customer Name</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                    <select id="cmbCustomerIDs" class="form-select" aria-label="Default select example" style="height: 53px">
+                                                        <option selected>Customer IDs</option>
                                                     </select>
                                                 </div>
 
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -956,7 +949,7 @@
                             <div class="row me-1 " style="height: 80px">
                                 <div class="col"></div>
                                 <div class="col align-self-end">
-                                    <button type="button" class="btn btn-warning text-black new" style="width: 315px" data-bs-target="#ViewAllOrdersModal" data-bs-toggle="modal" type="button">Get All Customer Orders</button>
+                                    <button id="viewAllOrders" type="button" class="btn btn-warning text-black new" style="width: 315px" data-bs-target="#ViewAllOrdersModal" data-bs-toggle="modal" type="button">Get All Customer Orders</button>
 
                                     <!---------------------View all Customer Modal start----------------->
                                     <div aria-hidden="true" aria-labelledby="ViewAllOrdersModalLabel" class="modal fade" id="ViewAllOrdersModal" tabindex="-1">
@@ -967,7 +960,7 @@
                                                     <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <section>
+                                                    <section >
                                                         <table class="table table-bordered table-hover mt-2">
                                                             <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
                                                             <tr>
@@ -979,16 +972,9 @@
                                                                 <th>Contact No</th>
                                                             </tr>
                                                             </thead>
-                                                            <tbdoy>
-                                                                <tr>
-                                                                    <td>D001</td>
-                                                                    <td>07/06/2022</td>
-                                                                    <td>C001</td>
-                                                                    <td>Hansika</td>
-                                                                    <td>Kadawatha</td>
-                                                                    <td>0112244668</td>
-                                                                </tr>
-                                                            </tbdoy>
+                                                            <tbody id="tblViewAllOrders">
+
+                                                            </tbody>
                                                         </table>
                                                         <div class="row justify-content-end">
                                                             <div class="col-1 me-0">
@@ -1009,7 +995,7 @@
 
                         <div class="col-12" style="height: 80px">
                             <div class="btn-group mt-2 ms-5" role="group" aria-label="Basic mixed styles example" style="height: 55px">
-                                <button type="button" class="btn btn-danger" style="width: 90px">Delete</button>
+                                <button id="btnDeleteOrder" type="button" class="btn btn-danger" style="width: 90px">Delete</button>
                                 <button class="btn btn-primary" style="width: 90px" data-bs-target="#OrderDetailsModal" data-bs-toggle="modal" type="button">Details</button>
 
                                 <!--------------------- Order Details Modal start----------------->
@@ -1017,7 +1003,7 @@
                                     <div class="modal-dialog" style="--bs-modal-width: 900px">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="OrderDetailsModalLabel"  style="font-size: 20px"><strong>Order ID : D001  <br>Order Date : 2022-11-17 <br> Customer ID : C001</strong></h5>
+                                                <h5 class="modal-title" id="OrderDetailsModalLabel"  style="font-size: 20px"><strong>Order ID : <label class="form-label" id="searchOrderId"></label> <br>Order Date : <label class="form-label" id="searchOrderDate"></label> <br> Customer ID : <label class="form-label" id="searchCusId"></label></strong></h5>
                                                 <button aria-label="Close" class="btn-close mb-5" data-bs-dismiss="modal" type="button"></button>
                                             </div>
                                             <div class="modal-body">
@@ -1042,11 +1028,11 @@
 
                                                         </div>
                                                         <div class="col-2  ">
-                                                            <button class="btn btn-warning text-white  mt-4" type="button">Update Item</button>
+                                                            <button id="btnUpdateSOItems" class="btn btn-warning text-white  mt-4" type="button">Update Item</button>
                                                         </div>
 
                                                     </form>
-                                                    <div class="col-12 mt-3" style="height: 200px">
+                                                    <div class="col-12 mt-3" style="overflow:scroll;height:200px;overflow:auto">
                                                         <table class="table table-bordered table-hover mt-2">
                                                             <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
                                                             <tr>
@@ -1057,31 +1043,25 @@
                                                                 <th>Total</th>
                                                             </tr>
                                                             </thead>
-                                                            <tbdoy>
-                                                                <tr>
-                                                                    <td>P001</td>
-                                                                    <td>Keerisamba 5Kg</td>
-                                                                    <td>255.00</td>
-                                                                    <td>2</td>
-                                                                    <td>510</td>
-                                                                </tr>
-                                                            </tbdoy>
+                                                            <tbody class="tblSearchO">
+
+                                                            </tbody>
                                                         </table>
                                                     </div>
                                                     <div class="row justify-content-end mt-3 ">
                                                         <div class="col-8 ">
                                                             <div class="row">
                                                                 <div class="col-12">
-                                                                    <span class="total" style="color: rgba(20, 130, 202, 1)">Total : Rs 1050/=</span>
+                                                                    <span class="total" id="soTotal" style="color: rgba(20, 130, 202, 1)">Total : Rs <label class="form-label" for="soTotal" id="SearchTotal"></label>/=</span>
                                                                 </div>
                                                                 <div class="col-12" >
-                                                                    <span class="total" style="color:rgba(218, 108, 108, 1)">SubTotal : Rs 945/=</span>
+                                                                    <span class="total" id="soSubTotal" style="color:rgba(218, 108, 108, 1)">SubTotal : Rs  <label class="form-label" for="soSubTotal" id="SearchSubTotal"></label>/=</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-4 ">
-                                                            <button class="btn text-white ms-2 mt-5" style="background-color: rgb(227,133,133)" type="button">Confirm Edits</button>
-                                                            <button class="btn btn-primary mt-5" type="button">Reset</button>
+                                                            <button id="btnConfirmEdits" class="btn text-white ms-2 mt-5" style="background-color: rgb(227,133,133)" type="button">Confirm Edits</button>
+                                                            <button id="btnSearchOrderReset" class="btn btn-primary mt-5" type="button">Reset</button>
                                                             <button class="btn btn-secondary mt-5" data-bs-dismiss="modal" type="button">Close</button>
                                                         </div>
                                                     </div>
@@ -1094,11 +1074,12 @@
                                 </div>
                                 <!---------------------Order Details Modal end----------------->
 
-                                <button type="button" class="btn btn-success" style="width: 70px">Clear</button>
+                                <button type="reset" form="searchOrderBox" class="btn btn-success" style="width: 70px">Clear</button>
+
                             </div>
                         </div>
 
-                        <div class="col-12" style="height:173px">
+                        <div class="col-12" style="overflow:scroll;height:173px;overflow:auto">
 
                             <table class="table table-bordered table-hover mt-2">
                                 <thead class="text-black" style=" background-color:  rgba(255, 204, 204, 1)">
@@ -1110,15 +1091,9 @@
                                     <th>Total</th>
                                 </tr>
                                 </thead>
-                                <tbdoy>
-                                    <tr>
-                                        <td>P001</td>
-                                        <td>Keerisamba 5Kg</td>
-                                        <td>255.00</td>
-                                        <td>2</td>
-                                        <td>510</td>
-                                    </tr>
-                                </tbdoy>
+                                <tbody class="tblSearchO">
+
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -1141,6 +1116,8 @@
 <script src="controllers/CustomerController.js"></script>
 <script src="controllers/ItemController.js"></script>
 <script src="controllers/placeOrderController.js"></script>
+<script src="controllers/searchOrderController.js"></script>
+
 
 
 
