@@ -5,18 +5,19 @@ $("#OrderDate").text(current_date);
 
 $("#selectItem").focus();
 $("#btnAddToCart").attr('disabled',true);
- $("#btnPurchaseOrder").attr('disabled',true);
+$("#btnPurchaseOrder").attr('disabled',true);
 
 
 function generateOrderID(){
 
     let lastOId =" ";
-    for (const ords of order) {
-        lastOId = ords.id;
-        console.log(lastOId)
+    for (const orderid of order) {
+        lastOId = orderid.oId;
     }
 
+
     if (order.length == 0){
+
         $("#OrderId").text("D00-1");
 
     }else {
@@ -283,6 +284,10 @@ function purchaseOrder() {
                 setTextInItemTextfields("","","","","");
                 $("#inputPOCustomerID, #inputPOCName,#inputPOCSalary, #inputAddress ").val("");
                 $(".tblCart").empty();
+                $("#inputPOCustomerID, #inputPOCName,#inputPOCSalary, #inputAddress ").val("");
+                $("#inputCash, #inputDiscount, #inputBalance ").val("");
+                $("#Total").text("");
+                $("#SubTotal").text("");
             }
         })
 
