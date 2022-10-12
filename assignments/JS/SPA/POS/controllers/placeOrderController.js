@@ -341,7 +341,7 @@ function purchaseOrder() {
     for(var i of orderDetails){
         if(i.oId == oId){
             var index= orderDetails.indexOf(i);
-            customers.splice(index,1);
+            orderDetails.splice(index,1);
         }
     }
 //
@@ -556,7 +556,6 @@ function checkBillingValidity() {
         } else {
             setBillingTextError(validation.field,validation.error);
         }
-
     }
     setPurchaseButtonState(errorCount);
 
@@ -581,6 +580,7 @@ function checkBilling(regex, txtField) {
     }
 
 }
+
 
 function setBillingTextError(txtField,error) {
     if (txtField.val().length <= 0) {
@@ -610,7 +610,7 @@ function focusBillingText(txtField) {
 }
 
 function setPurchaseButtonState(value){
-    if (value>0){
+    if (value > 0){
         $("#btnPurchaseOrder").attr('disabled',false);
     }else{
         $("#btnPurchaseOrder").attr('disabled',true);
