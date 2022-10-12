@@ -467,7 +467,7 @@
     </div>
     <!----------------------main bg end------------------------------------->
 </main>
-<!---------------------Customer start------------------------------------>
+<!---------------------Customer end------------------------------------>
 
 <!---------------------Item start------------------------------------>
 <main id="mainItem" class="container-fluid">
@@ -805,7 +805,7 @@
                                         <div class="col-4">
                                             <label for="inputPOOrderQty" class="form-label">Order Qty :</label>
                                             <input type="number" class="form-control" id="inputPOOrderQty">
-
+                                            <span class="control-error" id="lblorderqty"></span>
                                         </div>
                                         <div class="col-4 align-self-end">
                                             <button id="btnAddToCart" type="button" class="btn bg-warning ms-3 placeOrderButtons" style=" width: 140px">Add To Cart</button>
@@ -842,7 +842,7 @@
                                         <input type="number" class="form-control" id="inputBalance" placeholder="0000.00">
                                     </div>
                                     <div class="col-12 mt-4">
-                                        <button type="button" class="btn bg-success placeOrderButtons text-white" style="width: 156px">Purchanse</button>
+                                        <button id="btnPurchaseOrder" type="button" class="btn bg-success placeOrderButtons text-white" style="width: 156px">Purchase</button>
                                     </div>
                                 </div>
                             </div>
@@ -872,6 +872,7 @@
     </div>
     <!----------------------main bg end------------------------------------->
 </main>
+<!---------------------Place Order end------------------------------------>
 
 
 <!---------------------Search Order start------------------------------------>

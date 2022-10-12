@@ -3,6 +3,11 @@ var date = new Date();
 var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
 $("#OrderDate").text(current_date);
 
+$("#selectItem").focus();
+$("#btnAddToCart").attr('disabled',true);
+$("#btnPurchaseOrder").attr('disabled',true);
+
+
 function generateOrderID(){
     let lastOId ="";
     for (const ords of order) {
@@ -92,6 +97,8 @@ $("#selectItem").click(function () {
 $("#btnAddToCart").click(function (){
     addToCart();
 });
+
+
 
 function addToCart(){
     let orderID = $("#OrderId").text();
@@ -187,4 +194,108 @@ function manageQtyOnHand(qtyOnHand , orderQty){
 // //     console.log(tot);
 // //     return tot;
 // // }
+
+
+//---------------Validation of orderQty---------------------------
+
+const orderQtyRegEx = /^[1-9][0-9]{0,3}$/;
+
+var addToCartValidations = {
+    reg: orderQtyRegEx,
+    field: $('#inputPOOrderQty'),
+    error:'Quantity Pattern is Wrong : 1-9'
+}
+
+
+$("#inputPOOrderQty").on('keydown', function (event) {
+    if (event.key == "Tab") {
+        event.preventDefault();
+    }
+});
+
+$("#inputPOOrderQty").on('keyup', function (event) {
+    checkOrderQtyValidity();
+});
+
+$("#inputPOOrderQty").on('blur', function (event) {
+    checkOrderQtyValidity();
+});
+
+
+$("#inputPOOrderQty").on('keydown', function (event) {
+    if (event.key == "Enter" && checkOrderQty(orderQtyRegEx ,$("#inputPOOrderQty"))) {
+        let res = confirm("Do you want to add this item to cart?");
+        if (res) {
+            addToCart();
+            $("#btnAddToCart").attr('disabled',true);
+        }
+    }
+});
+
+
+function checkOrderQtyValidity() {
+    let errorCount=0;
+
+        if (checkOrderQty(addToCartValidations.reg,addToCartValidations.field)) {
+            OrderQtyTextSuccess(addToCartValidations.field,"");
+            errorCount=errorCount+1;
+        }else{
+            setOrderQtyTextError(addToCartValidations.field,addToCartValidations.error);
+        }
+
+    setAddToCartButtonState(errorCount);
+
+}
+
+
+function checkOrderQty(regex, txtField) {
+
+    let inputValue = txtField.val();
+
+    if(regex.test(inputValue)){
+        return true;
+    }else{
+        return false;
+    }
+
+     inputValue = txtField.val();
+
+    if (inputValue.length == 0 ){
+        return false;
+    }else {
+        return true;
+    }
+    
+}
+
+function setOrderQtyTextError(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultOrderQtyText(txtField,"");
+    } else {
+        txtField.css('border', '2px solid red');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function OrderQtyTextSuccess(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultOrderQtyText(txtField,"");
+    } else {
+        txtField.css('border', '2px solid green');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function defaultOrderQtyText(txtField,error) {
+    txtField.css("border", "1px solid #ced4da");
+    txtField.parent().children('span').text(error);
+}
+
+function setAddToCartButtonState(value){
+    if (value > 0){
+        $("#btnAddToCart").attr('disabled',false);
+    }else {
+        $("#btnAddToCart").attr('disabled',true);
+    }
+}
 
