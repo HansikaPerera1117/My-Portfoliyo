@@ -163,39 +163,19 @@ function addToCart(){
         }
     }
 
-    let TOTAL = manageTotal(total);
-    // console.log(TOTAL);
-    $("#Total").text(TOTAL);
+     manageTotal(total);
+    // // console.log(TOTAL);
+    // $("#Total").text(TOTAL);
+    //
+    // manageSubTotal(TOTAL);
 
     setTextInItemTextfields("","","","","")
 
     $("#btnAddToCart").attr('disabled',true);
 }
 
-// function gettable() {
-//
-//     for (const row of $(".tblCart").get($("tr"))) {
-//         console.log(row)
-//         let code = row.children(":eq(0)").text();
-//         console.log(code)
-//         let name = row.children(":eq(1)").text();
-//         console.log(name);
-//         let price = row.children(":eq(2)").text();
-//         console.log(price)
-//         let qty = row.children(":eq(3)").text();
-//         console.log(qty)
-//         let total = row.children(":eq(3)").text();
-//         console.log(total)
-//     }
-//     // // console.log(id, name, address, salary);
-//     //
-//     // //setting table details values to text fields
-//     // $('#txtCustomerID').val(id);
-//     // $('#txtCustomerName').val(name);
-//     // $('#txtCustomerAddress').val(address);
-//     // $('#txtCustomerSalary').val(salary);
-//
-// }
+
+
 
 function setTextInItemTextfields( code, name, price, qtyOHand, orderQty) {
     $("#inputPOItemCode").val(code);
@@ -210,22 +190,40 @@ function manageQtyOnHand(qtyOnHand , orderQty){
     return updatedQtyOnHand;
 }
 
-function manageTotal(total){
+function manageTotal(){
 
-    // var a=10;
-    // var b=100;
-    // var c =a+=b;
-    // b=c;
+  let tot = 0;
+    for (let oDetails of orderDetails) {
+       tot += oDetails.total;
+    }
 
-    // console.log(total);
-    //let tot1 = 0;
-    let tot2 = null;
-    tot2 = tot2 += total;
+    $("#Total").text(tot);
 
-   // let fulTot = tot1+=tot2
-   // tot1 = fulTot;
-    return tot2;
+
+    $("#inputDiscount").on('keydown', function (event) {
+
+        if (event.key == "Enter") {
+            let discount = $("#inputDiscount").val();
+
+            let dis = (tot*discount)/100;
+
+            let subTot= tot-dis;
+
+            $("#SubTotal").text(subTot);
+        }
+    });
+
 }
+
+// function manageSubTotal(total){
+//
+//     let tot = total;
+//     let discount = $("#inputDiscount").val();
+//
+//     let subTot = (total*discount)/100;
+//
+//     $("#SubTotal").text(subTot);
+// }
 
 $("#btnPurchaseOrder").click(function (){
     purchaseOrder();
@@ -236,11 +234,6 @@ function purchaseOrder() {
     let orderID = $("#OrderId").text();
     let orderDate = $("#OrderDate").text();
     let cusId = $("#inputPOCustomerID").val();
-    let cash = $("#inputCash").val();
-    let discount = $("#inputDiscount").val();
-
-    let balance
-
 
     var orderObject = {
         oId: orderID,
@@ -310,6 +303,12 @@ function purchaseOrder() {
                         'Your order has been purchased successfully !...',
                         'success'
                     )
+
+                    setTextInItemTextfields("","","","","");
+                    $("#inputPOCustomerID, #inputPOCName,#inputPOCSalary, #inputAddress ").val("");
+                    $(".tblCart").empty();
+                    generateOrderID();
+
                 }else{
                     Swal.fire({
                         position: 'top-end',
@@ -334,48 +333,28 @@ function purchaseOrder() {
         })
 
     console.log(orderDetails);
-
     $("#btnPurchaseOrder").attr('disabled',true);
 }
 
- function cancelOrder(oId) {
 
-    for(var i of orderDetails){
-        if(i.oId == oId){
-            var index= orderDetails.indexOf(i);
-            orderDetails.splice(index,1);
-        }
-    }
-//
-//     // let target = oId;
-//     // var i = 0;
-//     // while (i < orderDetails.length) {
-//     //     if (orderDetails[i] == target) {
-//     //         orderDetails.splice(i, 1);
-//     //     } else {
-//     //         ++i;
-//     //     }
-//     // }
-//     // console.log(orderDetails);
-//
-//     // for (let od of orderDetails) {
-//     //         if (od.oId == oId) {
-//     //             let indexNumber = orderDetails.indexOf(oId);
-//     //             orderDetails.splice(indexNumber, 1);
-//     //         }
-//     // }
-//
-//     // if (oDetail != null) {
-//     //     let indexNumber = orderDetails.indexOf(oDetail);
-//     //     orderDetails.splice(indexNumber, 1);
-//     //     return true;
-//     // } else {
-//     //     return false;
-//     // }
+function cancelOrder(oId) {
+
+    orderDetails=  orderDetails.filter(function(v){
+        return v.oId!=oId;
+    });
+
 }
 
 
+$("#inputCash").on('keydown', function (event) {
+        if (event.key == "Enter") {
+            let cash = $("#inputCash").val();
+            let subTotal =  $("#SubTotal").text();
 
+            let balance = cash - subTotal;
+            $("#inputBalance").val(balance);
+        }
+});
 
 
 
@@ -496,7 +475,7 @@ function setAddToCartButtonState(value){
 //-----------------validation of cash----------------------------------------
 
 const cashRegEx = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
-const discountRegEx = /^[0-9]{0,1}$/;
+const discountRegEx = /^[0-9]{0,2}$/;
 
 let billingValidations = [];
 billingValidations.push({reg: cashRegEx, field: $('#inputCash'),error:'Wrong : 100 or 100.00'});
@@ -520,21 +499,18 @@ $("#inputCash,#inputDiscount").on('blur', function (event) {
 
 
 
-$("#inputCash").on('keydown', function (event) {
-    if (event.key == "Enter" && checkBilling(cashRegEx, $("#inputCash"))) {
-        focusBillingText($("#inputDiscount"));
+$("#inputDiscount").on('keydown', function (event) {
+    if (event.key == "Enter" && checkBilling(cashRegEx, $("#inputDiscount"))) {
+        focusBillingText($("#inputCash"));
     }
 });
 
 
-$("#inputDiscount").on('keydown', function (event) {
-    if (event.key == "Enter" && checkBilling(discountRegEx, $("#inputDiscount"))) {
-        let res = confirm("Do you want to add this item.?");
-        if (res) {
-            //saveItem();
+$("#inputCash").on('keydown', function (event) {
+    if (event.key == "Enter" && checkBilling(discountRegEx, $("#inputCash"))) {
+            purchaseOrder();
             clearAllBillingTexts();
             $("#btnPurchaseOrder").attr('disabled',true);
-        }
     }
 });
 
@@ -561,15 +537,6 @@ function checkBilling(regex, txtField) {
     }else{
         return false;
     }
-    //
-    // inputValue = txtField.val();
-    //
-    // if (inputValue.length == 0){
-    //     return false;
-    // }else {
-    //     return true;
-    // }
-
 }
 
 function setBillingTextError(txtField,error) {
@@ -608,9 +575,9 @@ function setPurchaseButtonState(value){
     }
 }
 
-// function clearAllBillingTexts() {
-//     $("#inputCash").focus();
-//     $("#inputCash,#inputDiscount").val("");
-//     checkBillingValidity();
-// }
+function clearAllBillingTexts() {
+    $("#inputCash").focus();
+    $("#inputCash,#inputDiscount").val("");
+    checkBillingValidity();
+}
 
