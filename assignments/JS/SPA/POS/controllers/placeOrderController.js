@@ -254,84 +254,84 @@ function purchaseOrder() {
     console.log(beforCount);
 
 
-    order.push(orderObject);
-
-    if (beforCount == order.length){
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Order has bees saved successfully...',
-            showConfirmButton: false,
-            timer: 1500
-        })
-        setTextInItemTextfields("","","","","");
-        $("#inputPOCustomerID, #inputPOCName,#inputPOCSalary, #inputAddress ").val("");
-        $(".tblCart").empty();
-    }else{
-        Swal.fire({
-            position: 'top-end',
-            icon: 'error',
-            title: 'Unsuccessful...',
-            showConfirmButton: false,
-            timer: 1500
-        })
-    }
-
+    // order.push(orderObject);
+    //
+    // if (beforCount == order.length){
+    //     Swal.fire({
+    //         position: 'top-end',
+    //         icon: 'success',
+    //         title: 'Order has bees saved successfully...',
+    //         showConfirmButton: false,
+    //         timer: 1500
+    //     })
+    //     setTextInItemTextfields("","","","","");
+    //     $("#inputPOCustomerID, #inputPOCName,#inputPOCSalary, #inputAddress ").val("");
+    //     $(".tblCart").empty();
+    // }else{
+    //     Swal.fire({
+    //         position: 'top-end',
+    //         icon: 'error',
+    //         title: 'Unsuccessful...',
+    //         showConfirmButton: false,
+    //         timer: 1500
+    //     })
+    // }
+    //
     console.log(order);
 
 
-//
-// //------------alert--------------------------------
-//
-//         const swalWithBootstrapButtons = Swal.mixin({
-//             customClass: {
-//                 confirmButton: 'btn btn-success',
-//                 cancelButton: 'btn btn-danger'
-//             },
-//             buttonsStyling: false
-//         })
-//         swalWithBootstrapButtons.fire({
-//             title: 'Are you sure?',
-//             text: "You won't be able to revert this!",
-//             icon: 'question',
-//             showCancelButton: true,
-//             confirmButtonText: 'Yes, place order!',
-//             cancelButtonText: 'No, cancel!',
-//             reverseButtons: true
-//         }).then((result) => {
-//             if (result.isConfirmed) {
-//
-//                 order.push(orderObject);
-//
-//                 if (beforCount == order.length) {
-//
-//                     swalWithBootstrapButtons.fire(
-//                         'Purchased!',
-//                         'Your order has been purchased successfully !...',
-//                         'success'
-//                     )
-//                 }else{
-//                     Swal.fire({
-//                         position: 'top-end',
-//                         icon: 'error',
-//                         title: 'Unsuccessful...',
-//                         showConfirmButton: false,
-//                         timer: 1500
-//                     })
-//                 }
-//
-//             } else if (result.dismiss === Swal.DismissReason.cancel) {
-//                 swalWithBootstrapButtons.fire(
-//                     'Cancelled',
-//                     'Your order has been cancelled !',
-//                     'error'
-//                 )
-//                 cancelOrder(orderObject.oId);
-//                 setTextInItemTextfields("","","","","");
-//                 $("#inputPOCustomerID, #inputPOCName,#inputPOCSalary, #inputAddress ").val("");
-//                 $(".tblCart").empty();
-//             }
-//         })
+
+//------------alert--------------------------------
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+        })
+        swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, place order!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                order.push(orderObject);
+
+                if (beforCount == order.length) {
+
+                    swalWithBootstrapButtons.fire(
+                        'Purchased!',
+                        'Your order has been purchased successfully !...',
+                        'success'
+                    )
+                }else{
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: 'Unsuccessful...',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'Your order has been cancelled !',
+                    'error'
+                )
+                cancelOrder(orderObject.oId);
+                setTextInItemTextfields("","","","","");
+                $("#inputPOCustomerID, #inputPOCName,#inputPOCSalary, #inputAddress ").val("");
+                $(".tblCart").empty();
+            }
+        })
 
     console.log(orderDetails);
 }
