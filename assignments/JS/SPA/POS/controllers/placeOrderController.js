@@ -338,12 +338,12 @@ function purchaseOrder() {
 
 // function cancelOrder(oId) {
 //
-//     for(var i of orderDetails){
-//         if(i.oId == oId){
-//             var index= orderDetails.indexOf(i);
-//             customers.splice(index,1);
-//         }
-//     }
+    for(var i of orderDetails){
+        if(i.oId == oId){
+            var index= orderDetails.indexOf(i);
+            customers.splice(index,1);
+        }
+    }
 //
 //     // let target = oId;
 //     // var i = 0;
@@ -541,6 +541,7 @@ $("#inputDiscount").on('keydown', function (event) {
         if (res) {
             //saveItem();
             clearAllBillingTexts();
+            $("#btnPurchaseOrder").attr('disabled',true);
         }
     }
 });
