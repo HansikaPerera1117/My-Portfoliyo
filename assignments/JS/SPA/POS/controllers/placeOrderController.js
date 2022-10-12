@@ -5,7 +5,7 @@ $("#OrderDate").text(current_date);
 
 $("#selectItem").focus();
 $("#btnAddToCart").attr('disabled',true);
-$("#btnPurchaseOrder").attr('disabled',true);
+// $("#btnPurchaseOrder").attr('disabled',true);
 
 
 function generateOrderID(){
