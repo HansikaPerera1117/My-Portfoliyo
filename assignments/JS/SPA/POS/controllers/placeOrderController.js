@@ -5,7 +5,7 @@ $("#OrderDate").text(current_date);
 
 $("#selectItem").focus();
 $("#btnAddToCart").attr('disabled',true);
-// $("#btnPurchaseOrder").attr('disabled',true);
+ $("#btnPurchaseOrder").attr('disabled',true);
 
 
 function generateOrderID(){
@@ -334,6 +334,8 @@ function purchaseOrder() {
         })
 
     console.log(orderDetails);
+
+    $("#btnPurchaseOrder").attr('disabled',true);
 }
 
  function cancelOrder(oId) {
@@ -371,16 +373,6 @@ function purchaseOrder() {
 //     //     return false;
 //     // }
 }
-
-// function searchOrderDetails(oId) {
-//     for (let od of orderDetails) {
-//         if (od.oId == oId) {
-//             return oId;
-//         }
-//     }
-//     return null;
-// }
-
 
 
 
@@ -546,7 +538,6 @@ $("#inputDiscount").on('keydown', function (event) {
     }
 });
 
-
 function checkBillingValidity() {
     let errorCount=0;
     for (let validation of billingValidations) {
@@ -565,22 +556,21 @@ function checkBilling(regex, txtField) {
 
     let inputValue = txtField.val();
 
-    if(regex.test(inputValue)){
+    if((regex.test(inputValue)) && (inputValue.length != 0)){
         return true;
     }else{
         return false;
     }
-
-    inputValue = txtField.val();
-
-    if (inputValue.length == 0 ){
-        return false;
-    }else {
-        return true;
-    }
+    //
+    // inputValue = txtField.val();
+    //
+    // if (inputValue.length == 0){
+    //     return false;
+    // }else {
+    //     return true;
+    // }
 
 }
-
 
 function setBillingTextError(txtField,error) {
     if (txtField.val().length <= 0) {
@@ -609,17 +599,18 @@ function focusBillingText(txtField) {
     txtField.focus();
 }
 
+
 function setPurchaseButtonState(value){
     if (value > 0){
         $("#btnPurchaseOrder").attr('disabled',false);
-    }else{
+    }else {
         $("#btnPurchaseOrder").attr('disabled',true);
     }
 }
 
-function clearAllBillingTexts() {
-    $("#inputCash").focus();
-    $("#inputCash,#inputDiscount").val("");
-    checkBillingValidity();
-}
+// function clearAllBillingTexts() {
+//     $("#inputCash").focus();
+//     $("#inputCash,#inputDiscount").val("");
+//     checkBillingValidity();
+// }
 
