@@ -263,6 +263,8 @@ function purchaseOrder() {
                     $("#SubTotal").text("");
                     $(".tblCart").empty();
                     generateOrderID();
+                    loadOrderIDs();
+                    loadCustomerIDs();
 
                 }else{
                     Swal.fire({
