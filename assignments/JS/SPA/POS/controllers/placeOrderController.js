@@ -9,7 +9,8 @@ $("#btnAddToCart").attr('disabled',true);
 
 
 function generateOrderID(){
-    let lastOId ="";
+
+    let lastOId =" ";
     for (const ords of order) {
         lastOId = ords.id;
         console.log(lastOId)
@@ -17,6 +18,7 @@ function generateOrderID(){
 
     if (order.length == 0){
         $("#OrderId").text("D00-1");
+
     }else {
 
         let co = lastOId.length;
@@ -29,8 +31,6 @@ function generateOrderID(){
         let n = parseInt(num);
         n++;
         console.log(n);
-
-
 
         let GenerateId = text+n;
 
@@ -163,19 +163,12 @@ function addToCart(){
         }
     }
 
-     manageTotal(total);
-    // // console.log(TOTAL);
-    // $("#Total").text(TOTAL);
-    //
-    // manageSubTotal(TOTAL);
+     manageTotal();
 
     setTextInItemTextfields("","","","","")
 
     $("#btnAddToCart").attr('disabled',true);
 }
-
-
-
 
 function setTextInItemTextfields( code, name, price, qtyOHand, orderQty) {
     $("#inputPOItemCode").val(code);
@@ -191,14 +184,12 @@ function manageQtyOnHand(qtyOnHand , orderQty){
 }
 
 function manageTotal(){
-
   let tot = 0;
     for (let oDetails of orderDetails) {
        tot += oDetails.total;
     }
 
     $("#Total").text(tot);
-
 
     $("#inputDiscount").on('keydown', function (event) {
 
@@ -212,25 +203,13 @@ function manageTotal(){
             $("#SubTotal").text(subTot);
         }
     });
-
 }
-
-// function manageSubTotal(total){
-//
-//     let tot = total;
-//     let discount = $("#inputDiscount").val();
-//
-//     let subTot = (total*discount)/100;
-//
-//     $("#SubTotal").text(subTot);
-// }
 
 $("#btnPurchaseOrder").click(function (){
     purchaseOrder();
 });
 
 function purchaseOrder() {
-
     let orderID = $("#OrderId").text();
     let orderDate = $("#OrderDate").text();
     let cusId = $("#inputPOCustomerID").val();
@@ -242,40 +221,12 @@ function purchaseOrder() {
     }
 
     let afterCount = order.length;
-    console.log(afterCount);
+    // console.log(afterCount);
     let beforCount = afterCount + 1;
-    console.log(beforCount);
-
-
-    // order.push(orderObject);
-    //
-    // if (beforCount == order.length){
-    //     Swal.fire({
-    //         position: 'top-end',
-    //         icon: 'success',
-    //         title: 'Order has bees saved successfully...',
-    //         showConfirmButton: false,
-    //         timer: 1500
-    //     })
-    //     setTextInItemTextfields("","","","","");
-    //     $("#inputPOCustomerID, #inputPOCName,#inputPOCSalary, #inputAddress ").val("");
-    //     $(".tblCart").empty();
-    // }else{
-    //     Swal.fire({
-    //         position: 'top-end',
-    //         icon: 'error',
-    //         title: 'Unsuccessful...',
-    //         showConfirmButton: false,
-    //         timer: 1500
-    //     })
-    // }
-    //
-    console.log(order);
-
+    // console.log(beforCount);
 
 
 //------------alert--------------------------------
-
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success',
@@ -306,6 +257,9 @@ function purchaseOrder() {
 
                     setTextInItemTextfields("","","","","");
                     $("#inputPOCustomerID, #inputPOCName,#inputPOCSalary, #inputAddress ").val("");
+                    $("#inputCash, #inputDiscount, #inputBalance ").val("");
+                    $("#Total").text("");
+                    $("#SubTotal").text("");
                     $(".tblCart").empty();
                     generateOrderID();
 
@@ -338,13 +292,10 @@ function purchaseOrder() {
 
 
 function cancelOrder(oId) {
-
     orderDetails=  orderDetails.filter(function(v){
         return v.oId!=oId;
     });
-
 }
-
 
 $("#inputCash").on('keydown', function (event) {
         if (event.key == "Enter") {
@@ -509,7 +460,6 @@ $("#inputDiscount").on('keydown', function (event) {
 $("#inputCash").on('keydown', function (event) {
     if (event.key == "Enter" && checkBilling(discountRegEx, $("#inputCash"))) {
             purchaseOrder();
-            clearAllBillingTexts();
             $("#btnPurchaseOrder").attr('disabled',true);
     }
 });
@@ -575,9 +525,4 @@ function setPurchaseButtonState(value){
     }
 }
 
-function clearAllBillingTexts() {
-    $("#inputCash").focus();
-    $("#inputCash,#inputDiscount").val("");
-    checkBillingValidity();
-}
 
