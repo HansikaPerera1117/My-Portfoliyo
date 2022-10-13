@@ -143,8 +143,8 @@ function updateSearchOrderQty(){
         let tblCode = $(tr).children(":eq(0)").text();
         let txtCode =  $("#inputSOItemCode").val();
 
-        console.log(index);
-        console.log(tr);
+        // console.log(index);
+        // console.log(tr);
 
         if(txtCode == tblCode){
 
@@ -160,10 +160,34 @@ function updateSearchOrderQty(){
         }
     });
 
-    // let tot = 0;
-    // for (let oDetails of orderDetails) {
-    //     if (oDetails.oId == orderId){
-    //         tot += oDetails.total;
-    //     }
-    // }
+   let orderid =  $("#searchOrderId").text();
+    manageSearchOrderTotalWhenUpdateOrderQty(orderid);
 }
+
+function manageSearchOrderTotalWhenUpdateOrderQty(orderId){
+    let tot = 0;
+    let dis = 0;
+
+    $("#tblSearchOrder>tr").each(function(index, tr) {
+
+        let tblItemTotal = $(tr).children(":eq(4)").text();
+        console.log(tblItemTotal);
+        tot = tot + parseInt(tblItemTotal);
+    });
+
+    $("#SearchTotal").text(tot);
+
+    for (let ords of order) {
+        if (ords.oId == orderId){
+            dis = ords.discount;
+        }
+    }
+
+    let discount = (tot*dis)/100;
+
+    let subTot= tot-discount;
+
+    $("#SearchSubTotal").text(subTot);
+
+}
+
