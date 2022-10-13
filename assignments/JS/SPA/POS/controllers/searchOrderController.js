@@ -1,5 +1,7 @@
 $("#searchOrderBar").focus();
 
+$("#btnUpdateSOItems").attr('disabled',true);
+$("#btnConfirmEdits").attr('disabled',true);
 
 function loadAllOrders(){
     $("#tblViewAllOrders").empty();
@@ -135,12 +137,21 @@ $("#closeBtn").click(function (){
 
 $("#btnUpdateSOItems").click(function (){
     updateSearchOrderQty();
+
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Order details has been updated successfully...',
+        showConfirmButton: false,
+        timer: 1500
+    })
+
+
+    $("#btnConfirmEdits").attr('disabled',false);
 });
 
 function updateSearchOrderQty(){
     let updateOrderQty = $("#inputSOOrderQty").val();
-
-    // table row loop karanna one
 
     $("#tblSearchOrder>tr").each(function(index, tr) {
 
@@ -203,3 +214,172 @@ $("#btnSearchOrderReset").click(function (){
 $("#btnClear").click(function (){
     $(".tblSearchO").empty();
 });
+
+$("#btnConfirmEdits").click(function (){
+
+    let search = $("#searchOrderBar").val();
+
+    let response = updateOrderDetails(search);
+
+    if (response) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Order details has been updated successfully...',
+            showConfirmButton: false,
+            timer: 1500
+        })
+
+        $("#inputSOItemCode, #inputSOItemName, #inputSOPrice, #inputSOOrderQty , #SearchTotal, #SearchSubTotal").val("");
+        $("#searchOrderBar").val("");
+
+    } else {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: 'Unsuccessful...',
+            showConfirmButton: false,
+            timer: 1500
+        })
+
+    }
+
+
+});
+
+function updateOrderDetails(oId) {
+    let order = searchItem(oId);
+    if (order != null) {
+
+        $("#tblSearchOrder>tr").each(function (index, tr) {
+
+            for (let orderDtl of orderDetails) {
+                if (oId == orderDtl.oId) {
+
+                    let tblcode = $(tr).children(":eq(0)").text();
+                    if (orderDtl.code == tblcode) {
+
+                        let tblOQty = $(tr).children(":eq(3)").text();
+                        let tblTotal = $(tr).children(":eq(4)").text();
+
+                        orderDtl.orderItemQty = tblOQty;
+                        orderDtl.total = tblTotal;
+                    }
+                    return true;
+                }else {
+                    return false;
+                }
+            }
+        });
+
+    }
+}
+
+
+//---------------Validation of orderQty---------------------------
+
+const updateOrderQtyRegEx = /^[1-9][0-9]{0,2}$/;
+
+var updateOrderQtyValidations = {
+    reg: updateOrderQtyRegEx,
+    field: $('#inputSOOrderQty'),
+    error:'Quantity Pattern is Wrong : 1-9'
+}
+
+
+$("#inputSOOrderQty").on('keydown', function (event) {
+    if (event.key == "Tab") {
+        event.preventDefault();
+    }
+});
+
+$("#inputSOOrderQty").on('keyup', function (event) {
+    checkUpdateOrderQtyValidity();
+});
+
+$("#inputSOOrderQty").on('blur', function (event) {
+    checkUpdateOrderQtyValidity();
+});
+
+$("#inputSOOrderQty").on('keydown', function (event) {
+    if (event.key == "Enter" && checkUpdateOrderQty(updateOrderQtyRegEx ,$("#inputSOOrderQty"))) {
+        let res = confirm("Do you want to update this order item quantity?");
+        if (res) {
+            updateSearchOrderQty();
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Order details has been updated successfully...',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            $("#btnUpdateSOItems").attr('disabled',true);
+        }
+    }
+});
+
+function checkUpdateOrderQtyValidity() {
+    let errorCount=0;
+
+    if (checkUpdateOrderQty(updateOrderQtyValidations.reg,updateOrderQtyValidations.field)) {
+        UpdateOrderQtyTextSuccess(updateOrderQtyValidations.field,"");
+        errorCount=errorCount+1;
+    }else{
+        setUpdateOrderQtyTextError(updateOrderQtyValidations.field,updateOrderQtyValidations.error);
+    }
+
+    setUpdateOrderQtyButtonState(errorCount);
+
+}
+
+function checkUpdateOrderQty(regex, txtField) {
+
+    let inputValue = txtField.val();
+
+    if(regex.test(inputValue)){
+        return true;
+    }else{
+        return false;
+    }
+
+    inputValue = txtField.val();
+
+    if (inputValue.length == 0 ){
+        return false;
+    }else {
+        return true;
+    }
+
+}
+
+function setUpdateOrderQtyTextError(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultUpdateOrderQtyText(txtField,"");
+    } else {
+        txtField.css('border', '2px solid red');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function UpdateOrderQtyTextSuccess(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultUpdateOrderQtyText(txtField,"");
+    } else {
+        txtField.css('border', '2px solid green');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function defaultUpdateOrderQtyText(txtField,error) {
+    txtField.css("border", "1px solid #ced4da");
+    txtField.parent().children('span').text(error);
+}
+
+function setUpdateOrderQtyButtonState(value){
+    if (value > 0){
+        $("#btnUpdateSOItems").attr('disabled',false);
+    }else {
+        $("#btnUpdateSOItems").attr('disabled',true);
+    }
+}
+

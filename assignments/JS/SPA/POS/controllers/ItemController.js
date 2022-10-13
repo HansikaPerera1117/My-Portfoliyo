@@ -291,7 +291,7 @@ $("#inputItemName").focus();
 
 const itmNameRegEx = /^[A-z ]{5,40}$/;
 const itmPackSizesRegEx = /^[1-9][0-9]{0,5}(g|kg|ml|l)$/;
-const itmPriceRegEx = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
+const itmPriceRegEx = /^[1-9][0-9]{1,}[.]?[0-9]{1,2}$/;
 const itmQtyRegEx = /^[1-9][0-9]{0,3}$/;
 
 let itemValidations = [];

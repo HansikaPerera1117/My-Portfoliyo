@@ -437,7 +437,7 @@ function setAddToCartButtonState(value){
 
 //-----------------validation of cash----------------------------------------
 
-const cashRegEx = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
+const cashRegEx = /^[1-9][0-9]{0,}[.]?[0-9]{1,2}$/;
 const discountRegEx = /^[0-9]{0,2}$/;
 
 let billingValidations = [];

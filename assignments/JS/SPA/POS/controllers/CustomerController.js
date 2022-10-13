@@ -328,7 +328,7 @@ $("#inputCustomerName").focus();
 const cusNameRegEx = /^[A-z ]{5,20}$/;
 const cusAddressRegEx = /^[0-9/A-z. ,]{15,}$/;
 const cusContactNoRegEx = /^(011|070|071|072|074|075|076|077|078)[0-9]{7}$/;
-const cusSalaryRegEx = /^[0-9]{3,}[.]?[0-9]{1,2}$/;
+const cusSalaryRegEx = /^[1-9][0-9]{2,}[.]?[0-9]{1,2}$/;
 
 let customerValidations = [];
 customerValidations.push({reg: cusNameRegEx, field: $('#inputCustomerName'),error:'Customer Name Pattern is Wrong : A-z 5-20'});
