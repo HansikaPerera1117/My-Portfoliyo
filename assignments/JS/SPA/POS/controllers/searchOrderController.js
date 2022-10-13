@@ -85,7 +85,7 @@ function searchOrder(orID) {
 }
 
 function bindOrderListRowClickEvents() {
-    $(".tblSearchO>tr").click(function () {
+    $("#tblSearchOrder>tr").click(function () {
         let code = $(this).children(":eq(0)").text();
         let name = $(this).children(":eq(1)").text();
         let price = $(this).children(":eq(2)").text();
@@ -125,7 +125,45 @@ function manageSearchOrderTotal(orderId){
 
 $("#closeBtn").click(function (){
     $("#inputSOItemCode, #inputSOItemName, #inputSOPrice, #inputSOOrderQty , #SearchTotal, #SearchSubTotal").val("");
-    $("#searchOrderId, #searchOrderDate, #searchCusId, #SearchTotal, #SearchSubTotal").text("");;
+    $("#searchOrderId, #searchOrderDate, #searchCusId, #SearchTotal, #SearchSubTotal").text("");
     $(".tblSearchO").empty();
 });
 
+$("#btnUpdateSOItems").click(function (){
+    updateSearchOrderQty();
+});
+
+function updateSearchOrderQty(){
+    let updateOrderQty = $("#inputSOOrderQty").val();
+
+    // table row loop karanna one
+
+    $("#tblSearchOrder>tr").each(function(index, tr) {
+
+        let tblCode = $(tr).children(":eq(0)").text();
+        let txtCode =  $("#inputSOItemCode").val();
+
+        console.log(index);
+        console.log(tr);
+
+        if(txtCode == tblCode){
+
+            $(tr).children(":eq(3)").text(updateOrderQty);
+
+            let price = $("#inputSOPrice").val();
+
+
+            let updatedTot =  price * updateOrderQty;
+
+            $(tr).children(":eq(4)").text(updatedTot);
+
+        }
+    });
+
+    // let tot = 0;
+    // for (let oDetails of orderDetails) {
+    //     if (oDetails.oId == orderId){
+    //         tot += oDetails.total;
+    //     }
+    // }
+}
