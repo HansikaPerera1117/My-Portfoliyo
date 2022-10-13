@@ -121,6 +121,11 @@ function manageSearchOrderTotal(orderId){
 
     $("#SearchSubTotal").text(subTot);
 
-
 }
+
+$("#closeBtn").click(function (){
+    $("#inputSOItemCode, #inputSOItemName, #inputSOPrice, #inputSOOrderQty , #SearchTotal, #SearchSubTotal").val("");
+    $("#searchOrderId, #searchOrderDate, #searchCusId, #SearchTotal, #SearchSubTotal").text("");;
+    $(".tblSearchO").empty();
+});
 
