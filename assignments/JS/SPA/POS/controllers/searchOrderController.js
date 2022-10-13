@@ -18,8 +18,6 @@ function loadAllOrders(){
     }
 }
 
-
-
 function loadOrderIDs(){
     $("#cmbOrderIDs").empty();
     var selected = `<option selected>Order IDs</option>`;
@@ -130,10 +128,14 @@ function manageSearchOrderTotal(orderId){
 }
 
 $("#closeBtn").click(function (){
+    clearAllTextFieldsAndLabels();
+});
+
+function clearAllTextFieldsAndLabels(){
     $("#inputSOItemCode, #inputSOItemName, #inputSOPrice, #inputSOOrderQty , #SearchTotal, #SearchSubTotal").val("");
     $("#searchOrderId, #searchOrderDate, #searchCusId, #SearchTotal, #SearchSubTotal").text("");
     $(".tblSearchO").empty();
-});
+}
 
 $("#btnUpdateSOItems").click(function (){
     updateSearchOrderQty();
@@ -146,8 +148,6 @@ $("#btnUpdateSOItems").click(function (){
         timer: 1500
     })
 
-
-    $("#btnConfirmEdits").attr('disabled',false);
 });
 
 function updateSearchOrderQty(){
@@ -177,6 +177,8 @@ function updateSearchOrderQty(){
 
    let orderid =  $("#searchOrderId").text();
     manageSearchOrderTotalWhenUpdateOrderQty(orderid);
+
+    $("#btnConfirmEdits").attr('disabled',false);
 }
 
 function manageSearchOrderTotalWhenUpdateOrderQty(orderId){
@@ -219,7 +221,7 @@ $("#btnConfirmEdits").click(function (){
 
     let search = $("#searchOrderBar").val();
 
-    let response = updateOrderDetails(search);
+     let response = updateOrderDetails(search);
 
     if (response) {
         Swal.fire({
@@ -254,10 +256,14 @@ function updateOrderDetails(oId) {
         $("#tblSearchOrder>tr").each(function (index, tr) {
 
             for (let orderDtl of orderDetails) {
+                console.log(orderDtl)
                 if (oId == orderDtl.oId) {
-
+                    console.log("samana wela")
                     let tblcode = $(tr).children(":eq(0)").text();
+                    console.log(tblcode)
                     if (orderDtl.code == tblcode) {
+
+                        console.log()
 
                         let tblOQty = $(tr).children(":eq(3)").text();
                         let tblTotal = $(tr).children(":eq(4)").text();
@@ -266,7 +272,8 @@ function updateOrderDetails(oId) {
                         orderDtl.total = tblTotal;
                     }
                     return true;
-                }else {
+                }
+                else {
                     return false;
                 }
             }
@@ -274,6 +281,66 @@ function updateOrderDetails(oId) {
 
     }
 }
+
+
+
+$("#btnDeleteOrder").click(function (){
+
+    let search = $("#searchOrderBar").val();
+
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            if (deleteOrder(search)) {
+                Swal.fire(
+                    'Deleted!',
+                    'Order ' +search + ' has been deleted successfully',
+                    'success'
+                )
+            } else {
+                alert("No such Item to delete. please check the code or name");
+            }
+
+
+            $("#searchOrderBar").val("");
+
+            clearAllTextFieldsAndLabels();
+
+            loadOrderIDs();
+
+            loadAllOrders();
+
+        }
+    })
+});
+
+function deleteOrder(orderID) {
+    let odr = searchOrder(orderID);
+    if (odr != null) {
+
+        order=  order.filter(function(v){
+            return v.oId!=orderID;
+        });
+
+        orderDetails=  orderDetails.filter(function(v){
+            return v.oId!=orderID;
+        });
+
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
 
 
 //---------------Validation of orderQty---------------------------
