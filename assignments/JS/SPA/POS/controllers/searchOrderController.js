@@ -47,7 +47,6 @@ $("#viewAllOrders").click(function (){
     loadAllOrders();
 });
 
-
 $("#btnSearchOrder").click(function (){
     searchOrderDetailsAndSetTable();
 
@@ -107,7 +106,7 @@ function manageSearchOrderTotal(orderId){
     let dis = 0;
     for (let oDetails of orderDetails) {
         if (oDetails.oId == orderId){
-            tot += oDetails.total;
+            tot += parseInt(oDetails.total);
         }
     }
 
@@ -222,29 +221,44 @@ $("#btnConfirmEdits").click(function (){
     let search = $("#searchOrderBar").val();
 
      let response = updateOrderDetails(search);
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Update it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
 
-    if (response) {
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Order details has been updated successfully...',
-            showConfirmButton: false,
-            timer: 1500
-        })
+            if (response) {
 
-        $("#inputSOItemCode, #inputSOItemName, #inputSOPrice, #inputSOOrderQty , #SearchTotal, #SearchSubTotal").val("");
-        $("#searchOrderBar").val("");
+                Swal.fire(
+                    'Successful !',
+                    'Your order has been updated !...',
+                    'success'
+                )
 
-    } else {
-        Swal.fire({
-            position: 'top-end',
-            icon: 'error',
-            title: 'Unsuccessful...',
-            showConfirmButton: false,
-            timer: 1500
-        })
+                $("#inputSOItemCode, #inputSOItemName, #inputSOPrice, #inputSOOrderQty , #SearchTotal, #SearchSubTotal").val("");
+                $("#searchOrderBar").val("");
+                manageSearchOrderTotalWhenUpdateOrderQty();
 
-    }
+            } else {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Unsuccessful...',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+            }
+
+
+        }
+    })
+
 
 
 });
@@ -279,14 +293,13 @@ function updateOrderDetails(oId) {
                         console.log(orderDetails[i].orderItemQty )
                         console.log(orderDetails[i].total)
                     }
-                    return true;
-                }
-                else {
-                    return false;
+
                 }
             }
         });
-
+        return true;
+    }else {
+        return false;
     }
 }
 
