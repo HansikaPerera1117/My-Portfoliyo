@@ -71,10 +71,7 @@ $("#btnSearchOrder").click(function (){
             }
         }
     }
-
-
-    $("#inputIPrice").val(item.price);
-    $("#inputIQuantity").val(item.qty);
+    bindOrderListRowClickEvents();
 });
 
 function searchOrder(orID) {
@@ -85,3 +82,18 @@ function searchOrder(orID) {
     }
     return null;
 }
+
+function bindOrderListRowClickEvents() {
+    $(".tblSearchO>tr").click(function () {
+        let code = $(this).children(":eq(0)").text();
+        let name = $(this).children(":eq(1)").text();
+        let price = $(this).children(":eq(2)").text();
+        let oQty = $(this).children(":eq(3)").text();
+
+        $("#inputSOItemCode").val(code);
+        $("#inputSOItemName").val(name);
+        $("#inputSOPrice").val(price);
+        $("#inputSOOrderQty").val(oQty);
+    });
+}
+
