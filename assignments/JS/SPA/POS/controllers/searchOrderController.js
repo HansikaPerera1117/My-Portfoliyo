@@ -49,7 +49,11 @@ $("#viewAllOrders").click(function (){
 
 
 $("#btnSearchOrder").click(function (){
+    searchOrderDetailsAndSetTable();
 
+});
+
+function searchOrderDetailsAndSetTable(){
     let search = $("#searchOrderBar").val();
 
     let order = searchOrder(search);
@@ -62,7 +66,7 @@ $("#btnSearchOrder").click(function (){
 
     for (let orderList of orderDetails) {
         if (orderList.oId == order.oId){
-           let itemCode = orderList.code;
+            let itemCode = orderList.code;
             for (let  itm of items) {
                 if (itm.code == itemCode){
                     var row= `<tr><td>${orderList.code}</td><td>${itm.name}</td><td>${itm.price}</td><td>${orderList.orderItemQty}</td><td>${orderList.total}</td></tr>`;
@@ -73,7 +77,7 @@ $("#btnSearchOrder").click(function (){
     }
     bindOrderListRowClickEvents();
     manageSearchOrderTotal(order.oId);
-});
+}
 
 function searchOrder(orID) {
     for (let ord of order) {
@@ -191,3 +195,11 @@ function manageSearchOrderTotalWhenUpdateOrderQty(orderId){
 
 }
 
+$("#btnSearchOrderReset").click(function (){
+    $("#inputSOItemCode, #inputSOItemName, #inputSOPrice, #inputSOOrderQty , #SearchTotal, #SearchSubTotal").val("");
+    searchOrderDetailsAndSetTable();
+});
+
+$("#btnClear").click(function (){
+    $(".tblSearchO").empty();
+});
