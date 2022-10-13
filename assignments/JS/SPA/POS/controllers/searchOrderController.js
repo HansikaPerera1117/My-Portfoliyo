@@ -250,26 +250,34 @@ $("#btnConfirmEdits").click(function (){
 });
 
 function updateOrderDetails(oId) {
-    let order = searchItem(oId);
+    let order = searchOrder(oId);
     if (order != null) {
 
         $("#tblSearchOrder>tr").each(function (index, tr) {
 
-            for (let orderDtl of orderDetails) {
-                console.log(orderDtl)
-                if (oId == orderDtl.oId) {
-                    console.log("samana wela")
+            for (let i = 0; i < orderDetails.length; i++) {
+               let orderID =  orderDetails[i].oId;
+                console.log(orderDetails[i])
+                console.log(i)
+                console.log(orderID)
+                if (oId == orderID) {
+                    console.log("samana wela 1")
                     let tblcode = $(tr).children(":eq(0)").text();
                     console.log(tblcode)
-                    if (orderDtl.code == tblcode) {
+                    if (orderDetails[i].code == tblcode) {
 
-                        console.log()
+                        console.log("samana wela 2")
 
                         let tblOQty = $(tr).children(":eq(3)").text();
                         let tblTotal = $(tr).children(":eq(4)").text();
 
-                        orderDtl.orderItemQty = tblOQty;
-                        orderDtl.total = tblTotal;
+                        console.log(tblOQty);
+                        console.log(tblTotal)
+
+                        orderDetails[i].orderItemQty = tblOQty;
+                        orderDetails[i].total = tblTotal;
+                        console.log(orderDetails[i].orderItemQty )
+                        console.log(orderDetails[i].total)
                     }
                     return true;
                 }
@@ -281,8 +289,6 @@ function updateOrderDetails(oId) {
 
     }
 }
-
-
 
 $("#btnDeleteOrder").click(function (){
 
@@ -339,9 +345,6 @@ function deleteOrder(orderID) {
         return false;
     }
 }
-
-
-
 
 //---------------Validation of orderQty---------------------------
 
