@@ -72,6 +72,7 @@ $("#btnSearchOrder").click(function (){
         }
     }
     bindOrderListRowClickEvents();
+    manageSearchOrderTotal(order.oId);
 });
 
 function searchOrder(orID) {
@@ -95,5 +96,31 @@ function bindOrderListRowClickEvents() {
         $("#inputSOPrice").val(price);
         $("#inputSOOrderQty").val(oQty);
     });
+}
+
+function manageSearchOrderTotal(orderId){
+    let tot = 0;
+    let dis = 0;
+    for (let oDetails of orderDetails) {
+        if (oDetails.oId == orderId){
+            tot += oDetails.total;
+        }
+    }
+
+    $("#SearchTotal").text(tot);
+
+    for (let ords of order) {
+        if (ords.oId == orderId){
+           dis = ords.discount;
+        }
+    }
+
+    let discount = (tot*dis)/100;
+
+    let subTot= tot-discount;
+
+    $("#SearchSubTotal").text(subTot);
+
+
 }
 

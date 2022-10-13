@@ -109,7 +109,6 @@ function addToCart(){
 
     let total = price * orderItemQty;
 
-
     var addToCartObject = {
         code: itemCode,
         name: itemName,
@@ -127,6 +126,7 @@ function addToCart(){
         code: itemCode,
         orderItemQty: orderItemQty,
         total: total,
+
     }
 
     let afterCount = orderDetails.length;
@@ -164,7 +164,7 @@ function addToCart(){
         }
     }
 
-     manageTotal();
+     manageTotal(orderID);
 
     setTextInItemTextfields("","","","","")
 
@@ -184,10 +184,12 @@ function manageQtyOnHand(qtyOnHand , orderQty){
     return updatedQtyOnHand;
 }
 
-function manageTotal(){
+function manageTotal(orderId){
   let tot = 0;
     for (let oDetails of orderDetails) {
-       tot += oDetails.total;
+        if (oDetails.oId == orderId){
+            tot += oDetails.total;
+        }
     }
 
     $("#Total").text(tot);
@@ -202,6 +204,7 @@ function manageTotal(){
             let subTot= tot-dis;
 
             $("#SubTotal").text(subTot);
+
         }
     });
 }
@@ -215,10 +218,13 @@ function purchaseOrder() {
     let orderDate = $("#OrderDate").text();
     let cusId = $("#inputPOCustomerID").val();
 
+    let discount = $("#inputDiscount").val();
+
     var orderObject = {
         oId: orderID,
         oDate: orderDate,
         customerId: cusId,
+        discount :discount,
     }
 
     let afterCount = order.length;
