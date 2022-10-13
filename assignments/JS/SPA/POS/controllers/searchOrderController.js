@@ -1,5 +1,6 @@
 $("#searchOrderBar").focus();
 
+
 function loadAllOrders(){
     $("#tblViewAllOrders").empty();
 
@@ -14,6 +15,8 @@ function loadAllOrders(){
         }
     }
 }
+
+
 
 function loadOrderIDs(){
     $("#cmbOrderIDs").empty();
@@ -43,3 +46,42 @@ $("#cmbOrderIDs").click(function () {
 $("#viewAllOrders").click(function (){
     loadAllOrders();
 });
+
+
+$("#btnSearchOrder").click(function (){
+
+    let search = $("#searchOrderBar").val();
+
+    let order = searchOrder(search);
+
+    $(".tblSearchO").empty();
+
+    $("#searchOrderId").text(order.oId);
+    $("#searchOrderDate").text(order.oDate);
+    $("#searchCusId").text(order.customerId);
+
+    for (let orderList of orderDetails) {
+        if (orderList.oId == order.oId){
+           let itemCode = orderList.code;
+            for (let  itm of items) {
+                if (itm.code == itemCode){
+                    var row= `<tr><td>${orderList.code}</td><td>${itm.name}</td><td>${itm.price}</td><td>${orderList.orderItemQty}</td><td>${orderList.total}</td></tr>`;
+                    $(".tblSearchO").append(row);
+                }
+            }
+        }
+    }
+
+
+    $("#inputIPrice").val(item.price);
+    $("#inputIQuantity").val(item.qty);
+});
+
+function searchOrder(orID) {
+    for (let ord of order) {
+        if (ord.oId == orID) {
+            return ord;
+        }
+    }
+    return null;
+}
