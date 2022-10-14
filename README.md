@@ -2,8 +2,11 @@
 # Tech used
 
 HTML
+
 CSS
+
 Java
+
 
 # My-Portfoliyo
 
@@ -23,7 +26,10 @@ Wire fram  :  https://wireframe.cc/FlurT9
 Mockup  :  https://www.figma.com/file/yfYzDasvDx22xYA6sGIpVU/Untitled?node-id=0%3A1
 
 
+
 This site was built using Github Pages and 000WebHost
+
+
 
 Github Pages URL ---->  https://hansikaperera1117.github.io/My-Portfoliyo/
 
