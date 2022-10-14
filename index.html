@@ -514,26 +514,26 @@
             </div>
             <div id="image2">
                 <figure >
-                    <img src="assests/images/certificates/Certificate_1.jpg" alt="This is a photo of certificate">
-                    <figcaption>This is a certificate of participation</figcaption>
+                    <img src="assests/images/certificates/Certificate_2.jpg" alt="This is a photo of certificate">
+                    <figcaption>This is the certificate of Software Development Examination</figcaption>
                 </figure>
             </div>
             <div id="image3">
                 <figure>
-                    <img src="assests/images/certificates/Certificate_1.jpg" alt="This is a photo of certificate">
-                    <figcaption>This is a certificate of participation</figcaption>
+                    <img src="assests/images/certificates/Certificate_5.jpg" alt="This is a photo of certificate">
+                    <figcaption>This is the result sheet of Software Development Examination</figcaption>
                 </figure>
             </div>
             <div id="image4">
                 <figure>
-                    <img src="assests/images/certificates/Certificate_1.jpg" alt="This is a photo of certificate">
-                    <figcaption>This is a certificate of participation</figcaption>
+                    <img src="assests/images/certificates/Certificate_3.jpg" alt="This is a photo of certificate">
+                    <figcaption>This is the certificate Advance Software Development Examination</figcaption>
                 </figure>
             </div>
             <div id="image5">
                 <figure>
-                    <img src="assests/images/certificates/Certificate_1.jpg" alt="This is a photo of certificate">
-                    <figcaption>This is a certificate of participation</figcaption>
+                    <img src="assests/images/certificates/Certificate_04.jpg" alt="This is a photo of certificate">
+                    <figcaption>This is the result sheet of Advance Software Development Examination</figcaption>
                 </figure>
             </div>
         </section>
@@ -924,9 +924,10 @@
          $("#mainImage").attr('src',imagesrc);
 
          let caption = $("#image1>figure>figcaption").text();
-         $("#maincaption").text(caption)
-         $("#image1").css('border','3px solid white')
-         $("#image2 , #image3, #image4, #image5").css('border','none')
+         $("#maincaption").text(caption);
+         $("#image1").css('border','3px solid white');
+         $("#image2 , #image3, #image4, #image5").css('border','none');
+         $("#mainImage").css('width',' 555px');
      });
 
      $('#image2').click(function(){
@@ -934,9 +935,10 @@
          $("#mainImage").attr('src',imagesrc);
 
          let caption = $("#image2>figure>figcaption").text();
-         $("#maincaption").text(caption)
-         $("#image2").css('border','3px solid white')
-         $("#image1 , #image3, #image4, #image5").css('border','none')
+         $("#maincaption").text(caption);
+         $("#image2").css('border','3px solid white');
+         $("#image1 , #image3, #image4, #image5").css('border','none');
+         $("#mainImage").css('width',' 555px');
      });
 
      $('#image3').click(function(){
@@ -944,9 +946,12 @@
          $("#mainImage").attr('src',imagesrc);
 
          let caption = $("#image3>figure>figcaption").text();
-         $("#maincaption").text(caption)
-         $("#image3").css('border','3px solid white')
-         $("#image1 , #image2, #image4, #image5").css('border','none')
+         $("#maincaption").text(caption);
+         $("#image3").css('border','3px solid white');
+         $("#image1 , #image2, #image4, #image5").css('border','none');
+         $("#mainImage").css('height',' 395px');
+         $("#mainImage").css('width',' 274px');
+
      });
 
      $('#image4').click(function(){
@@ -954,9 +959,10 @@
          $("#mainImage").attr('src',imagesrc);
 
          let caption = $("#image4>figure>figcaption").text();
-         $("#maincaption").text(caption)
-         $("#image4").css('border','3px solid white')
-         $("#image1 , #image2, #image3, #image5").css('border','none')
+         $("#maincaption").text(caption);
+         $("#image4").css('border','3px solid white');
+         $("#image1 , #image2, #image3, #image5").css('border','none');
+         $("#mainImage").css('width',' 555px');
      });
 
      $('#image5').click(function(){
@@ -964,9 +970,11 @@
          $("#mainImage").attr('src',imagesrc);
 
          let caption = $("#image5>figure>figcaption").text();
-         $("#maincaption").text(caption)
-         $("#image5").css('border','3px solid white')
-         $("#image1 , #image2 , #image3, #image4").css('border','none')
+         $("#maincaption").text(caption);
+         $("#image5").css('border','3px solid white');
+         $("#image1 , #image2 , #image3, #image4").css('border','none');
+         $("#mainImage").css('height',' 395px');
+         $("#mainImage").css('width',' 274px');
      });
 
 

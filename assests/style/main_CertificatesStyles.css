@@ -69,8 +69,11 @@ main>section:nth-child(4)>section:nth-child(4) {
 main>section:nth-child(4)>section:nth-child(4)>div {
     height: 230px;
     width: 225px;
-    background-color: green;
     position: relative;
+}
+
+#image1{
+    border: 3px solid white ;
 }
 
 main>section:nth-child(4)>section:nth-child(4)>div>figure>img {
@@ -83,6 +86,18 @@ main>section:nth-child(4)>section:nth-child(4)>div>figure>img {
     top: 25px;
 }
 
+main>section:nth-child(4)>section:nth-child(4)>div:nth-child(3)>figure>img {
+    height: 200px;
+    width: 140px;
+    top: 3px;
+}
+
+main>section:nth-child(4)>section:nth-child(4)>div:nth-child(5)>figure>img {
+    height: 200px;
+    width: 140px;
+    top: 3px;
+}
+
 main>section:nth-child(4)>section:nth-child(4)>div>figure>figcaption {
     color: white;
     font-family: 'Ubuntu', sans-serif;
@@ -93,9 +108,16 @@ main>section:nth-child(4)>section:nth-child(4)>div>figure>figcaption {
     top: 182px;
     margin: auto;
     height: max-content;
-    width: max-content;
+    width: 220px;
+    text-align: center;
 }
 
+main>section:nth-child(4)>section:nth-child(4)>div:nth-child(3)>figure>figcaption {
+    top: 204px;
+}
+main>section:nth-child(4)>section:nth-child(4)>div:nth-child(5)>figure>figcaption {
+    top: 204px;
+}
 /*===========responsive=======================*/
 
 @media all and (max-width: 1024px){
@@ -109,7 +131,7 @@ main>section:nth-child(4)>section:nth-child(4)>div>figure>figcaption {
 }
 
 @media all and (max-width: 768px){
-    main>section:nth-child(4)>section:nth-child(4)>div:nth-child(4) {
+    main>section:nth-child(4)>section:nth-child(4)>div:nth-child(3) {
         display: none;
     }
 
@@ -130,7 +152,7 @@ main>section:nth-child(4)>section:nth-child(4)>div>figure>figcaption {
         width: 365px;
     }
 
-    main>section:nth-child(4)>section:nth-child(4)>div:nth-child(3) {
+    main>section:nth-child(4)>section:nth-child(4)>div:nth-child(4) {
         display: none;
     }
     main>section:nth-child(4)>section:nth-child(4)>div:nth-child(2) {
