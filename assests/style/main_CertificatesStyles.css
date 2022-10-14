@@ -31,7 +31,7 @@ main>section:nth-child(4)>h5:nth-child(2){
     width: max-content;
 }
 
-main>section:nth-child(4)>figure:nth-child(3)>img{
+main>section:nth-child(4)>figure:nth-child(3)>div{
     height: 395px;
     width: 555px;
     position: absolute;
@@ -147,9 +147,10 @@ main>section:nth-child(4)>section:nth-child(4)>div:nth-child(5)>figure>figcaptio
         top: 450px;
     }
 
-    main>section:nth-child(4)>figure:nth-child(3)>img {
-        height: 245px;
+    main>section:nth-child(4)>figure:nth-child(3)>div {
+        height: 257px;
         width: 365px;
+        top: 160px;
     }
 
     main>section:nth-child(4)>section:nth-child(4)>div:nth-child(4) {
@@ -171,9 +172,10 @@ main>section:nth-child(4)>section:nth-child(4)>div:nth-child(5)>figure>figcaptio
 
 @media all and (max-width: 377px) {
 
-    main>section:nth-child(4)>figure:nth-child(3)>img {
-        height: 215px;
+    main>section:nth-child(4)>figure:nth-child(3)>div {
+        height: 236px;
         width: 335px;
+        top: 151px;
     }
 
     main>section:nth-child(4)>figure:nth-child(3)>figcaption {
@@ -191,10 +193,12 @@ main>section:nth-child(4)>section:nth-child(4)>div:nth-child(5)>figure>figcaptio
 
 @media all and (max-width: 320px) {
 
-    main>section:nth-child(4)>figure:nth-child(3)>img {
-        height: 175px;
+    main>section:nth-child(4)>figure:nth-child(3)>div {
+        height: 207px;
         width: 295px;
+        top: 146px;
     }
+
 
     main>section:nth-child(4)>figure:nth-child(3)>figcaption {
         top: 380px;

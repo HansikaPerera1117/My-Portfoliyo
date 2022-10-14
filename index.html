@@ -500,7 +500,7 @@
         <h3><dfn id="Certificates">Certificates</dfn></h3>
         <h5>There are Some of My Certificates</h5>
         <figure>
-            <img id="mainImage" src="assests/images/certificates/Certificate_1.jpg" alt="This is a photo of certificate">
+            <div id="mainImage"></div>
             <figcaption id="maincaption">This is a certificate of participation</figcaption>
         </figure>
 
@@ -917,64 +917,79 @@
 
      $(window).on('load',function (){
          $("#loader").fadeOut(1000);
+
+         $("#mainImage").css({
+             "background":"url('assests/images/certificates/Certificate_1.jpg')",
+             "background-size":"cover",
+             "background-position":"center"
+         });
+
      });
 
      $('#image1').click(function(){
          let imagesrc = $("#image1>figure>img").attr('src');
-         $("#mainImage").attr('src',imagesrc);
-
          let caption = $("#image1>figure>figcaption").text();
          $("#maincaption").text(caption);
          $("#image1").css('border','3px solid white');
          $("#image2 , #image3, #image4, #image5").css('border','none');
-         $("#mainImage").css('width',' 555px');
+         $("#mainImage").css({
+             "background":`url(${imagesrc})`,
+             "background-size":"cover",
+             "background-position":"center"
+         });
      });
 
      $('#image2').click(function(){
          let imagesrc = $("#image2>figure>img").attr('src');
-         $("#mainImage").attr('src',imagesrc);
-
          let caption = $("#image2>figure>figcaption").text();
          $("#maincaption").text(caption);
          $("#image2").css('border','3px solid white');
          $("#image1 , #image3, #image4, #image5").css('border','none');
-         $("#mainImage").css('width',' 555px');
+         $("#mainImage").css({
+             "background":`url(${imagesrc})`,
+             "background-size":"cover",
+             "background-position":"center"
+         });
      });
 
      $('#image3').click(function(){
          let imagesrc = $("#image3>figure>img").attr('src');
-         $("#mainImage").attr('src',imagesrc);
-
          let caption = $("#image3>figure>figcaption").text();
          $("#maincaption").text(caption);
          $("#image3").css('border','3px solid white');
          $("#image1 , #image2, #image4, #image5").css('border','none');
-         $("#mainImage").css('height',' 395px');
-         $("#mainImage").css('width',' 274px');
+         $("#mainImage").css({
+             "background":`url(${imagesrc})`,
+             "background-size":"cover",
+             "background-position":"center"
+         });
 
      });
 
      $('#image4').click(function(){
          let imagesrc = $("#image4>figure>img").attr('src');
-         $("#mainImage").attr('src',imagesrc);
-
          let caption = $("#image4>figure>figcaption").text();
          $("#maincaption").text(caption);
          $("#image4").css('border','3px solid white');
          $("#image1 , #image2, #image3, #image5").css('border','none');
-         $("#mainImage").css('width',' 555px');
+         $("#mainImage").css({
+             "background":`url(${imagesrc})`,
+             "background-size":"cover",
+             "background-position":"center"
+         });
      });
 
      $('#image5').click(function(){
          let imagesrc = $("#image5>figure>img").attr('src');
-         $("#mainImage").attr('src',imagesrc);
-
          let caption = $("#image5>figure>figcaption").text();
          $("#maincaption").text(caption);
          $("#image5").css('border','3px solid white');
          $("#image1 , #image2 , #image3, #image4").css('border','none');
-         $("#mainImage").css('height',' 395px');
-         $("#mainImage").css('width',' 274px');
+         $("#mainImage").css({
+             "background":`url(${imagesrc})`,
+             "background-size":"cover",
+             "background-position":"center"
+         });
      });
 
 
