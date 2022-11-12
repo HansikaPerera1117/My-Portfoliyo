@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Knight Rider</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="assests/normalize.css">
+
+    <style>
+        body{
+            background: black;
+        }
+        h1 {
+            color: white;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 130px;
+            font-family:Calibri;
+            width: max-content;
+            border-bottom: 3px solid white;
+            border-top: 3px solid white;
+            padding-bottom: 9px;
+        }
+
+        #container{
+            height: max-content;
+            width: max-content;
+            display: flex;
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        #container>div{
+            height: 90px;
+            width: 180px;
+            border: 2px solid #cd92ff;
+        }
+        #btns{
+            height: max-content;
+            width: max-content;
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 250px;
+            margin: auto;
+        }
+        #btnStart{
+            background: #186c18;
+            height: 40px;
+            width: 90px;
+            font-family: Calibri;
+        }
+        #btnEnd{
+            background: #f63b3b;
+            height: 40px;
+            width: 90px;
+            font-family: Calibri;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+    <h1>Knight-Rider</h1>
+
+    <section id="container">
+
+    </section>
+
+    <div id="btns">
+        <button  id="btnStart" type="button">Start</button>
+        <button  id="btnEnd"  type="button" >End</button>
+    </div>
+
+</main>
+
+<script src="assests/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+    var knightRider = {
+        count: 0,
+        temArray: [],
+        rightColors: ['white', 'white', 'white', 'white', 'white', 'white', '#31025c', '#490487', '#6926aa', 'rebeccapurple', '#9565d2', '#d1b8ff'],
+        leftColors: ['white', 'white', 'white', 'white', 'white', 'white',  '#d1b8ff', '#9565d2', 'rebeccapurple', '#6926aa', '#490487', '#31025c'],
+
+        animateColorLeft: function () {
+            var lastColor = this.temArray.pop();
+            this.temArray.unshift(lastColor);
+        },
+
+        animateColorRight: function () {
+            var firstColor = this.temArray.shift();
+            this.temArray.push(firstColor);
+        },
+        animate: function () {
+            this.count++;
+            if (this.count <= this.leftColors.length) {
+                this.temArray = this.leftColors;
+                this.animateColorLeft();
+            } else {
+                if (this.count >= (this.rightColors.length * 2)) {
+                    this.count = 0;
+                }
+                this.temArray = this.rightColors;
+                this.animateColorRight();
+
+            }
+        }
+    }
+
+    renderDivs();
+    function renderDivs(){
+        $("#container").empty();
+        for (let i = 0; i <knightRider.temArray.length / 2; i++) {
+            $("#container").append(`<div style="background-color: ${knightRider.temArray[i]}"></div>`);
+        }
+        knightRider.animate();
+
+    }
+    var id;
+
+    $("#btnStart").click(function (){
+        clearInterval(id);
+        id = setInterval(renderDivs,150);
+    });
+
+    $("#btnEnd").click(function (){
+        clearInterval(id);
+    });
+
+</script>
+
+</body>
+</html>
