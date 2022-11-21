@@ -25,24 +25,24 @@
 </head>
 <body>
 <main id="startMain"></main>
-<div class="startMainBtn position-absolute">
 
+<div class="startMainPlayBtn position-absolute">
+    <button class="startMainButtons"  id="btnPlay">Play</button>
+</div>
+
+<div class="startMainIntroBtn position-absolute mt-5">
 
     <div class="accordion-item">
-
-            <button id="btnIntro" class="startMainButtons" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <button id="btnIntro" class="startMainButtons collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                 Introduction
             </button>
-        
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Flip is a timed card memory game. When starting a level, there's a red bar on top of the screen that shows how much time you have left.
+                Click the green cards to see what symbol they uncover and try to find the matching symbol underneath the other cards.
+                Uncover two matching symbols in a row to eliminate them from the game.
+                Eliminate all cards as fast as you can to win the game. Have fun FLIPing!</div>
         </div>
     </div>
-
-
-    <button class="startMainButtons"  id="btnPlay">Play</button>
 
 </div>
 

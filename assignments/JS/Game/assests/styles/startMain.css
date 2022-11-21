@@ -7,20 +7,39 @@ body{
     height: 100%;
 }
 
-.startMainBtn{
+.startMainPlayBtn{
     width: 600px;
+    height:60px;
     right: 0;
     left: 0;
-    bottom: 28%;
+    bottom: 40%;
     margin: auto;
 }
 
+.startMainIntroBtn{
+    width: 600px;
+    height:220px;
+    right: 0;
+    left: 0;
+    bottom: 6%;
+    margin: auto;
+}
 .startMainButtons{
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 10px;
+    background: #ff75bc;
     height: 60px;
     width:250px;
-    margin-left: 20px ;
+    margin-bottom: 20px ;
 }
 
-#collapseOne{
+#flush-collapseOne{
     width: 600px;
+    position: absolute;
+    top: 30%;
+    background: orange;
+    border-radius: 5px;
 }
