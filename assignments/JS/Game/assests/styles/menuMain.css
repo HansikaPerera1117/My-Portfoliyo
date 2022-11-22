@@ -1,14 +1,59 @@
+*{
+    color: white;
+}
+
 #menuMain{
     width: 100%;
     height: 100%;
 }
 
 #levels{
-    height: 200px;
-    width: 200px;
-    background: #6f42c1;
+    height: 350px;
+    width: 350px;
     position: relative;
+    background: rgba(255, 255, 255, 0.56);
+    border-radius: 10px;
+    top: 30%;
     right: 0;
     left: 0;
     margin: auto;
+}
+
+#levels>div{
+    height: 70px;
+    width: 250px;
+    position: relative;
+    right: 0;
+    left: 0;
+    top: 45px;
+    margin: auto;
+    background: #ff7ac0;
+    border-radius: 10px;
+    border: 3px solid deeppink;
+}
+
+#levels>div>a{
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Assistant', sans-serif;
+    color: white;
+    width: max-content;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+#btnBackToHome{
+    position: absolute;
+    bottom: 45px;
+    left: 25px;
+    margin: auto;
+    border-radius: 10px;
+    background: #70ceff;
+    border: 3px solid #00b2ff;
+    height: 60px;
+    width:250px;
+    font-family: 'Assistant', sans-serif;
+    font-size: 25px;
 }

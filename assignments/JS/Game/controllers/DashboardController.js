@@ -12,4 +12,11 @@ $(document).ready(function () {
         $("#menuMain").css('display','block');
     });
 
+    $("#menuMain").css('display','none');
+
+    $("#btnBackToHome").click(function(){
+        $("#startMain").css('display','block');
+        $("#menuMain").css('display','none');
+    });
+
 });
