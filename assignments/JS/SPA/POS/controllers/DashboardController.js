@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 
     $("#imgHome").mousedown(function(){
-        $("#mainHome").css('display','block');
+        $("#startMain").css('display','block');
         $("#mainCustomer").css('display','none');
         $("#mainItem").css('display','none');
         $("#mainPlaceOrders").css('display','none');

@@ -5,4 +5,11 @@ $(window).on('load',function (){
 
 $(document).ready(function () {
 
+    $("#menuMain").css('display','none');
+
+    $("#btnPlay").click(function(){
+        $("#startMain").css('display','none');
+        $("#menuMain").css('display','block');
+    });
+
 });
