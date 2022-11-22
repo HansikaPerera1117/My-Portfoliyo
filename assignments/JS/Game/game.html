@@ -10,21 +10,35 @@
     <!------------------------stylesheets--------------------------------->
     <link rel="stylesheet" href="assests/styles/startMain.css">
     <link rel="stylesheet" href="assests/styles/menuMain.css">
+
+    <!------------------------fonts--------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@600&display=swap" rel="stylesheet">
+
+
     <style>
         #startMain{
-            background: url("assests/bacground_images/bg1.jpg");
+            background: url("assests/images/bacground_images/bg1.jpg");
             background-position: center;
             background-size: contain;
         }
         #menuMain{
-            background: url("assests/bacground_images/bg4.jpg");
+            background: url("assests/images/bacground_images/bg4.jpg");
             background-position: center;
             background-size: contain;
         }
     </style>
 </head>
 <body>
-<main id="startMain"></main>
+
+<div id="loader">
+    <div>
+        <img src="assests/images/bacground_images/loading_img.jpg" alt="loading image" class="position-absolute" style="right: 0;left: 0; margin: auto;" height="100%" width="100%">
+    </div>
+</div>
+
+<main id="startMain">
 
 <div class="startMainPlayBtn position-absolute">
     <button class="startMainButtons"  id="btnPlay">Play</button>
@@ -40,16 +54,32 @@
             <div class="accordion-body">Flip is a timed card memory game. When starting a level, there's a red bar on top of the screen that shows how much time you have left.
                 Click the green cards to see what symbol they uncover and try to find the matching symbol underneath the other cards.
                 Uncover two matching symbols in a row to eliminate them from the game.
-                Eliminate all cards as fast as you can to win the game. Have fun FLIPing!</div>
+                Eliminate all cards as fast as you can to win the game. Have fun FLIPing!
+            </div>
         </div>
     </div>
 
 </div>
+</main>
 
+<main id="menuMain">
 
-<main id="menuMain"></main>
+    <section id="levels">
+        <div>
+            <a href="javascript:;" data-level="8" class="play">Casual</a>
+        </div>
+        <div>
+            <a href="javascript:;" data-level="18" class="play">Medium</a>
+        </div>
+        <div>
+            <a href="javascript:;" data-level="32" class="play">Hard</a>
+        </div>
+
+    </section>
+</main>
 
 <script src="assests/js/bootstrap.min.js"></script>
 <script src="assests/JQuery/jquery-3.6.1.min.js"></script>
+<script src="controllers/DashboardController.js"></script>
 </body>
 </html>
