@@ -47,6 +47,7 @@
     };
 
 
+
 //===================================Toggle menu screen cards start=========================
 
     $('.logo .card:not(".twist")').on('click', function (e) {
@@ -57,6 +58,8 @@
     });
 
 //===================================Toggle menu screen cards end=========================
+
+
 
     // Start game
     $('.play').on('click', function () {
@@ -113,6 +116,7 @@
                 .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
                     startScreen('fail'); // fail game
                 });
+
 
         });
     });
