@@ -56,7 +56,6 @@ a:hover {
     background: rgba(255, 255, 255, 0.73);
 }
 
-
 .logo .f {
     font-family: 'Signika', sans-serif;
     font-size: 140px;
@@ -67,6 +66,7 @@ a:hover {
     top: 32px;
     margin: auto;
     text-align: center;
+    border: 3px solid #d0a300;
 }
 
 .logo .contentbox {

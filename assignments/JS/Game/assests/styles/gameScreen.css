@@ -1,0 +1,24 @@
+
+#g {
+    display: block;
+    height: 90%;
+    width: 90%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 20px;
+    margin: auto;
+}
+
+/* card styles */
+#g .found {
+    display: inline-block
+}
+
+.card {
+    display: inline-block;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+}
+
+
