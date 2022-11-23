@@ -38,23 +38,27 @@ a:hover {
     background: rgba(255, 255, 255, .1)
 }
 
+
 .logo {
-    width: 475px;
-    height: 280px;
+    width: 80%;
+    height: 66%;
     position: absolute;
     top: 63%;
-    left: 50%;
+    left: 17%;
     margin: -225px 0 0 -225px;
 }
 
+
 .logo .card {
-    width: 100%;
-    height: 100%;
+    width: 41%;
+    height: 61%;
     cursor: default;
     position: relative;
     top: 85px;
+    left: 39%;
     background: rgba(255, 255, 255, 0.73);
 }
+
 
 .logo .f {
     font-family: 'Signika', sans-serif;
@@ -63,7 +67,7 @@ a:hover {
     position: absolute;
     right: 0;
     left: 0;
-    top: 32px;
+    top: 37px;
     margin: auto;
     text-align: center;
     border: 3px solid #d0a300;
@@ -76,9 +80,9 @@ a:hover {
 }
 
 .logo .contentbox.levels {
-    width: 89%;
+    width: 88%;
     position: absolute;
-    top: 24px;
+    top: 30px;
     left: 0;
     right: 0;
     margin: auto;

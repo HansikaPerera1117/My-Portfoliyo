@@ -10,6 +10,40 @@
     margin: auto;
 }
 
+#g .timer {
+    width: 0%;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    background: dodgerblue;
+    z-index: 1
+}
+
+@-webkit-keyframes timer {
+    100% {
+        width: 100%;
+    }
+}
+
+@-moz-keyframes timer {
+    100% {
+        width: 100%;
+    }
+}
+
+@-o-keyframes timer {
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes timer {
+    100% {
+        width: 100%;
+    }
+}
+
+
 /* card styles */
 #g .found {
     display: inline-block
@@ -20,5 +54,7 @@
     -webkit-perspective: 1000px;
     -moz-perspective: 1000px;
 }
+
+
 
 

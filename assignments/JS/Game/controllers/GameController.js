@@ -1,29 +1,54 @@
-function set(key, value) {
-    localStorage.setItem(key, value);
-}
 
-function get(key) {
-    return localStorage.getItem(key);
-}
-
-function increase(el) {
-    set(el, parseInt(get(el)) + 1);
-}
-
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-    while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
+    function set(key, value) {
+        localStorage.setItem(key, value);
     }
-    return array;
-};
+
+    function get(key) {
+        return localStorage.getItem(key);
+    }
+
+    function increase(el) {
+        set(el, parseInt(get(el)) + 1);
+    }
+
+    function decrease(el) {
+        set(el, parseInt(get(el)) - 1);
+    }
+
+
+    function shuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+        while (0 !== currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array;
+    };
+
+    function startScreen(text) {
+        $('#g').removeAttr('class').empty();
+        $('.logo').fadeIn(250);
+
+        // If won game
+        if (text == 'nice') {
+            increase('flip_won');
+            decrease('flip_abandoned');
+        }
+
+        // If lost game
+        else if (text == 'fail') {
+            increase('flip_lost');
+            decrease('flip_abandoned');
+        }
+
+    };
 
 
 //===================================Toggle menu screen cards start=========================
+
     $('.logo .card:not(".twist")').on('click', function (e) {
         $(this).toggleClass('active').siblings().not('.twist').removeClass('active');
         if ($(e.target).is('.playnow')) {
@@ -33,23 +58,25 @@ function shuffle(array) {
 
 //===================================Toggle menu screen cards end=========================
 
-
-
-$('.play').on('click', function () {
+    // Start game
+    $('.play').on('click', function () {
         increase('flip_abandoned');
         $('.info').fadeOut();
 
         var difficulty = '',
+            timer = 1000,
             level = $(this).data('level');
 
         // Set game timer and difficulty
         if (level == 8) {
             difficulty = 'casual';
+            timer *= level * 4;
         } else if (level == 18) {
             difficulty = 'medium';
+            timer *= level * 5;
         } else if (level == 32) {
             difficulty = 'hard';
-
+            timer *= level * 6;
         }
 
         $('#g').addClass(difficulty);
@@ -75,6 +102,17 @@ $('.play').on('click', function () {
                     '<div class="flipper"><div class="f"></div><div class="b" data-f="&#xf0' + code + ';"></div></div>' +
                     '</div>').appendTo('#g');
             }
+
+
+            // Add timer bar
+            $('<i class="timer"></i>')
+                .prependTo('#g')
+                .css({
+                    'animation': 'timer ' + timer + 'ms linear'
+                })
+                .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
+                    startScreen('fail'); // fail game
+                });
 
         });
     });
