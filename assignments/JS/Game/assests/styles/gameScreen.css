@@ -1,4 +1,16 @@
 
+/* font-face */
+@font-face {
+    font-family: "GeneralFoundicons";
+    font-weight: normal;
+    font-style: normal;
+    src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/60583/general_foundicons.eot");
+    src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/60583/general_foundicons.eot?#iefix") format("embedded-opentype"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/60583/general_foundicons.woff") format("woff"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/60583/general_foundicons.ttf") format("truetype"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/60583/general_foundicons.svg#GeneralFoundicons") format("svg");
+}
+
 #g {
     display: block;
     height: 90%;
@@ -58,6 +70,17 @@
 
 .card:not(.active):hover {
     opacity: .8
+}
+
+.card .b::before {
+    content: attr(data-f);
+    display: block;
+    font: normal 100px/100px "GeneralFoundicons";
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    width: 100%;
+    text-align: center
 }
 
 

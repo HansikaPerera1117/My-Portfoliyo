@@ -15,15 +15,6 @@
         set(el, parseInt(get(el)) - 1);
     }
 
-    var toTime = function (nr) {
-        if (nr == '-:-') return nr;
-        else {
-            var n = ' ' + nr / 1000 + ' ';
-            return n.substr(0, n.length - 1) + 's';
-        }
-    };
-
-
     function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
         while (0 !== currentIndex) {
@@ -42,8 +33,6 @@
 
     };
 
-
-
 //===================================Toggle menu screen cards start=========================
 
     $('.logo .card:not(".twist")').on('click', function (e) {
@@ -54,7 +43,6 @@
     });
 
 //===================================Toggle menu screen cards end=========================
-
 
 
     // Start game
@@ -84,7 +72,7 @@
             var startGame = $.now(),
                 obj = [];
 
-            // Create and add shuffled cards to game
+            // Create and add shuffled cards
             for (i = 0; i < level; i++) {
                 obj.push(i);
             }
@@ -101,8 +89,40 @@
                     '<div class="flipper"><div class="f"></div><div class="b" data-f="&#xf0' + code + ';"></div></div>' +
                     '</div>').appendTo('#g');
             }
-            
-            // Add timer bar
+
+
+            // ==================Set card actions start ============================================
+            $('#g .card').on({
+                'mousedown': function () {
+                    if ($('#g').attr('data-paused') == 1) {
+                        return;
+                    }
+                    var data = $(this).addClass('active').find('.b').attr('data-f');
+
+                    if ($('#g').find('.card.active').length > 1) {
+                        setTimeout(function () {
+                            var thisCard = $('#g .active .b[data-f=' + data + ']');
+
+                            if (thisCard.length > 1) {
+                                thisCard.parents('.card').toggleClass('active card found').empty(); //yey
+                                increase('flip_matched');
+
+                                // Win game
+                                if (!$('#g .card').length) {
+                                    var time = $.now() - startGame;
+
+                                    startScreen('nice');
+                                }
+                            } else {
+                                $('#g .card.active').removeClass('active'); // fail
+                            }
+                        }, 401);
+                    }
+                }
+            });
+            // ==================Set card actions end ============================================
+
+            //====================Add timer bar start===============================================
             $('<i class="timer"></i>')
                 .prependTo('#g')
                 .css({
@@ -112,5 +132,7 @@
                     startScreen('fail'); // fail game
                 });
 
+            //====================Add timer bar end===============================================
+            
         });
     });
