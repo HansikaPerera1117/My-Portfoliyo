@@ -39,8 +39,7 @@
     });
 
 //===================================Toggle menu screen cards end=========================
-
-
+    
 //================== Start game==================================
 
     $('.play').on('click', function () {
@@ -138,15 +137,32 @@
 
             //====================Add timer bar end===============================================
 
-            //===================== Set keyboard [esc] actions start=====================
+            //======================= Set keyboard (p)ause and [esc] actions start=========================
             $(window).off().on('keyup', function (e) {
-
+                // Pause game. (p)
+                if (e.keyCode == 80) {
+                    if ($('#g').attr('data-paused') == 1) { //was paused, now resume
+                        $('#g').attr('data-paused', '0');
+                        $('.timer').css('animation-play-state', 'running');
+                        $('.pause').remove();
+                    } else {
+                        $('#g').attr('data-paused', '1');
+                        $('.timer').css('animation-play-state', 'paused');
+                        $('<div class="pause"></div>').appendTo('body');
+                    }
+                }
+                // Abandon game. (ESC)
                 if (e.keyCode == 27) {
-                    startScreen('flip');
-
+                    startScreen();
+                    // If game was paused
+                    if ($('#g').attr('data-paused') == 1) {
+                        $('#g').attr('data-paused', '0');
+                        $('.pause').remove();
+                    }
                     $(window).off();
                 }
             });
-            //===================== Set keyboard [esc] actions end=====================
+
+            //======================= Set keyboard (p)ause and [esc] actions end=========================
         });
     });
