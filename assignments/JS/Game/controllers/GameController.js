@@ -40,6 +40,7 @@
 
 //===================================Toggle menu screen cards end=========================
 
+
 //================== Start game==================================
 
     $('.play').on('click', function () {
@@ -137,5 +138,15 @@
 
             //====================Add timer bar end===============================================
 
+            //===================== Set keyboard [esc] actions start=====================
+            $(window).off().on('keyup', function (e) {
+
+                if (e.keyCode == 27) {
+                    startScreen('flip');
+
+                    $(window).off();
+                }
+            });
+            //===================== Set keyboard [esc] actions end=====================
         });
     });
