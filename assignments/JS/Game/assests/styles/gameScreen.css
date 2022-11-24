@@ -10,13 +10,15 @@
     margin: auto;
 }
 
+
 #g .timer {
     width: 0%;
-    height: 5px;
+    height: 10px;
     position: absolute;
     top: 0;
-    background: dodgerblue;
-    z-index: 1
+    background: #38c2fd;
+    z-index: 1;
+    border: 3px solid #0060be;
 }
 
 @-webkit-keyframes timer {
@@ -43,8 +45,6 @@
     }
 }
 
-
-
 /* card styles */
 #g .found {
     display: inline-block
@@ -61,5 +61,24 @@
 }
 
 
+#g .card{
+    background: #fa81aa;
+}
 
 
+#g .card .flipper {
+    height: 100%;
+    width: 100%;
+}
+
+#g .card .flipper .f {
+    height: 100%;
+    width: 100%;
+}
+
+
+#g .card.active .b{
+    background: #fa81aa;
+    height: 100%;
+    width: 100%;
+}

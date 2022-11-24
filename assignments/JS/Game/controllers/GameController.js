@@ -15,6 +15,14 @@
         set(el, parseInt(get(el)) - 1);
     }
 
+    var toTime = function (nr) {
+        if (nr == '-:-') return nr;
+        else {
+            var n = ' ' + nr / 1000 + ' ';
+            return n.substr(0, n.length - 1) + 's';
+        }
+    };
+
 
     function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
@@ -31,18 +39,6 @@
     function startScreen(text) {
         $('#g').removeAttr('class').empty();
         $('.logo').fadeIn(250);
-
-        // If won game
-        if (text == 'nice') {
-            increase('flip_won');
-            decrease('flip_abandoned');
-        }
-
-        // If lost game
-        else if (text == 'fail') {
-            increase('flip_lost');
-            decrease('flip_abandoned');
-        }
 
     };
 
@@ -105,8 +101,7 @@
                     '<div class="flipper"><div class="f"></div><div class="b" data-f="&#xf0' + code + ';"></div></div>' +
                     '</div>').appendTo('#g');
             }
-
-
+            
             // Add timer bar
             $('<i class="timer"></i>')
                 .prependTo('#g')
@@ -116,7 +111,6 @@
                 .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
                     startScreen('fail'); // fail game
                 });
-
 
         });
     });
