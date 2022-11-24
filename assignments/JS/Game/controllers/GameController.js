@@ -7,13 +7,6 @@
         return localStorage.getItem(key);
     }
 
-    function increase(el) {
-        set(el, parseInt(get(el)) + 1);
-    }
-
-    function decrease(el) {
-        set(el, parseInt(get(el)) - 1);
-    }
 
     function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
@@ -27,11 +20,14 @@
         return array;
     };
 
-    function startScreen(text) {
+//===================================back to start screen start=========================
+    function startScreen() {
         $('#g').removeAttr('class').empty();
         $('.logo').fadeIn(250);
-
     };
+
+//===================================back to start screen start=========================
+
 
 //===================================Toggle menu screen cards start=========================
 
@@ -47,7 +43,6 @@
 
     // Start game
     $('.play').on('click', function () {
-        increase('flip_abandoned');
         $('.info').fadeOut();
 
         var difficulty = '',
@@ -69,7 +64,6 @@
         $('#g').addClass(difficulty);
 
         $('.logo').fadeOut(250, function () {
-            var startGame = $.now(),
                 obj = [];
 
             // Create and add shuffled cards
@@ -90,7 +84,6 @@
                     '</div>').appendTo('#g');
             }
 
-
             // ==================Set card actions start ============================================
             $('#g .card').on({
                 'mousedown': function () {
@@ -104,17 +97,26 @@
                             var thisCard = $('#g .active .b[data-f=' + data + ']');
 
                             if (thisCard.length > 1) {
-                                thisCard.parents('.card').toggleClass('active card found').empty(); //yey
-                                increase('flip_matched');
+                                thisCard.parents('.card').toggleClass('active card found').empty();
 
                                 // Win game
                                 if (!$('#g .card').length) {
-                                    var time = $.now() - startGame;
 
-                                    startScreen('nice');
+                                    Swal.fire({
+                                        title: 'Sweet!',
+                                        text: 'Congratulations You Win!.. Try the next level.',
+                                        imageUrl: "assests/images/bacground_images/bg2.jpg",
+                                        imageWidth: 400,
+                                        imageHeight: 200,
+                                        imageAlt: 'Custom image',
+                                    });
+
+                                    startScreen();
+                                    $(" #g .timer").css('display','none');
+
                                 }
                             } else {
-                                $('#g .card.active').removeClass('active'); // fail
+                                $('#g .card.active').removeClass('active');
                             }
                         }, 401);
                     }
@@ -123,13 +125,14 @@
             // ==================Set card actions end ============================================
 
             //====================Add timer bar start===============================================
+
             $('<i class="timer"></i>')
                 .prependTo('#g')
                 .css({
                     'animation': 'timer ' + timer + 'ms linear'
                 })
                 .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
-                    startScreen('fail'); // fail game
+                    startScreen(); // fail game
                 });
 
             //====================Add timer bar end===============================================
