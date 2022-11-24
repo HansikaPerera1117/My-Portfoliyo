@@ -40,8 +40,8 @@
 
 //===================================Toggle menu screen cards end=========================
 
+//================== Start game==================================
 
-    // Start game
     $('.play').on('click', function () {
         $('.info').fadeOut();
 
@@ -66,7 +66,7 @@
         $('.logo').fadeOut(250, function () {
                 obj = [];
 
-            // Create and add shuffled cards
+            // ========================Create and add shuffled cards==========================
             for (i = 0; i < level; i++) {
                 obj.push(i);
             }

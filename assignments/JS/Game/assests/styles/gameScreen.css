@@ -107,3 +107,48 @@
     width: 100%;
 }
 
+
+
+/*Responsive Stuff*/
+@media all and (max-width: 1680px) and (min-width: 640px) {
+    .card .b::before {
+        font-size: 90px
+    }
+
+    #g.medium .card .b::before {
+        font-size: 70px
+    }
+
+    #g.hard .card .b::before {
+        font-size: 50px
+    }
+}
+
+@media all and (max-width: 640px) and (min-width: 470px) {
+    .card .b::before {
+        font-size: 90px
+    }
+
+    #g.medium .card .b::before {
+        font-size: 60px
+    }
+
+    #g.hard .card .b::before {
+        font-size: 50px
+    }
+}
+
+@media all and (max-width: 470px) and (min-width: 0px) {
+    .card .b::before {
+        font-size: 60px
+    }
+
+    #g.medium .card .b::before {
+        font-size: 35px;
+    }
+
+    #g.hard .card .b::before {
+        font-size: 32px;
+    }
+}
+
